@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\auto\revisions\rev_658d11d_6520620\rev_left_658d11d\value\src\main\java\com\google\auto\value\processor\AutoValueProcessor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\auto\revisions\rev_658d11d_6520620\rev_base_b6f51d9\value\src\main\java\com\google\auto\value\processor\AutoValueProcessor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\auto\revisions\rev_658d11d_6520620\rev_right_6520620\value\src\main\java\com\google\auto\value\processor\AutoValueProcessor.java

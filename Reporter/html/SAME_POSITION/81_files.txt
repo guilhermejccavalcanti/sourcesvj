@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\gephi\revisions\rev_677b35d_bd6cca6\rev_left_677b35d\AttributesAPI\src\org\gephi\data\attributes\api\AttributeType.java
+C:\Users\user\Desktop\gjcc\amostra\projects\gephi\revisions\rev_677b35d_bd6cca6\rev_base_90e6e4b\AttributesAPI\src\org\gephi\data\attributes\api\AttributeType.java
+C:\Users\user\Desktop\gjcc\amostra\projects\gephi\revisions\rev_677b35d_bd6cca6\rev_right_bd6cca6\AttributesAPI\src\org\gephi\data\attributes\api\AttributeType.java

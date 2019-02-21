@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_6d19f7c_e13f8e4\rev_left_6d19f7c\flyway-core\src\main\java\org\flywaydb\core\internal\dbsupport\DbSupportFactory.java
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_6d19f7c_e13f8e4\rev_base_77a15e5\flyway-core\src\main\java\org\flywaydb\core\internal\dbsupport\DbSupportFactory.java
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_6d19f7c_e13f8e4\rev_right_e13f8e4\flyway-core\src\main\java\org\flywaydb\core\internal\dbsupport\DbSupportFactory.java

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\titan\revisions\rev_4935a97_c136530\rev_left_4935a97\titan-core\src\main\java\com\thinkaurelius\titan\graphdb\transaction\StandardTitanTx.java
+C:\Users\user\Desktop\gjcc\amostra\projects\titan\revisions\rev_4935a97_c136530\rev_base_f669fc4\titan-core\src\main\java\com\thinkaurelius\titan\graphdb\transaction\StandardTitanTx.java
+C:\Users\user\Desktop\gjcc\amostra\projects\titan\revisions\rev_4935a97_c136530\rev_right_c136530\titan-core\src\main\java\com\thinkaurelius\titan\graphdb\transaction\StandardTitanTx.java

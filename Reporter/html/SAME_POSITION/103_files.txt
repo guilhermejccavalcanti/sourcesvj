@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\druid\revisions\rev_c4397bd_e4a3108\rev_left_c4397bd\processing\src\main\java\io\druid\query\groupby\GroupByQueryRunnerFactory.java
+C:\Users\user\Desktop\gjcc\amostra\projects\druid\revisions\rev_c4397bd_e4a3108\rev_base_b3aad48\processing\src\main\java\io\druid\query\groupby\GroupByQueryRunnerFactory.java
+C:\Users\user\Desktop\gjcc\amostra\projects\druid\revisions\rev_c4397bd_e4a3108\rev_right_e4a3108\processing\src\main\java\io\druid\query\groupby\GroupByQueryRunnerFactory.java

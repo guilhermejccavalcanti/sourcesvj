@@ -1,0 +1,6 @@
+1539608504406	Rename type 'FixMergeConflict'
+1539612495919	Rename local variable 'file1'
+1539612737757	Rename local variable 'str1'
+1539623070817	Extract local variable 'matchCandidateStartingIdx'
+1539623122061	Extract local variable 'matchingCandidateEndIdx'
+1539623147253	Rename local variable 'matchingCandidateEndIdx'

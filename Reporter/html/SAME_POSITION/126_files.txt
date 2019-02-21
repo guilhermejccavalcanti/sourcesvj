@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\fastjson\revisions\rev_c76d44b_a12ff69\rev_left_c76d44b\src\main\java\com\alibaba\fastjson\parser\deserializer\JavaBeanDeserializer.java
+C:\Users\user\Desktop\gjcc\amostra\projects\fastjson\revisions\rev_c76d44b_a12ff69\rev_base_490213c\src\main\java\com\alibaba\fastjson\parser\deserializer\JavaBeanDeserializer.java
+C:\Users\user\Desktop\gjcc\amostra\projects\fastjson\revisions\rev_c76d44b_a12ff69\rev_right_a12ff69\src\main\java\com\alibaba\fastjson\parser\deserializer\JavaBeanDeserializer.java

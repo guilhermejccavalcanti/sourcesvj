@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_6520395_119e9ba\rev_left_6520395\core\src\main\java\org\elasticsearch\discovery\zen\ping\ZenPingService.java
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_6520395_119e9ba\rev_base_32a0973\core\src\main\java\org\elasticsearch\discovery\zen\ping\ZenPingService.java
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_6520395_119e9ba\rev_right_119e9ba\core\src\main\java\org\elasticsearch\discovery\zen\ping\ZenPingService.java

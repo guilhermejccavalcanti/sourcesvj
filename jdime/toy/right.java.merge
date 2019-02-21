@@ -1,0 +1,13 @@
+public class A {
+
+	void m(){
+<<<<<<< MINE
+		m = 10;
+		b = 2;
+=======
+		a = 1;
+		n = 20;
+>>>>>>> YOURS
+	}
+	
+}

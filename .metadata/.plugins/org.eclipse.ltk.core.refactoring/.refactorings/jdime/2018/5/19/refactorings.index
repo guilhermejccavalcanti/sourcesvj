@@ -1,0 +1,9 @@
+1525797790972	Rename local variable 'node'
+1525874845458	Rename resource 'bsdr.java'
+1525874855625	Copy file
+1525874872581	Rename resource 'left'
+1525874878047	Copy file
+1525893520971	Delete element
+1525978418082	Extract method 'processSamePstCandidates'
+1525978595531	Extract method 'processSameStmtConflicts'
+1525978847399	Delete element

@@ -1,0 +1,6 @@
+<<<<<<< MINE
+getStartTimeInMs()
+=======
+getStartTime()
+>>>>>>> YOURS
+

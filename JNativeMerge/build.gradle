@@ -1,0 +1,117 @@
+import groovy.io.FileType
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath 'net.java.dev.jna:jna:4.5.1'
+        classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.14.0"
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'com.github.hierynomus.license'
+
+version '0.1'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+javadoc {
+    options.setEncoding 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'net.java.dev.jna:jna:4.5.1'
+}
+
+task wrapper(type: Wrapper) {
+    distributionType Wrapper.DistributionType.ALL
+    gradleVersion '4.6'
+}
+
+final LIBGIT2_PROP = 'jnativemerge.libgit2'
+final JNA_LIBRARY_PATH = 'jna.library.path'
+final PROP_WARNING = "Missing libgit2 library path. Provide a path to the libgit2 library file using the Gradle property '$LIBGIT2_PROP' if you would like to include the native library in the $project.name JAR. This will enable JNA to automatically extract libgit2 from the JAR file at runtime. Alternatively you may use the JVM property '$JNA_LIBRARY_PATH' and pass the path to the directory containing libgit2 to the JVM using this library."
+
+final NATIVES_DIR = new File(buildDir, 'nativeRes')
+
+task copyLib(type: Copy) {
+
+    doFirst {
+
+        if (NATIVES_DIR.exists()) {
+            if (NATIVES_DIR.isFile()) {
+                if (!NATIVES_DIR.delete()) throw new GradleException("Can not delete " + NATIVES_DIR)
+            } else {
+                if (!NATIVES_DIR.deleteDir()) throw new GradleException("Can not delete " + NATIVES_DIR)
+            }
+        }
+    }
+
+    if (!project.hasProperty(LIBGIT2_PROP)) {
+        def nativeName = System.mapLibraryName('git2')
+        def searchPaths = System.getProperty('java.library.path').tokenize(System.getProperty('path.separator'))
+
+        for (String dir : searchPaths) {
+            File searchDir = new File(dir)
+
+            if (!(searchDir.exists() && searchDir.isDirectory())) {
+                logger.debug('Skipping invalid library search directory ' + searchDir)
+                continue
+            }
+
+            List<File> foundNativeLibs = []
+
+            searchDir.eachFileRecurse(FileType.FILES) {
+                if (it.name == nativeName) {
+                    foundNativeLibs.add(it)
+                }
+            }
+
+            if (foundNativeLibs.size() > 0) {
+                File libFile = foundNativeLibs[0]
+                logger.lifecycle('Discovered ' + libFile + ' in the Java library search path.')
+                project.ext.set(LIBGIT2_PROP, libFile.absolutePath)
+                break
+            }
+        }
+    }
+
+    if (project.hasProperty(LIBGIT2_PROP)) {
+
+        sourceSets.main.resources {
+            srcDir NATIVES_DIR
+        }
+
+        from project.getProperty(LIBGIT2_PROP)
+        into new File(NATIVES_DIR, com.sun.jna.Platform.RESOURCE_PREFIX)
+    } else {
+        logger.warn(PROP_WARNING)
+    }
+}
+
+processResources.dependsOn copyLib
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+license {
+    header = file('LICENSE_HEADER')
+    strictCheck = true
+}

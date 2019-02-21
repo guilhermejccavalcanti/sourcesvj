@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="82" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2"/>
+	<item value="1" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn"/>
+	<item value="194" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1"/>
+	<item value="121" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0"/>
+	<section name="conditionHistory">
+		<item value="leftChild.toString().equals(&quot;ForStmt&quot;)&#x0D;&#x0A;&amp;&amp;&#x0D;&#x0A;rightChild.toString().equals(&quot;TryStmt&quot;)" key="conditionHistoryEntry_8"/>
+		<item value="leftChild.toString().equals(&quot;VarDeclStmt&quot;)&#x0D;&#x0A;&amp;&amp;&#x0D;&#x0A;rightChild.toString().equals(&quot;TryStmt&quot;)" key="conditionHistoryEntry_9"/>
+		<item value="leftChild.toString().equals(&quot;IfStmt&quot;)&#x0D;&#x0A;&amp;&amp;&#x0D;&#x0A;rightChild.toString().equals(&quot;IfStmt&quot;)" key="conditionHistoryEntry_6"/>
+		<item value="leftChild.toString().equals(&quot;EnhancedForStmt&quot;)&#x0D;&#x0A;&amp;&amp;&#x0D;&#x0A;rightChild.toString().equals(&quot;TryStmt&quot;)" key="conditionHistoryEntry_7"/>
+		<item value="10" key="conditionHistoryEntryCount"/>
+		<item value="leftChild instanceof ASTNodeArtifact &amp;&amp; ((ASTNodeArtifact)leftChild).toString().contains(&quot;Dot&quot;)" key="conditionHistoryEntry_0"/>
+		<item value="leftChild instanceof ASTNodeArtifact &amp;&amp; (ASTNodeArtifact)leftChild.toString().contains(&quot;Dot&quot;)" key="conditionHistoryEntry_1"/>
+		<item value="rightChild.toString().equals(&quot;Dot&quot;)" key="conditionHistoryEntry_4"/>
+		<item value="leftChild.toString().equals(&quot;IfStmt&quot;)" key="conditionHistoryEntry_5"/>
+		<item value="leftChild.toString().contains(&quot;Dot&quot;)" key="conditionHistoryEntry_2"/>
+		<item value="leftChild.toString().equals(&quot;Dot&quot;)" key="conditionHistoryEntry_3"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item value="678" key="SashWeightTree"/>
+		<item value="321" key="SashWeightDetails"/>
+		<item value="877" key="WIDTH"/>
+		<item value="464" key="HEIGHT"/>
+	</section>
+	<section name="AddExceptionDialog">
+		<item value="true" key="caughtChecked"/>
+		<item value="true" key="uncaughtChecked"/>
+	</section>
+</section>

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_07253e8_5f7ea30\rev_left_07253e8\ql\src\java\org\apache\hadoop\hive\ql\exec\tez\MapRecordProcessor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_07253e8_5f7ea30\rev_base_1977d7f\ql\src\java\org\apache\hadoop\hive\ql\exec\tez\MapRecordProcessor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_07253e8_5f7ea30\rev_right_5f7ea30\ql\src\java\org\apache\hadoop\hive\ql\exec\tez\MapRecordProcessor.java

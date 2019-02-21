@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_left_6bf0b68\app\src\processing\app\Editor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_base_c79604d\app\src\processing\app\Editor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_right_54d4f1c\app\src\processing\app\Editor.java

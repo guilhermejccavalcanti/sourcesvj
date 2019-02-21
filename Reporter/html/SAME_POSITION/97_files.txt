@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\Kundera\revisions\rev_fa90495_6bd9733\rev_left_fa90495\kundera-core\src\main\java\com\impetus\kundera\persistence\AbstractEntityReader.java
+C:\Users\user\Desktop\gjcc\amostra\projects\Kundera\revisions\rev_fa90495_6bd9733\rev_base_9071768\kundera-core\src\main\java\com\impetus\kundera\persistence\AbstractEntityReader.java
+C:\Users\user\Desktop\gjcc\amostra\projects\Kundera\revisions\rev_fa90495_6bd9733\rev_right_6bd9733\kundera-core\src\main\java\com\impetus\kundera\persistence\AbstractEntityReader.java

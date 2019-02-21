@@ -1,0 +1,5 @@
+1543511003440	Extract method 'findMethodsEditions'
+1543511806216	Rename method 'findMethodsEditions'
+1543521328437	Rename local variable 'mergeCmdInclBase'
+1543521342431	Rename local variable 'resultInclBase'
+1543521555828	Delete elements

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_01e5d5b_e443529\rev_left_01e5d5b\core\src\processing\core\PSurfaceAWT.java
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_01e5d5b_e443529\rev_base_194e6f2\core\src\processing\core\PSurfaceAWT.java
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_01e5d5b_e443529\rev_right_e443529\core\src\processing\core\PSurfaceAWT.java

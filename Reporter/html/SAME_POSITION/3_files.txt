@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\hector\revisions\rev_f488227_c832174\rev_left_f488227\src\test\java\me\prettyprint\cassandra\service\KeyspaceTest.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hector\revisions\rev_f488227_c832174\rev_base_a720902\src\test\java\me\prettyprint\cassandra\service\KeyspaceTest.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hector\revisions\rev_f488227_c832174\rev_right_c832174\src\test\java\me\prettyprint\cassandra\service\KeyspaceTest.java

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_b46877e_b0c21eb\rev_left_b46877e\ambry-coordinator\src\main\java\com.github.ambry.coordinator\AmbryCoordinator.java
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_b46877e_b0c21eb\rev_base_709f3db\ambry-coordinator\src\main\java\com.github.ambry.coordinator\AmbryCoordinator.java
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_b46877e_b0c21eb\rev_right_b0c21eb\ambry-coordinator\src\main\java\com.github.ambry.coordinator\AmbryCoordinator.java

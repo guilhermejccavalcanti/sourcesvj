@@ -1,0 +1,6 @@
+<<<<<<< MINE
+"nextInjectableAncestor"
+=======
+"supertype"
+>>>>>>> YOURS
+

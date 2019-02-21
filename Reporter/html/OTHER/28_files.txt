@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_42a3857_8482c5f\rev_left_42a3857\ql\src\java\org\apache\hadoop\hive\ql\parse\DDLSemanticAnalyzer.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_42a3857_8482c5f\rev_base_b82d38a\ql\src\java\org\apache\hadoop\hive\ql\parse\DDLSemanticAnalyzer.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_42a3857_8482c5f\rev_right_8482c5f\ql\src\java\org\apache\hadoop\hive\ql\parse\DDLSemanticAnalyzer.java

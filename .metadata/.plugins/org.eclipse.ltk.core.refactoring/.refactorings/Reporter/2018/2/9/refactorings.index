@@ -1,0 +1,20 @@
+1519671589937	Rename type 'JDimeEntity'
+1519674642482	Extract method 'readLogEntries'
+1519677740751	Rename local variable 'isReadingS3mOutput'
+1519677784190	Rename local variable 'isReadingJDImeOutput'
+1519677804621	Rename local variable 'isReadingLeftContent'
+1519677813287	Rename local variable 'isReadingBaseContent'
+1519677826649	Rename local variable 'isReadingRightContent'
+1519679945468	Extract method 'baba'
+1519679971895	Rename method 'baba'
+1519680045570	Move method
+1519680050556	Move method
+1519680063062	Move method
+1519689691240	Rename local variable 'res'
+1519689725833	Rename local variable 'res'
+1519689745891	Rename local variable 'r'
+1519747301704	Rename resource 'Table_Responsive_v1'
+1519747415881	Delete element
+1519747588083	Delete element
+1519750052945	Delete elements
+1519750425826	Delete elements

@@ -1,0 +1,2056 @@
+<!DOCTYPE html><html lang="en"><head>	<title>Report</title>	<meta charset="UTF-8">	<meta name="viewport" content="width=device-width, initial-scale=1"><!--===============================================================================================-->		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"><!--===============================================================================================-->	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"><!--===============================================================================================-->	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"><!--===============================================================================================-->	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"><!--===============================================================================================-->	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css"><!--===============================================================================================-->	<link rel="stylesheet" type="text/css" href="css/util.css">	<link rel="stylesheet" type="text/css" href="css/main.css"><!--===============================================================================================--></head><body>		<div class="limiter">		<div class="container-table100">			<div class="wrap-table100">				<div class="table100">					<table>						<thead>							<tr class="table100-head">								<th class="column1">ID</th>								<th class="column2">Type</th>								<th class="column3">Files</th>								<th class="column4">Semistructured Conflict</th>								<th class="column5">Structured Conflict</th>								<th class="column6">Semistructured Declaration</th>								<th class="column7">Structured Declaration</th>								<th class="column8">Left Content</th>								<th class="column9">Base Content</th>								<th class="column10">Right Content</th>								<th class="column11">Semistructured Output</th>								<th class="column12">Structured Output</th>								<th class="column13">Findings</th>							</tr>						</thead>						<tbody><tr>
+<td class="column1">1</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/1_files.txt">FakeView.java</a></td>
+<td class="column4"><a href="SAME_POSITION/1_semi_conflict.java">1_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/1_stru_conflict.java">1_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/1_semi_declaration.java">1_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/1_stru_declaration.java">1_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/1_left.java">1_left</a></td>
+<td class="column9"><a href="SAME_POSITION/1_base.java">1_base</a></td>
+<td class="column10"><a href="SAME_POSITION/1_right.java">1_right</a></td>
+<td class="column11"><a href="SAME_POSITION/1_semi_output.java">1_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/1_stru_output.java">1_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">2</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/2_files.txt">StatisticsFrontEnd.java</a></td>
+<td class="column4"><a href="SAME_POSITION/2_semi_conflict.java">2_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/2_stru_conflict.java">2_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/2_semi_declaration.java">2_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/2_stru_declaration.java">2_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/2_left.java">2_left</a></td>
+<td class="column9"><a href="SAME_POSITION/2_base.java">2_base</a></td>
+<td class="column10"><a href="SAME_POSITION/2_right.java">2_right</a></td>
+<td class="column11"><a href="SAME_POSITION/2_semi_output.java">2_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/2_stru_output.java">2_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. MUDANÃAS COMPLEMENTARES (REFATORAMENTO?).</td>
+</tr>
+<tr>
+<td class="column1">3</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/3_files.txt">KeyspaceTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/3_semi_conflict.java">3_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/3_stru_conflict.java">3_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/3_semi_declaration.java">3_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/3_stru_declaration.java">3_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/3_left.java">3_left</a></td>
+<td class="column9"><a href="SAME_POSITION/3_base.java">3_base</a></td>
+<td class="column10"><a href="SAME_POSITION/3_right.java">3_right</a></td>
+<td class="column11"><a href="SAME_POSITION/3_semi_output.java">3_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/3_stru_output.java">3_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. NÃO HOUVE MUDANÃAS DE UM DOS DEVS (BUG?)</td>
+</tr>
+<tr>
+<td class="column1">4</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/4_files.txt">SocketServer.java</a></td>
+<td class="column4"><a href="SAME_POSITION/4_semi_conflict.java">4_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/4_stru_conflict.java">4_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/4_semi_declaration.java">4_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/4_stru_declaration.java">4_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/4_left.java">4_left</a></td>
+<td class="column9"><a href="SAME_POSITION/4_base.java">4_base</a></td>
+<td class="column10"><a href="SAME_POSITION/4_right.java">4_right</a></td>
+<td class="column11"><a href="SAME_POSITION/4_semi_output.java">4_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/4_stru_output.java">4_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">5</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/5_files.txt">MessageFormatSend.java</a></td>
+<td class="column4"><a href="SAME_POSITION/5_semi_conflict.java">5_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/5_stru_conflict.java">5_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/5_semi_declaration.java">5_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/5_stru_declaration.java">5_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/5_left.java">5_left</a></td>
+<td class="column9"><a href="SAME_POSITION/5_base.java">5_base</a></td>
+<td class="column10"><a href="SAME_POSITION/5_right.java">5_right</a></td>
+<td class="column11"><a href="SAME_POSITION/5_semi_output.java">5_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/5_stru_output.java">5_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">6</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/6_files.txt">SocketServer.java</a></td>
+<td class="column4"><a href="SAME_POSITION/6_semi_conflict.java">6_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/6_stru_conflict.java">6_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/6_semi_declaration.java">6_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/6_stru_declaration.java">6_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/6_left.java">6_left</a></td>
+<td class="column9"><a href="SAME_POSITION/6_base.java">6_base</a></td>
+<td class="column10"><a href="SAME_POSITION/6_right.java">6_right</a></td>
+<td class="column11"><a href="SAME_POSITION/6_semi_output.java">6_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/6_stru_output.java">6_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE. EXEMPLO</td>
+</tr>
+<tr>
+<td class="column1">7</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/7_files.txt">AmbryRequests.java</a></td>
+<td class="column4"><a href="SAME_POSITION/7_semi_conflict.java">7_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/7_stru_conflict.java">7_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/7_semi_declaration.java">7_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/7_stru_declaration.java">7_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/7_left.java">7_left</a></td>
+<td class="column9"><a href="SAME_POSITION/7_base.java">7_base</a></td>
+<td class="column10"><a href="SAME_POSITION/7_right.java">7_right</a></td>
+<td class="column11"><a href="SAME_POSITION/7_semi_output.java">7_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/7_stru_output.java">7_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">8</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/8_files.txt">AmbryRequests.java</a></td>
+<td class="column4"><a href="SAME_POSITION/8_semi_conflict.java">8_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/8_stru_conflict.java">8_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/8_semi_declaration.java">8_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/8_stru_declaration.java">8_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/8_left.java">8_left</a></td>
+<td class="column9"><a href="SAME_POSITION/8_base.java">8_base</a></td>
+<td class="column10"><a href="SAME_POSITION/8_right.java">8_right</a></td>
+<td class="column11"><a href="SAME_POSITION/8_semi_output.java">8_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/8_stru_output.java">8_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">9</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/9_files.txt">AmbryRequests.java</a></td>
+<td class="column4"><a href="SAME_POSITION/9_semi_conflict.java">9_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/9_stru_conflict.java">9_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/9_semi_declaration.java">9_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/9_stru_declaration.java">9_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/9_left.java">9_left</a></td>
+<td class="column9"><a href="SAME_POSITION/9_base.java">9_base</a></td>
+<td class="column10"><a href="SAME_POSITION/9_right.java">9_right</a></td>
+<td class="column11"><a href="SAME_POSITION/9_semi_output.java">9_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/9_stru_output.java">9_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">10</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/10_files.txt">AmbryRequests.java</a></td>
+<td class="column4"><a href="SAME_POSITION/10_semi_conflict.java">10_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/10_stru_conflict.java">10_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/10_semi_declaration.java">10_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/10_stru_declaration.java">10_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/10_left.java">10_left</a></td>
+<td class="column9"><a href="SAME_POSITION/10_base.java">10_base</a></td>
+<td class="column10"><a href="SAME_POSITION/10_right.java">10_right</a></td>
+<td class="column11"><a href="SAME_POSITION/10_semi_output.java">10_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/10_stru_output.java">10_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">11</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/11_files.txt">AmbryRequests.java</a></td>
+<td class="column4"><a href="SAME_POSITION/11_semi_conflict.java">11_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/11_stru_conflict.java">11_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/11_semi_declaration.java">11_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/11_stru_declaration.java">11_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/11_left.java">11_left</a></td>
+<td class="column9"><a href="SAME_POSITION/11_base.java">11_base</a></td>
+<td class="column10"><a href="SAME_POSITION/11_right.java">11_right</a></td>
+<td class="column11"><a href="SAME_POSITION/11_semi_output.java">11_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/11_stru_output.java">11_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">12</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/12_files.txt">AmbryRequests.java</a></td>
+<td class="column4"><a href="SAME_POSITION/12_semi_conflict.java">12_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/12_stru_conflict.java">12_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/12_semi_declaration.java">12_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/12_stru_declaration.java">12_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/12_left.java">12_left</a></td>
+<td class="column9"><a href="SAME_POSITION/12_base.java">12_base</a></td>
+<td class="column10"><a href="SAME_POSITION/12_right.java">12_right</a></td>
+<td class="column11"><a href="SAME_POSITION/12_semi_output.java">12_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/12_stru_output.java">12_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">13</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/13_files.txt">RexsterEdgeSequence.java</a></td>
+<td class="column4"><a href="SAME_POSITION/13_semi_conflict.java">13_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/13_stru_conflict.java">13_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/13_semi_declaration.java">13_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/13_stru_declaration.java">13_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/13_left.java">13_left</a></td>
+<td class="column9"><a href="SAME_POSITION/13_base.java">13_base</a></td>
+<td class="column10"><a href="SAME_POSITION/13_right.java">13_right</a></td>
+<td class="column11"><a href="SAME_POSITION/13_semi_output.java">13_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/13_stru_output.java">13_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE. EXEMPLO</td>
+</tr>
+<tr>
+<td class="column1">14</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/14_files.txt">RexsterVertexSequence.java</a></td>
+<td class="column4"><a href="SAME_POSITION/14_semi_conflict.java">14_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/14_stru_conflict.java">14_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/14_semi_declaration.java">14_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/14_stru_declaration.java">14_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/14_left.java">14_left</a></td>
+<td class="column9"><a href="SAME_POSITION/14_base.java">14_base</a></td>
+<td class="column10"><a href="SAME_POSITION/14_right.java">14_right</a></td>
+<td class="column11"><a href="SAME_POSITION/14_semi_output.java">14_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/14_stru_output.java">14_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">15</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/15_files.txt">OkHttpStreamFetcher.java</a></td>
+<td class="column4"><a href="SAME_POSITION/15_semi_conflict.java">15_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/15_stru_conflict.java">15_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/15_semi_declaration.java">15_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/15_stru_declaration.java">15_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/15_left.java">15_left</a></td>
+<td class="column9"><a href="SAME_POSITION/15_base.java">15_base</a></td>
+<td class="column10"><a href="SAME_POSITION/15_right.java">15_right</a></td>
+<td class="column11"><a href="SAME_POSITION/15_semi_output.java">15_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/15_stru_output.java">15_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">16</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/16_files.txt">HttpUrlFetcherServerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/16_semi_conflict.java">16_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/16_stru_conflict.java">16_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/16_semi_declaration.java">16_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/16_stru_declaration.java">16_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/16_left.java">16_left</a></td>
+<td class="column9"><a href="SAME_POSITION/16_base.java">16_base</a></td>
+<td class="column10"><a href="SAME_POSITION/16_right.java">16_right</a></td>
+<td class="column11"><a href="SAME_POSITION/16_semi_output.java">16_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/16_stru_output.java">16_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">17</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/17_files.txt">ImageHeaderParserTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/17_semi_conflict.java">17_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/17_stru_conflict.java">17_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/17_semi_declaration.java">17_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/17_stru_declaration.java">17_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/17_left.java">17_left</a></td>
+<td class="column9"><a href="SAME_POSITION/17_base.java">17_base</a></td>
+<td class="column10"><a href="SAME_POSITION/17_right.java">17_right</a></td>
+<td class="column11"><a href="SAME_POSITION/17_semi_output.java">17_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/17_stru_output.java">17_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE.</td>
+</tr>
+<tr>
+<td class="column1">18</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/18_files.txt">ImageHeaderParserTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/18_semi_conflict.java">18_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/18_stru_conflict.java">18_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/18_semi_declaration.java">18_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/18_stru_declaration.java">18_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/18_left.java">18_left</a></td>
+<td class="column9"><a href="SAME_POSITION/18_base.java">18_base</a></td>
+<td class="column10"><a href="SAME_POSITION/18_right.java">18_right</a></td>
+<td class="column11"><a href="SAME_POSITION/18_semi_output.java">18_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/18_stru_output.java">18_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">19</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/19_files.txt">Glide.java</a></td>
+<td class="column4"><a href="SAME_POSITION/19_semi_conflict.java">19_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/19_stru_conflict.java">19_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/19_semi_declaration.java">19_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/19_stru_declaration.java">19_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/19_left.java">19_left</a></td>
+<td class="column9"><a href="SAME_POSITION/19_base.java">19_base</a></td>
+<td class="column10"><a href="SAME_POSITION/19_right.java">19_right</a></td>
+<td class="column11"><a href="SAME_POSITION/19_semi_output.java">19_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/19_stru_output.java">19_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">20</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/20_files.txt">HttpUrlFetcher.java</a></td>
+<td class="column4"><a href="SAME_POSITION/20_semi_conflict.java">20_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/20_stru_conflict.java">20_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/20_semi_declaration.java">20_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/20_stru_declaration.java">20_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/20_left.java">20_left</a></td>
+<td class="column9"><a href="SAME_POSITION/20_base.java">20_base</a></td>
+<td class="column10"><a href="SAME_POSITION/20_right.java">20_right</a></td>
+<td class="column11"><a href="SAME_POSITION/20_semi_output.java">20_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/20_stru_output.java">20_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE. EXEMPLO ONDE O SSMERGE CONFLITO FOI PIOR</td>
+</tr>
+<tr>
+<td class="column1">21</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/21_files.txt">EngineKey.java</a></td>
+<td class="column4"><a href="SAME_POSITION/21_semi_conflict.java">21_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/21_stru_conflict.java">21_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/21_semi_declaration.java">21_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/21_stru_declaration.java">21_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/21_left.java">21_left</a></td>
+<td class="column9"><a href="SAME_POSITION/21_base.java">21_base</a></td>
+<td class="column10"><a href="SAME_POSITION/21_right.java">21_right</a></td>
+<td class="column11"><a href="SAME_POSITION/21_semi_output.java">21_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/21_stru_output.java">21_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">22</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/22_files.txt">LruBitmapPool.java</a></td>
+<td class="column4"><a href="SAME_POSITION/22_semi_conflict.java">22_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/22_stru_conflict.java">22_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/22_semi_declaration.java">22_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/22_stru_declaration.java">22_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/22_left.java">22_left</a></td>
+<td class="column9"><a href="SAME_POSITION/22_base.java">22_base</a></td>
+<td class="column10"><a href="SAME_POSITION/22_right.java">22_right</a></td>
+<td class="column11"><a href="SAME_POSITION/22_semi_output.java">22_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/22_stru_output.java">22_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">23</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/23_files.txt">RequestManagerFragment.java</a></td>
+<td class="column4"><a href="SAME_POSITION/23_semi_conflict.java">23_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/23_stru_conflict.java">23_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/23_semi_declaration.java">23_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/23_stru_declaration.java">23_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/23_left.java">23_left</a></td>
+<td class="column9"><a href="SAME_POSITION/23_base.java">23_base</a></td>
+<td class="column10"><a href="SAME_POSITION/23_right.java">23_right</a></td>
+<td class="column11"><a href="SAME_POSITION/23_semi_output.java">23_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/23_stru_output.java">23_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">24</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/24_files.txt">RequestManagerFragment.java</a></td>
+<td class="column4"><a href="SAME_POSITION/24_semi_conflict.java">24_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/24_stru_conflict.java">24_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/24_semi_declaration.java">24_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/24_stru_declaration.java">24_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/24_left.java">24_left</a></td>
+<td class="column9"><a href="SAME_POSITION/24_base.java">24_base</a></td>
+<td class="column10"><a href="SAME_POSITION/24_right.java">24_right</a></td>
+<td class="column11"><a href="SAME_POSITION/24_semi_output.java">24_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/24_stru_output.java">24_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">25</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/25_files.txt">SupportRequestManagerFragment.java</a></td>
+<td class="column4"><a href="SAME_POSITION/25_semi_conflict.java">25_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/25_stru_conflict.java">25_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/25_semi_declaration.java">25_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/25_stru_declaration.java">25_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/25_left.java">25_left</a></td>
+<td class="column9"><a href="SAME_POSITION/25_base.java">25_base</a></td>
+<td class="column10"><a href="SAME_POSITION/25_right.java">25_right</a></td>
+<td class="column11"><a href="SAME_POSITION/25_semi_output.java">25_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/25_stru_output.java">25_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">26</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/26_files.txt">SupportRequestManagerFragment.java</a></td>
+<td class="column4"><a href="SAME_POSITION/26_semi_conflict.java">26_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/26_stru_conflict.java">26_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/26_semi_declaration.java">26_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/26_stru_declaration.java">26_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/26_left.java">26_left</a></td>
+<td class="column9"><a href="SAME_POSITION/26_base.java">26_base</a></td>
+<td class="column10"><a href="SAME_POSITION/26_right.java">26_right</a></td>
+<td class="column11"><a href="SAME_POSITION/26_semi_output.java">26_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/26_stru_output.java">26_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">27</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/27_files.txt">FlickrPhotoGrid.java</a></td>
+<td class="column4"><a href="SAME_POSITION/27_semi_conflict.java">27_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/27_stru_conflict.java">27_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/27_semi_declaration.java">27_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/27_stru_declaration.java">27_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/27_left.java">27_left</a></td>
+<td class="column9"><a href="SAME_POSITION/27_base.java">27_base</a></td>
+<td class="column10"><a href="SAME_POSITION/27_right.java">27_right</a></td>
+<td class="column11"><a href="SAME_POSITION/27_semi_output.java">27_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/27_stru_output.java">27_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE. EXEMPLO</td>
+</tr>
+<tr>
+<td class="column1">28</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/28_files.txt">DBCursor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/28_semi_conflict.java">28_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/28_stru_conflict.java">28_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/28_semi_declaration.java">28_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/28_stru_declaration.java">28_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/28_left.java">28_left</a></td>
+<td class="column9"><a href="SAME_POSITION/28_base.java">28_base</a></td>
+<td class="column10"><a href="SAME_POSITION/28_right.java">28_right</a></td>
+<td class="column11"><a href="SAME_POSITION/28_semi_output.java">28_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/28_stru_output.java">28_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">29</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/29_files.txt">PelopsDataHandler.java</a></td>
+<td class="column4"><a href="SAME_POSITION/29_semi_conflict.java">29_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/29_stru_conflict.java">29_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/29_semi_declaration.java">29_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/29_stru_declaration.java">29_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/29_left.java">29_left</a></td>
+<td class="column9"><a href="SAME_POSITION/29_base.java">29_base</a></td>
+<td class="column10"><a href="SAME_POSITION/29_right.java">29_right</a></td>
+<td class="column11"><a href="SAME_POSITION/29_semi_output.java">29_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/29_stru_output.java">29_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">30</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/30_files.txt">StandardTitanTx.java</a></td>
+<td class="column4"><a href="SAME_POSITION/30_semi_conflict.java">30_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/30_stru_conflict.java">30_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/30_semi_declaration.java">30_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/30_stru_declaration.java">30_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/30_left.java">30_left</a></td>
+<td class="column9"><a href="SAME_POSITION/30_base.java">30_base</a></td>
+<td class="column10"><a href="SAME_POSITION/30_right.java">30_right</a></td>
+<td class="column11"><a href="SAME_POSITION/30_semi_output.java">30_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/30_stru_output.java">30_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">31</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/31_files.txt">ExprNodeGenericFuncDesc.java</a></td>
+<td class="column4"><a href="SAME_POSITION/31_semi_conflict.java">31_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/31_stru_conflict.java">31_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/31_semi_declaration.java">31_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/31_stru_declaration.java">31_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/31_left.java">31_left</a></td>
+<td class="column9"><a href="SAME_POSITION/31_base.java">31_base</a></td>
+<td class="column10"><a href="SAME_POSITION/31_right.java">31_right</a></td>
+<td class="column11"><a href="SAME_POSITION/31_semi_output.java">31_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/31_stru_output.java">31_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. MUDANÃAS COMPLEMENTARES. EXEMPLO SSMERGE QUEBRA BUILD?</td>
+</tr>
+<tr>
+<td class="column1">32</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/32_files.txt">InterProcessSemaphoreMutex.java</a></td>
+<td class="column4"><a href="SAME_POSITION/32_semi_conflict.java">32_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/32_stru_conflict.java">32_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/32_semi_declaration.java">32_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/32_stru_declaration.java">32_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/32_left.java">32_left</a></td>
+<td class="column9"><a href="SAME_POSITION/32_base.java">32_base</a></td>
+<td class="column10"><a href="SAME_POSITION/32_right.java">32_right</a></td>
+<td class="column11"><a href="SAME_POSITION/32_semi_output.java">32_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/32_stru_output.java">32_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">33</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/33_files.txt">MockCluster.java</a></td>
+<td class="column4"><a href="SAME_POSITION/33_semi_conflict.java">33_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/33_stru_conflict.java">33_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/33_semi_declaration.java">33_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/33_stru_declaration.java">33_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/33_left.java">33_left</a></td>
+<td class="column9"><a href="SAME_POSITION/33_base.java">33_base</a></td>
+<td class="column10"><a href="SAME_POSITION/33_right.java">33_right</a></td>
+<td class="column11"><a href="SAME_POSITION/33_semi_output.java">33_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/33_stru_output.java">33_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. JDIME INTEGROU MÃTODOS COM O MESMO NOME, MAS ASSINATURAS DIFERENTES. EXEMPLO</td>
+</tr>
+<tr>
+<td class="column1">34</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/34_files.txt">ServerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/34_semi_conflict.java">34_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/34_stru_conflict.java">34_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/34_semi_declaration.java">34_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/34_stru_declaration.java">34_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/34_left.java">34_left</a></td>
+<td class="column9"><a href="SAME_POSITION/34_base.java">34_base</a></td>
+<td class="column10"><a href="SAME_POSITION/34_right.java">34_right</a></td>
+<td class="column11"><a href="SAME_POSITION/34_semi_output.java">34_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/34_stru_output.java">34_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">35</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/35_files.txt">ServerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/35_semi_conflict.java">35_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/35_stru_conflict.java">35_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/35_semi_declaration.java">35_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/35_stru_declaration.java">35_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/35_left.java">35_left</a></td>
+<td class="column9"><a href="SAME_POSITION/35_base.java">35_base</a></td>
+<td class="column10"><a href="SAME_POSITION/35_right.java">35_right</a></td>
+<td class="column11"><a href="SAME_POSITION/35_semi_output.java">35_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/35_stru_output.java">35_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. JDIME INTEGROU MÃTODOS COM O MESMO NOME, MAS ASSINATURAS DIFERENTES.</td>
+</tr>
+<tr>
+<td class="column1">36</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/36_files.txt">ServerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/36_semi_conflict.java">36_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/36_stru_conflict.java">36_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/36_semi_declaration.java">36_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/36_stru_declaration.java">36_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/36_left.java">36_left</a></td>
+<td class="column9"><a href="SAME_POSITION/36_base.java">36_base</a></td>
+<td class="column10"><a href="SAME_POSITION/36_right.java">36_right</a></td>
+<td class="column11"><a href="SAME_POSITION/36_semi_output.java">36_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/36_stru_output.java">36_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">37</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/37_files.txt">ServerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/37_semi_conflict.java">37_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/37_stru_conflict.java">37_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/37_semi_declaration.java">37_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/37_stru_declaration.java">37_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/37_left.java">37_left</a></td>
+<td class="column9"><a href="SAME_POSITION/37_base.java">37_base</a></td>
+<td class="column10"><a href="SAME_POSITION/37_right.java">37_right</a></td>
+<td class="column11"><a href="SAME_POSITION/37_semi_output.java">37_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/37_stru_output.java">37_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">38</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/38_files.txt">ServerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/38_semi_conflict.java">38_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/38_stru_conflict.java">38_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/38_semi_declaration.java">38_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/38_stru_declaration.java">38_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/38_left.java">38_left</a></td>
+<td class="column9"><a href="SAME_POSITION/38_base.java">38_base</a></td>
+<td class="column10"><a href="SAME_POSITION/38_right.java">38_right</a></td>
+<td class="column11"><a href="SAME_POSITION/38_semi_output.java">38_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/38_stru_output.java">38_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO. RENAMING NO SSMERGE.</td>
+</tr>
+<tr>
+<td class="column1">39</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/39_files.txt">DBCollection.java</a></td>
+<td class="column4"><a href="SAME_POSITION/39_semi_conflict.java">39_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/39_stru_conflict.java">39_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/39_semi_declaration.java">39_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/39_stru_declaration.java">39_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/39_left.java">39_left</a></td>
+<td class="column9"><a href="SAME_POSITION/39_base.java">39_base</a></td>
+<td class="column10"><a href="SAME_POSITION/39_right.java">39_right</a></td>
+<td class="column11"><a href="SAME_POSITION/39_semi_output.java">39_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/39_stru_output.java">39_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLIT, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">40</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/40_files.txt">DBCollection.java</a></td>
+<td class="column4"><a href="SAME_POSITION/40_semi_conflict.java">40_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/40_stru_conflict.java">40_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/40_semi_declaration.java">40_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/40_stru_declaration.java">40_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/40_left.java">40_left</a></td>
+<td class="column9"><a href="SAME_POSITION/40_base.java">40_base</a></td>
+<td class="column10"><a href="SAME_POSITION/40_right.java">40_right</a></td>
+<td class="column11"><a href="SAME_POSITION/40_semi_output.java">40_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/40_stru_output.java">40_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">41</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/41_files.txt">SocketServer.java</a></td>
+<td class="column4"><a href="SAME_POSITION/41_semi_conflict.java">41_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/41_stru_conflict.java">41_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/41_semi_declaration.java">41_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/41_stru_declaration.java">41_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/41_left.java">41_left</a></td>
+<td class="column9"><a href="SAME_POSITION/41_base.java">41_base</a></td>
+<td class="column10"><a href="SAME_POSITION/41_right.java">41_right</a></td>
+<td class="column11"><a href="SAME_POSITION/41_semi_output.java">41_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/41_stru_output.java">41_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">42</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/42_files.txt">CreateBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/42_semi_conflict.java">42_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/42_stru_conflict.java">42_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/42_semi_declaration.java">42_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/42_stru_declaration.java">42_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/42_left.java">42_left</a></td>
+<td class="column9"><a href="SAME_POSITION/42_base.java">42_base</a></td>
+<td class="column10"><a href="SAME_POSITION/42_right.java">42_right</a></td>
+<td class="column11"><a href="SAME_POSITION/42_semi_output.java">42_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/42_stru_output.java">42_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">43</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/43_files.txt">DeleteBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/43_semi_conflict.java">43_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/43_stru_conflict.java">43_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/43_semi_declaration.java">43_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/43_stru_declaration.java">43_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/43_left.java">43_left</a></td>
+<td class="column9"><a href="SAME_POSITION/43_base.java">43_base</a></td>
+<td class="column10"><a href="SAME_POSITION/43_right.java">43_right</a></td>
+<td class="column11"><a href="SAME_POSITION/43_semi_output.java">43_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/43_stru_output.java">43_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">44</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/44_files.txt">ExistsBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/44_semi_conflict.java">44_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/44_stru_conflict.java">44_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/44_semi_declaration.java">44_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/44_stru_declaration.java">44_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/44_left.java">44_left</a></td>
+<td class="column9"><a href="SAME_POSITION/44_base.java">44_base</a></td>
+<td class="column10"><a href="SAME_POSITION/44_right.java">44_right</a></td>
+<td class="column11"><a href="SAME_POSITION/44_semi_output.java">44_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/44_stru_output.java">44_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. DEVS EDITAM/ADICIONAM COMANDOS QUE NÃO APARENTAM TER RELAÃÃO ENTRE SI</td>
+</tr>
+<tr>
+<td class="column1">45</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/45_files.txt">ExistsBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/45_semi_conflict.java">45_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/45_stru_conflict.java">45_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/45_semi_declaration.java">45_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/45_stru_declaration.java">45_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/45_left.java">45_left</a></td>
+<td class="column9"><a href="SAME_POSITION/45_base.java">45_base</a></td>
+<td class="column10"><a href="SAME_POSITION/45_right.java">45_right</a></td>
+<td class="column11"><a href="SAME_POSITION/45_semi_output.java">45_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/45_stru_output.java">45_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">46</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/46_files.txt">GetACLBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/46_semi_conflict.java">46_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/46_stru_conflict.java">46_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/46_semi_declaration.java">46_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/46_stru_declaration.java">46_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/46_left.java">46_left</a></td>
+<td class="column9"><a href="SAME_POSITION/46_base.java">46_base</a></td>
+<td class="column10"><a href="SAME_POSITION/46_right.java">46_right</a></td>
+<td class="column11"><a href="SAME_POSITION/46_semi_output.java">46_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/46_stru_output.java">46_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">47</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/47_files.txt">GetChildrenBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/47_semi_conflict.java">47_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/47_stru_conflict.java">47_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/47_semi_declaration.java">47_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/47_stru_declaration.java">47_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/47_left.java">47_left</a></td>
+<td class="column9"><a href="SAME_POSITION/47_base.java">47_base</a></td>
+<td class="column10"><a href="SAME_POSITION/47_right.java">47_right</a></td>
+<td class="column11"><a href="SAME_POSITION/47_semi_output.java">47_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/47_stru_output.java">47_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. DEVS EDITAM/ADICIONAM COMANDOS QUE NÃO APARENTAM TER RELAÃÃO ENTRE SI</td>
+</tr>
+<tr>
+<td class="column1">48</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/48_files.txt">GetChildrenBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/48_semi_conflict.java">48_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/48_stru_conflict.java">48_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/48_semi_declaration.java">48_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/48_stru_declaration.java">48_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/48_left.java">48_left</a></td>
+<td class="column9"><a href="SAME_POSITION/48_base.java">48_base</a></td>
+<td class="column10"><a href="SAME_POSITION/48_right.java">48_right</a></td>
+<td class="column11"><a href="SAME_POSITION/48_semi_output.java">48_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/48_stru_output.java">48_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">49</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/49_files.txt">GetDataBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/49_semi_conflict.java">49_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/49_stru_conflict.java">49_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/49_semi_declaration.java">49_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/49_stru_declaration.java">49_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/49_left.java">49_left</a></td>
+<td class="column9"><a href="SAME_POSITION/49_base.java">49_base</a></td>
+<td class="column10"><a href="SAME_POSITION/49_right.java">49_right</a></td>
+<td class="column11"><a href="SAME_POSITION/49_semi_output.java">49_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/49_stru_output.java">49_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. DEVS EDITAM/ADICIONAM COMANDOS QUE NÃO APARENTAM TER RELAÃÃO ENTRE SI</td>
+</tr>
+<tr>
+<td class="column1">50</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/50_files.txt">GetDataBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/50_semi_conflict.java">50_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/50_stru_conflict.java">50_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/50_semi_declaration.java">50_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/50_stru_declaration.java">50_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/50_left.java">50_left</a></td>
+<td class="column9"><a href="SAME_POSITION/50_base.java">50_base</a></td>
+<td class="column10"><a href="SAME_POSITION/50_right.java">50_right</a></td>
+<td class="column11"><a href="SAME_POSITION/50_semi_output.java">50_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/50_stru_output.java">50_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">51</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/51_files.txt">SyncBuilderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/51_semi_conflict.java">51_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/51_stru_conflict.java">51_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/51_semi_declaration.java">51_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/51_stru_declaration.java">51_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/51_left.java">51_left</a></td>
+<td class="column9"><a href="SAME_POSITION/51_base.java">51_base</a></td>
+<td class="column10"><a href="SAME_POSITION/51_right.java">51_right</a></td>
+<td class="column11"><a href="SAME_POSITION/51_semi_output.java">51_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/51_stru_output.java">51_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">52</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/52_files.txt">Flyway.java</a></td>
+<td class="column4"><a href="SAME_POSITION/52_semi_conflict.java">52_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/52_stru_conflict.java">52_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/52_semi_declaration.java">52_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/52_stru_declaration.java">52_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/52_left.java">52_left</a></td>
+<td class="column9"><a href="SAME_POSITION/52_base.java">52_base</a></td>
+<td class="column10"><a href="SAME_POSITION/52_right.java">52_right</a></td>
+<td class="column11"><a href="SAME_POSITION/52_semi_output.java">52_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/52_stru_output.java">52_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">53</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/53_files.txt">AmbryCoordinator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/53_semi_conflict.java">53_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/53_stru_conflict.java">53_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/53_semi_declaration.java">53_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/53_stru_declaration.java">53_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/53_left.java">53_left</a></td>
+<td class="column9"><a href="SAME_POSITION/53_base.java">53_base</a></td>
+<td class="column10"><a href="SAME_POSITION/53_right.java">53_right</a></td>
+<td class="column11"><a href="SAME_POSITION/53_semi_output.java">53_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/53_stru_output.java">53_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">54</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/54_files.txt">AmbryCoordinator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/54_semi_conflict.java">54_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/54_stru_conflict.java">54_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/54_semi_declaration.java">54_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/54_stru_declaration.java">54_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/54_left.java">54_left</a></td>
+<td class="column9"><a href="SAME_POSITION/54_base.java">54_base</a></td>
+<td class="column10"><a href="SAME_POSITION/54_right.java">54_right</a></td>
+<td class="column11"><a href="SAME_POSITION/54_semi_output.java">54_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/54_stru_output.java">54_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">55</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/55_files.txt">Encoding.java</a></td>
+<td class="column4"><a href="SAME_POSITION/55_semi_conflict.java">55_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/55_stru_conflict.java">55_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/55_semi_declaration.java">55_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/55_stru_declaration.java">55_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/55_left.java">55_left</a></td>
+<td class="column9"><a href="SAME_POSITION/55_base.java">55_base</a></td>
+<td class="column10"><a href="SAME_POSITION/55_right.java">55_right</a></td>
+<td class="column11"><a href="SAME_POSITION/55_semi_output.java">55_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/55_stru_output.java">55_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">56</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/56_files.txt">Encoding.java</a></td>
+<td class="column4"><a href="SAME_POSITION/56_semi_conflict.java">56_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/56_stru_conflict.java">56_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/56_semi_declaration.java">56_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/56_stru_declaration.java">56_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/56_left.java">56_left</a></td>
+<td class="column9"><a href="SAME_POSITION/56_base.java">56_base</a></td>
+<td class="column10"><a href="SAME_POSITION/56_right.java">56_right</a></td>
+<td class="column11"><a href="SAME_POSITION/56_semi_output.java">56_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/56_stru_output.java">56_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">57</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/57_files.txt">Encoding.java</a></td>
+<td class="column4"><a href="SAME_POSITION/57_semi_conflict.java">57_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/57_stru_conflict.java">57_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/57_semi_declaration.java">57_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/57_stru_declaration.java">57_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/57_left.java">57_left</a></td>
+<td class="column9"><a href="SAME_POSITION/57_base.java">57_base</a></td>
+<td class="column10"><a href="SAME_POSITION/57_right.java">57_right</a></td>
+<td class="column11"><a href="SAME_POSITION/57_semi_output.java">57_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/57_stru_output.java">57_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">58</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/58_files.txt">ImageAttacher.java</a></td>
+<td class="column4"><a href="SAME_POSITION/58_semi_conflict.java">58_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/58_stru_conflict.java">58_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/58_semi_declaration.java">58_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/58_stru_declaration.java">58_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/58_left.java">58_left</a></td>
+<td class="column9"><a href="SAME_POSITION/58_base.java">58_base</a></td>
+<td class="column10"><a href="SAME_POSITION/58_right.java">58_right</a></td>
+<td class="column11"><a href="SAME_POSITION/58_semi_output.java">58_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/58_stru_output.java">58_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">59</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/59_files.txt">ImageAttacher.java</a></td>
+<td class="column4"><a href="SAME_POSITION/59_semi_conflict.java">59_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/59_stru_conflict.java">59_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/59_semi_declaration.java">59_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/59_stru_declaration.java">59_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/59_left.java">59_left</a></td>
+<td class="column9"><a href="SAME_POSITION/59_base.java">59_base</a></td>
+<td class="column10"><a href="SAME_POSITION/59_right.java">59_right</a></td>
+<td class="column11"><a href="SAME_POSITION/59_semi_output.java">59_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/59_stru_output.java">59_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">60</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/60_files.txt">FixedEnsembleProvider.java</a></td>
+<td class="column4"><a href="SAME_POSITION/60_semi_conflict.java">60_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/60_stru_conflict.java">60_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/60_semi_declaration.java">60_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/60_stru_declaration.java">60_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/60_left.java">60_left</a></td>
+<td class="column9"><a href="SAME_POSITION/60_base.java">60_base</a></td>
+<td class="column10"><a href="SAME_POSITION/60_right.java">60_right</a></td>
+<td class="column11"><a href="SAME_POSITION/60_semi_output.java">60_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/60_stru_output.java">60_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">61</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/61_files.txt">Backend.java</a></td>
+<td class="column4"><a href="SAME_POSITION/61_semi_conflict.java">61_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/61_stru_conflict.java">61_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/61_semi_declaration.java">61_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/61_stru_declaration.java">61_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/61_left.java">61_left</a></td>
+<td class="column9"><a href="SAME_POSITION/61_base.java">61_base</a></td>
+<td class="column10"><a href="SAME_POSITION/61_right.java">61_right</a></td>
+<td class="column11"><a href="SAME_POSITION/61_semi_output.java">61_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/61_stru_output.java">61_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">62</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/62_files.txt">Backend.java</a></td>
+<td class="column4"><a href="SAME_POSITION/62_semi_conflict.java">62_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/62_stru_conflict.java">62_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/62_semi_declaration.java">62_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/62_stru_declaration.java">62_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/62_left.java">62_left</a></td>
+<td class="column9"><a href="SAME_POSITION/62_base.java">62_base</a></td>
+<td class="column10"><a href="SAME_POSITION/62_right.java">62_right</a></td>
+<td class="column11"><a href="SAME_POSITION/62_semi_output.java">62_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/62_stru_output.java">62_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">63</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/63_files.txt">GraphDatabaseConfiguration.java</a></td>
+<td class="column4"><a href="SAME_POSITION/63_semi_conflict.java">63_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/63_stru_conflict.java">63_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/63_semi_declaration.java">63_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/63_stru_declaration.java">63_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/63_left.java">63_left</a></td>
+<td class="column9"><a href="SAME_POSITION/63_base.java">63_base</a></td>
+<td class="column10"><a href="SAME_POSITION/63_right.java">63_right</a></td>
+<td class="column11"><a href="SAME_POSITION/63_semi_output.java">63_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/63_stru_output.java">63_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">64</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/64_files.txt">SqlScript.java</a></td>
+<td class="column4"><a href="SAME_POSITION/64_semi_conflict.java">64_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/64_stru_conflict.java">64_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/64_semi_declaration.java">64_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/64_stru_declaration.java">64_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/64_left.java">64_left</a></td>
+<td class="column9"><a href="SAME_POSITION/64_base.java">64_base</a></td>
+<td class="column10"><a href="SAME_POSITION/64_right.java">64_right</a></td>
+<td class="column11"><a href="SAME_POSITION/64_semi_output.java">64_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/64_stru_output.java">64_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">65</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/65_files.txt">PersistentNode.java</a></td>
+<td class="column4"><a href="SAME_POSITION/65_semi_conflict.java">65_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/65_stru_conflict.java">65_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/65_semi_declaration.java">65_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/65_stru_declaration.java">65_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/65_left.java">65_left</a></td>
+<td class="column9"><a href="SAME_POSITION/65_base.java">65_base</a></td>
+<td class="column10"><a href="SAME_POSITION/65_right.java">65_right</a></td>
+<td class="column11"><a href="SAME_POSITION/65_semi_output.java">65_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/65_stru_output.java">65_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">66</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/66_files.txt">ContributionListPanel.java</a></td>
+<td class="column4"><a href="SAME_POSITION/66_semi_conflict.java">66_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/66_stru_conflict.java">66_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/66_semi_declaration.java">66_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/66_stru_declaration.java">66_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/66_left.java">66_left</a></td>
+<td class="column9"><a href="SAME_POSITION/66_base.java">66_base</a></td>
+<td class="column10"><a href="SAME_POSITION/66_right.java">66_right</a></td>
+<td class="column11"><a href="SAME_POSITION/66_semi_output.java">66_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/66_stru_output.java">66_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">67</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/67_files.txt">ContributionListPanel.java</a></td>
+<td class="column4"><a href="SAME_POSITION/67_semi_conflict.java">67_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/67_stru_conflict.java">67_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/67_semi_declaration.java">67_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/67_stru_declaration.java">67_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/67_left.java">67_left</a></td>
+<td class="column9"><a href="SAME_POSITION/67_base.java">67_base</a></td>
+<td class="column10"><a href="SAME_POSITION/67_right.java">67_right</a></td>
+<td class="column11"><a href="SAME_POSITION/67_semi_output.java">67_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/67_stru_output.java">67_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">68</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/68_files.txt">AbstractEntityReader.java</a></td>
+<td class="column4"><a href="SAME_POSITION/68_semi_conflict.java">68_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/68_stru_conflict.java">68_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/68_semi_declaration.java">68_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/68_stru_declaration.java">68_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/68_left.java">68_left</a></td>
+<td class="column9"><a href="SAME_POSITION/68_base.java">68_base</a></td>
+<td class="column10"><a href="SAME_POSITION/68_right.java">68_right</a></td>
+<td class="column11"><a href="SAME_POSITION/68_semi_output.java">68_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/68_stru_output.java">68_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">69</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/69_files.txt">ClientNotificationAppExample.java</a></td>
+<td class="column4"><a href="SAME_POSITION/69_semi_conflict.java">69_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/69_stru_conflict.java">69_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/69_semi_declaration.java">69_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/69_stru_declaration.java">69_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/69_left.java">69_left</a></td>
+<td class="column9"><a href="SAME_POSITION/69_base.java">69_base</a></td>
+<td class="column10"><a href="SAME_POSITION/69_right.java">69_right</a></td>
+<td class="column11"><a href="SAME_POSITION/69_semi_output.java">69_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/69_stru_output.java">69_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">70</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/70_files.txt">ClientNotificationAppExample.java</a></td>
+<td class="column4"><a href="SAME_POSITION/70_semi_conflict.java">70_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/70_stru_conflict.java">70_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/70_semi_declaration.java">70_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/70_stru_declaration.java">70_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/70_left.java">70_left</a></td>
+<td class="column9"><a href="SAME_POSITION/70_base.java">70_base</a></td>
+<td class="column10"><a href="SAME_POSITION/70_right.java">70_right</a></td>
+<td class="column11"><a href="SAME_POSITION/70_semi_output.java">70_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/70_stru_output.java">70_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">71</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/71_files.txt">InjectAdapterProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/71_semi_conflict.java">71_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/71_stru_conflict.java">71_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/71_semi_declaration.java">71_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/71_stru_declaration.java">71_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/71_left.java">71_left</a></td>
+<td class="column9"><a href="SAME_POSITION/71_base.java">71_base</a></td>
+<td class="column10"><a href="SAME_POSITION/71_right.java">71_right</a></td>
+<td class="column11"><a href="SAME_POSITION/71_semi_output.java">71_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/71_stru_output.java">71_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">72</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/72_files.txt">InjectAdapterProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/72_semi_conflict.java">72_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/72_stru_conflict.java">72_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/72_semi_declaration.java">72_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/72_stru_declaration.java">72_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/72_left.java">72_left</a></td>
+<td class="column9"><a href="SAME_POSITION/72_base.java">72_base</a></td>
+<td class="column10"><a href="SAME_POSITION/72_right.java">72_right</a></td>
+<td class="column11"><a href="SAME_POSITION/72_semi_output.java">72_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/72_stru_output.java">72_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. OS DEVS ADICIONARAM METÃDOS COM MESMO NOME, MAS ASSINATURAS DIFERENTES.</td>
+</tr>
+<tr>
+<td class="column1">73</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/73_files.txt">InjectAdapterProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/73_semi_conflict.java">73_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/73_stru_conflict.java">73_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/73_semi_declaration.java">73_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/73_stru_declaration.java">73_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/73_left.java">73_left</a></td>
+<td class="column9"><a href="SAME_POSITION/73_base.java">73_base</a></td>
+<td class="column10"><a href="SAME_POSITION/73_right.java">73_right</a></td>
+<td class="column11"><a href="SAME_POSITION/73_semi_output.java">73_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/73_stru_output.java">73_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">74</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/74_files.txt">InjectAdapterProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/74_semi_conflict.java">74_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/74_stru_conflict.java">74_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/74_semi_declaration.java">74_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/74_stru_declaration.java">74_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/74_left.java">74_left</a></td>
+<td class="column9"><a href="SAME_POSITION/74_base.java">74_base</a></td>
+<td class="column10"><a href="SAME_POSITION/74_right.java">74_right</a></td>
+<td class="column11"><a href="SAME_POSITION/74_semi_output.java">74_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/74_stru_output.java">74_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">75</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/75_files.txt">InjectAdapterProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/75_semi_conflict.java">75_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/75_stru_conflict.java">75_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/75_semi_declaration.java">75_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/75_stru_declaration.java">75_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/75_left.java">75_left</a></td>
+<td class="column9"><a href="SAME_POSITION/75_base.java">75_base</a></td>
+<td class="column10"><a href="SAME_POSITION/75_right.java">75_right</a></td>
+<td class="column11"><a href="SAME_POSITION/75_semi_output.java">75_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/75_stru_output.java">75_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">76</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/76_files.txt">InjectAdapterProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/76_semi_conflict.java">76_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/76_stru_conflict.java">76_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/76_semi_declaration.java">76_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/76_stru_declaration.java">76_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/76_left.java">76_left</a></td>
+<td class="column9"><a href="SAME_POSITION/76_base.java">76_base</a></td>
+<td class="column10"><a href="SAME_POSITION/76_right.java">76_right</a></td>
+<td class="column11"><a href="SAME_POSITION/76_semi_output.java">76_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/76_stru_output.java">76_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">77</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/77_files.txt">IdGenerator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/77_semi_conflict.java">77_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/77_stru_conflict.java">77_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/77_semi_declaration.java">77_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/77_stru_declaration.java">77_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/77_left.java">77_left</a></td>
+<td class="column9"><a href="SAME_POSITION/77_base.java">77_base</a></td>
+<td class="column10"><a href="SAME_POSITION/77_right.java">77_right</a></td>
+<td class="column11"><a href="SAME_POSITION/77_semi_output.java">77_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/77_stru_output.java">77_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">78</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/78_files.txt">IdGenerator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/78_semi_conflict.java">78_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/78_stru_conflict.java">78_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/78_semi_declaration.java">78_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/78_stru_declaration.java">78_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/78_left.java">78_left</a></td>
+<td class="column9"><a href="SAME_POSITION/78_base.java">78_base</a></td>
+<td class="column10"><a href="SAME_POSITION/78_right.java">78_right</a></td>
+<td class="column11"><a href="SAME_POSITION/78_semi_output.java">78_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/78_stru_output.java">78_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">79</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/79_files.txt">PropertiesProxy.java</a></td>
+<td class="column4"><a href="SAME_POSITION/79_semi_conflict.java">79_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/79_stru_conflict.java">79_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/79_semi_declaration.java">79_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/79_stru_declaration.java">79_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/79_left.java">79_left</a></td>
+<td class="column9"><a href="SAME_POSITION/79_base.java">79_base</a></td>
+<td class="column10"><a href="SAME_POSITION/79_right.java">79_right</a></td>
+<td class="column11"><a href="SAME_POSITION/79_semi_output.java">79_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/79_stru_output.java">79_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">80</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/80_files.txt">PropertiesProxy.java</a></td>
+<td class="column4"><a href="SAME_POSITION/80_semi_conflict.java">80_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/80_stru_conflict.java">80_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/80_semi_declaration.java">80_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/80_stru_declaration.java">80_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/80_left.java">80_left</a></td>
+<td class="column9"><a href="SAME_POSITION/80_base.java">80_base</a></td>
+<td class="column10"><a href="SAME_POSITION/80_right.java">80_right</a></td>
+<td class="column11"><a href="SAME_POSITION/80_semi_output.java">80_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/80_stru_output.java">80_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">81</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/81_files.txt">AttributeType.java</a></td>
+<td class="column4"><a href="SAME_POSITION/81_semi_conflict.java">81_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/81_stru_conflict.java">81_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/81_semi_declaration.java">81_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/81_stru_declaration.java">81_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/81_left.java">81_left</a></td>
+<td class="column9"><a href="SAME_POSITION/81_base.java">81_base</a></td>
+<td class="column10"><a href="SAME_POSITION/81_right.java">81_right</a></td>
+<td class="column11"><a href="SAME_POSITION/81_semi_output.java">81_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/81_stru_output.java">81_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">82</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/82_files.txt">SnapshotCommands.java</a></td>
+<td class="column4"><a href="SAME_POSITION/82_semi_conflict.java">82_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/82_stru_conflict.java">82_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/82_semi_declaration.java">82_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/82_stru_declaration.java">82_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/82_left.java">82_left</a></td>
+<td class="column9"><a href="SAME_POSITION/82_base.java">82_base</a></td>
+<td class="column10"><a href="SAME_POSITION/82_right.java">82_right</a></td>
+<td class="column11"><a href="SAME_POSITION/82_semi_output.java">82_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/82_stru_output.java">82_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">83</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/83_files.txt">ZenPingService.java</a></td>
+<td class="column4"><a href="SAME_POSITION/83_semi_conflict.java">83_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/83_stru_conflict.java">83_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/83_semi_declaration.java">83_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/83_stru_declaration.java">83_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/83_left.java">83_left</a></td>
+<td class="column9"><a href="SAME_POSITION/83_base.java">83_base</a></td>
+<td class="column10"><a href="SAME_POSITION/83_right.java">83_right</a></td>
+<td class="column11"><a href="SAME_POSITION/83_semi_output.java">83_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/83_stru_output.java">83_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">84</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/84_files.txt">InterProcessSemaphoreV2.java</a></td>
+<td class="column4"><a href="SAME_POSITION/84_semi_conflict.java">84_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/84_stru_conflict.java">84_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/84_semi_declaration.java">84_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/84_stru_declaration.java">84_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/84_left.java">84_left</a></td>
+<td class="column9"><a href="SAME_POSITION/84_base.java">84_base</a></td>
+<td class="column10"><a href="SAME_POSITION/84_right.java">84_right</a></td>
+<td class="column11"><a href="SAME_POSITION/84_semi_output.java">84_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/84_stru_output.java">84_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">85</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/85_files.txt">InterProcessSemaphoreV2.java</a></td>
+<td class="column4"><a href="SAME_POSITION/85_semi_conflict.java">85_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/85_stru_conflict.java">85_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/85_semi_declaration.java">85_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/85_stru_declaration.java">85_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/85_left.java">85_left</a></td>
+<td class="column9"><a href="SAME_POSITION/85_base.java">85_base</a></td>
+<td class="column10"><a href="SAME_POSITION/85_right.java">85_right</a></td>
+<td class="column11"><a href="SAME_POSITION/85_semi_output.java">85_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/85_stru_output.java">85_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">86</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/86_files.txt">CassandraEntityReader.java</a></td>
+<td class="column4"><a href="SAME_POSITION/86_semi_conflict.java">86_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/86_stru_conflict.java">86_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/86_semi_declaration.java">86_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/86_stru_declaration.java">86_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/86_left.java">86_left</a></td>
+<td class="column9"><a href="SAME_POSITION/86_base.java">86_base</a></td>
+<td class="column10"><a href="SAME_POSITION/86_right.java">86_right</a></td>
+<td class="column11"><a href="SAME_POSITION/86_semi_output.java">86_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/86_stru_output.java">86_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">87</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/87_files.txt">QueryFilterBuilder.java</a></td>
+<td class="column4"><a href="SAME_POSITION/87_semi_conflict.java">87_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/87_stru_conflict.java">87_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/87_semi_declaration.java">87_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/87_stru_declaration.java">87_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/87_left.java">87_left</a></td>
+<td class="column9"><a href="SAME_POSITION/87_base.java">87_base</a></td>
+<td class="column10"><a href="SAME_POSITION/87_right.java">87_right</a></td>
+<td class="column11"><a href="SAME_POSITION/87_semi_output.java">87_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/87_stru_output.java">87_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">88</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/88_files.txt">Announcer.java</a></td>
+<td class="column4"><a href="SAME_POSITION/88_semi_conflict.java">88_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/88_stru_conflict.java">88_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/88_semi_declaration.java">88_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/88_stru_declaration.java">88_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/88_left.java">88_left</a></td>
+<td class="column9"><a href="SAME_POSITION/88_base.java">88_base</a></td>
+<td class="column10"><a href="SAME_POSITION/88_right.java">88_right</a></td>
+<td class="column11"><a href="SAME_POSITION/88_semi_output.java">88_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/88_stru_output.java">88_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">89</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/89_files.txt">DAGNode.java</a></td>
+<td class="column4"><a href="SAME_POSITION/89_semi_conflict.java">89_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/89_stru_conflict.java">89_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/89_semi_declaration.java">89_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/89_stru_declaration.java">89_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/89_left.java">89_left</a></td>
+<td class="column9"><a href="SAME_POSITION/89_base.java">89_base</a></td>
+<td class="column10"><a href="SAME_POSITION/89_right.java">89_right</a></td>
+<td class="column11"><a href="SAME_POSITION/89_semi_output.java">89_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/89_stru_output.java">89_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">90</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/90_files.txt">ContextBase.java</a></td>
+<td class="column4"><a href="SAME_POSITION/90_semi_conflict.java">90_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/90_stru_conflict.java">90_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/90_semi_declaration.java">90_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/90_stru_declaration.java">90_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/90_left.java">90_left</a></td>
+<td class="column9"><a href="SAME_POSITION/90_base.java">90_base</a></td>
+<td class="column10"><a href="SAME_POSITION/90_right.java">90_right</a></td>
+<td class="column11"><a href="SAME_POSITION/90_semi_output.java">90_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/90_stru_output.java">90_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">91</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/91_files.txt">PelopsDataHandler.java</a></td>
+<td class="column4"><a href="SAME_POSITION/91_semi_conflict.java">91_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/91_stru_conflict.java">91_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/91_semi_declaration.java">91_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/91_stru_declaration.java">91_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/91_left.java">91_left</a></td>
+<td class="column9"><a href="SAME_POSITION/91_base.java">91_base</a></td>
+<td class="column10"><a href="SAME_POSITION/91_right.java">91_right</a></td>
+<td class="column11"><a href="SAME_POSITION/91_semi_output.java">91_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/91_stru_output.java">91_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">92</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/92_files.txt">StepDefinitionMatch.java</a></td>
+<td class="column4"><a href="SAME_POSITION/92_semi_conflict.java">92_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/92_stru_conflict.java">92_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/92_semi_declaration.java">92_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/92_stru_declaration.java">92_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/92_left.java">92_left</a></td>
+<td class="column9"><a href="SAME_POSITION/92_base.java">92_base</a></td>
+<td class="column10"><a href="SAME_POSITION/92_right.java">92_right</a></td>
+<td class="column11"><a href="SAME_POSITION/92_semi_output.java">92_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/92_stru_output.java">92_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">93</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/93_files.txt">StepDefinitionMatch.java</a></td>
+<td class="column4"><a href="SAME_POSITION/93_semi_conflict.java">93_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/93_stru_conflict.java">93_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/93_semi_declaration.java">93_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/93_stru_declaration.java">93_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/93_left.java">93_left</a></td>
+<td class="column9"><a href="SAME_POSITION/93_base.java">93_base</a></td>
+<td class="column10"><a href="SAME_POSITION/93_right.java">93_right</a></td>
+<td class="column11"><a href="SAME_POSITION/93_semi_output.java">93_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/93_stru_output.java">93_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. MUDANÃAS COMPLEMENTARES.</td>
+</tr>
+<tr>
+<td class="column1">94</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/94_files.txt">MapRecordProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/94_semi_conflict.java">94_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/94_stru_conflict.java">94_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/94_semi_declaration.java">94_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/94_stru_declaration.java">94_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/94_left.java">94_left</a></td>
+<td class="column9"><a href="SAME_POSITION/94_base.java">94_base</a></td>
+<td class="column10"><a href="SAME_POSITION/94_right.java">94_right</a></td>
+<td class="column11"><a href="SAME_POSITION/94_semi_output.java">94_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/94_stru_output.java">94_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. DEVS EDITAM/ADICIONAM COMANDOS QUE NÃO APARENTAM TER RELAÃÃO ENTRE SI</td>
+</tr>
+<tr>
+<td class="column1">95</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/95_files.txt">MapRecordProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/95_semi_conflict.java">95_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/95_stru_conflict.java">95_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/95_semi_declaration.java">95_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/95_stru_declaration.java">95_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/95_left.java">95_left</a></td>
+<td class="column9"><a href="SAME_POSITION/95_base.java">95_base</a></td>
+<td class="column10"><a href="SAME_POSITION/95_right.java">95_right</a></td>
+<td class="column11"><a href="SAME_POSITION/95_semi_output.java">95_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/95_stru_output.java">95_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">96</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/96_files.txt">MapRecordProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/96_semi_conflict.java">96_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/96_stru_conflict.java">96_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/96_semi_declaration.java">96_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/96_stru_declaration.java">96_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/96_left.java">96_left</a></td>
+<td class="column9"><a href="SAME_POSITION/96_base.java">96_base</a></td>
+<td class="column10"><a href="SAME_POSITION/96_right.java">96_right</a></td>
+<td class="column11"><a href="SAME_POSITION/96_semi_output.java">96_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/96_stru_output.java">96_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">97</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/97_files.txt">AbstractEntityReader.java</a></td>
+<td class="column4"><a href="SAME_POSITION/97_semi_conflict.java">97_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/97_stru_conflict.java">97_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/97_semi_declaration.java">97_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/97_stru_declaration.java">97_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/97_left.java">97_left</a></td>
+<td class="column9"><a href="SAME_POSITION/97_base.java">97_base</a></td>
+<td class="column10"><a href="SAME_POSITION/97_right.java">97_right</a></td>
+<td class="column11"><a href="SAME_POSITION/97_semi_output.java">97_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/97_stru_output.java">97_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">98</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/98_files.txt">SerializerTypeInferer.java</a></td>
+<td class="column4"><a href="SAME_POSITION/98_semi_conflict.java">98_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/98_stru_conflict.java">98_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/98_semi_declaration.java">98_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/98_stru_declaration.java">98_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/98_left.java">98_left</a></td>
+<td class="column9"><a href="SAME_POSITION/98_base.java">98_base</a></td>
+<td class="column10"><a href="SAME_POSITION/98_right.java">98_right</a></td>
+<td class="column11"><a href="SAME_POSITION/98_semi_output.java">98_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/98_stru_output.java">98_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">99</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/99_files.txt">StandardTitanTx.java</a></td>
+<td class="column4"><a href="SAME_POSITION/99_semi_conflict.java">99_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/99_stru_conflict.java">99_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/99_semi_declaration.java">99_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/99_stru_declaration.java">99_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/99_left.java">99_left</a></td>
+<td class="column9"><a href="SAME_POSITION/99_base.java">99_base</a></td>
+<td class="column10"><a href="SAME_POSITION/99_right.java">99_right</a></td>
+<td class="column11"><a href="SAME_POSITION/99_semi_output.java">99_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/99_stru_output.java">99_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">100</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/100_files.txt">PatchFixes.java</a></td>
+<td class="column4"><a href="SAME_POSITION/100_semi_conflict.java">100_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/100_stru_conflict.java">100_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/100_semi_declaration.java">100_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/100_stru_declaration.java">100_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/100_left.java">100_left</a></td>
+<td class="column9"><a href="SAME_POSITION/100_base.java">100_base</a></td>
+<td class="column10"><a href="SAME_POSITION/100_right.java">100_right</a></td>
+<td class="column11"><a href="SAME_POSITION/100_semi_output.java">100_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/100_stru_output.java">100_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE.</td>
+</tr>
+<tr>
+<td class="column1">101</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/101_files.txt">PatchFixes.java</a></td>
+<td class="column4"><a href="SAME_POSITION/101_semi_conflict.java">101_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/101_stru_conflict.java">101_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/101_semi_declaration.java">101_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/101_stru_declaration.java">101_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/101_left.java">101_left</a></td>
+<td class="column9"><a href="SAME_POSITION/101_base.java">101_base</a></td>
+<td class="column10"><a href="SAME_POSITION/101_right.java">101_right</a></td>
+<td class="column11"><a href="SAME_POSITION/101_semi_output.java">101_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/101_stru_output.java">101_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">102</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/102_files.txt">PatchFixes.java</a></td>
+<td class="column4"><a href="SAME_POSITION/102_semi_conflict.java">102_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/102_stru_conflict.java">102_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/102_semi_declaration.java">102_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/102_stru_declaration.java">102_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/102_left.java">102_left</a></td>
+<td class="column9"><a href="SAME_POSITION/102_base.java">102_base</a></td>
+<td class="column10"><a href="SAME_POSITION/102_right.java">102_right</a></td>
+<td class="column11"><a href="SAME_POSITION/102_semi_output.java">102_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/102_stru_output.java">102_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">103</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/103_files.txt">GroupByQueryRunnerFactory.java</a></td>
+<td class="column4"><a href="SAME_POSITION/103_semi_conflict.java">103_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/103_stru_conflict.java">103_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/103_semi_declaration.java">103_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/103_stru_declaration.java">103_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/103_left.java">103_left</a></td>
+<td class="column9"><a href="SAME_POSITION/103_base.java">103_base</a></td>
+<td class="column10"><a href="SAME_POSITION/103_right.java">103_right</a></td>
+<td class="column11"><a href="SAME_POSITION/103_semi_output.java">103_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/103_stru_output.java">103_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">104</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/104_files.txt">MoveWordRightForUpdate.java</a></td>
+<td class="column4"><a href="SAME_POSITION/104_semi_conflict.java">104_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/104_stru_conflict.java">104_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/104_semi_declaration.java">104_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/104_stru_declaration.java">104_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/104_left.java">104_left</a></td>
+<td class="column9"><a href="SAME_POSITION/104_base.java">104_base</a></td>
+<td class="column10"><a href="SAME_POSITION/104_right.java">104_right</a></td>
+<td class="column11"><a href="SAME_POSITION/104_semi_output.java">104_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/104_stru_output.java">104_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">105</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/105_files.txt">HandleLog.java</a></td>
+<td class="column4"><a href="SAME_POSITION/105_semi_conflict.java">105_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/105_stru_conflict.java">105_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/105_semi_declaration.java">105_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/105_stru_declaration.java">105_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/105_left.java">105_left</a></td>
+<td class="column9"><a href="SAME_POSITION/105_base.java">105_base</a></td>
+<td class="column10"><a href="SAME_POSITION/105_right.java">105_right</a></td>
+<td class="column11"><a href="SAME_POSITION/105_semi_output.java">105_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/105_stru_output.java">105_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. MUDANÃAS COMPLEMENTARES.</td>
+</tr>
+<tr>
+<td class="column1">106</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/106_files.txt">HandleLog.java</a></td>
+<td class="column4"><a href="SAME_POSITION/106_semi_conflict.java">106_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/106_stru_conflict.java">106_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/106_semi_declaration.java">106_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/106_stru_declaration.java">106_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/106_left.java">106_left</a></td>
+<td class="column9"><a href="SAME_POSITION/106_base.java">106_base</a></td>
+<td class="column10"><a href="SAME_POSITION/106_right.java">106_right</a></td>
+<td class="column11"><a href="SAME_POSITION/106_semi_output.java">106_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/106_stru_output.java">106_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">107</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/107_files.txt">HandleLog.java</a></td>
+<td class="column4"><a href="SAME_POSITION/107_semi_conflict.java">107_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/107_stru_conflict.java">107_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/107_semi_declaration.java">107_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/107_stru_declaration.java">107_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/107_left.java">107_left</a></td>
+<td class="column9"><a href="SAME_POSITION/107_base.java">107_base</a></td>
+<td class="column10"><a href="SAME_POSITION/107_right.java">107_right</a></td>
+<td class="column11"><a href="SAME_POSITION/107_semi_output.java">107_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/107_stru_output.java">107_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">108</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/108_files.txt">HandleLog.java</a></td>
+<td class="column4"><a href="SAME_POSITION/108_semi_conflict.java">108_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/108_stru_conflict.java">108_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/108_semi_declaration.java">108_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/108_stru_declaration.java">108_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/108_left.java">108_left</a></td>
+<td class="column9"><a href="SAME_POSITION/108_base.java">108_base</a></td>
+<td class="column10"><a href="SAME_POSITION/108_right.java">108_right</a></td>
+<td class="column11"><a href="SAME_POSITION/108_semi_output.java">108_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/108_stru_output.java">108_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">109</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/109_files.txt">PathChildrenCache.java</a></td>
+<td class="column4"><a href="SAME_POSITION/109_semi_conflict.java">109_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/109_stru_conflict.java">109_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/109_semi_declaration.java">109_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/109_stru_declaration.java">109_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/109_left.java">109_left</a></td>
+<td class="column9"><a href="SAME_POSITION/109_base.java">109_base</a></td>
+<td class="column10"><a href="SAME_POSITION/109_right.java">109_right</a></td>
+<td class="column11"><a href="SAME_POSITION/109_semi_output.java">109_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/109_stru_output.java">109_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">110</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/110_files.txt">SortParseElement.java</a></td>
+<td class="column4"><a href="SAME_POSITION/110_semi_conflict.java">110_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/110_stru_conflict.java">110_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/110_semi_declaration.java">110_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/110_stru_declaration.java">110_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/110_left.java">110_left</a></td>
+<td class="column9"><a href="SAME_POSITION/110_base.java">110_base</a></td>
+<td class="column10"><a href="SAME_POSITION/110_right.java">110_right</a></td>
+<td class="column11"><a href="SAME_POSITION/110_semi_output.java">110_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/110_stru_output.java">110_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">111</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/111_files.txt">PersistentIndex.java</a></td>
+<td class="column4"><a href="SAME_POSITION/111_semi_conflict.java">111_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/111_stru_conflict.java">111_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/111_semi_declaration.java">111_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/111_stru_declaration.java">111_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/111_left.java">111_left</a></td>
+<td class="column9"><a href="SAME_POSITION/111_base.java">111_base</a></td>
+<td class="column10"><a href="SAME_POSITION/111_right.java">111_right</a></td>
+<td class="column11"><a href="SAME_POSITION/111_semi_output.java">111_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/111_stru_output.java">111_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">112</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/112_files.txt">FaunusElement.java</a></td>
+<td class="column4"><a href="SAME_POSITION/112_semi_conflict.java">112_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/112_stru_conflict.java">112_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/112_semi_declaration.java">112_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/112_stru_declaration.java">112_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/112_left.java">112_left</a></td>
+<td class="column9"><a href="SAME_POSITION/112_base.java">112_base</a></td>
+<td class="column10"><a href="SAME_POSITION/112_right.java">112_right</a></td>
+<td class="column11"><a href="SAME_POSITION/112_semi_output.java">112_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/112_stru_output.java">112_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">113</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/113_files.txt">FaunusVertex.java</a></td>
+<td class="column4"><a href="SAME_POSITION/113_semi_conflict.java">113_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/113_stru_conflict.java">113_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/113_semi_declaration.java">113_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/113_stru_declaration.java">113_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/113_left.java">113_left</a></td>
+<td class="column9"><a href="SAME_POSITION/113_base.java">113_base</a></td>
+<td class="column10"><a href="SAME_POSITION/113_right.java">113_right</a></td>
+<td class="column11"><a href="SAME_POSITION/113_semi_output.java">113_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/113_stru_output.java">113_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">114</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/114_files.txt">FaunusVertex.java</a></td>
+<td class="column4"><a href="SAME_POSITION/114_semi_conflict.java">114_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/114_stru_conflict.java">114_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/114_semi_declaration.java">114_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/114_stru_declaration.java">114_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/114_left.java">114_left</a></td>
+<td class="column9"><a href="SAME_POSITION/114_base.java">114_base</a></td>
+<td class="column10"><a href="SAME_POSITION/114_right.java">114_right</a></td>
+<td class="column11"><a href="SAME_POSITION/114_semi_output.java">114_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/114_stru_output.java">114_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">115</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/115_files.txt">GenMapRedUtils.java</a></td>
+<td class="column4"><a href="SAME_POSITION/115_semi_conflict.java">115_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/115_stru_conflict.java">115_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/115_semi_declaration.java">115_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/115_stru_declaration.java">115_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/115_left.java">115_left</a></td>
+<td class="column9"><a href="SAME_POSITION/115_base.java">115_base</a></td>
+<td class="column10"><a href="SAME_POSITION/115_right.java">115_right</a></td>
+<td class="column11"><a href="SAME_POSITION/115_semi_output.java">115_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/115_stru_output.java">115_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">116</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/116_files.txt">NumberDeserializers.java</a></td>
+<td class="column4"><a href="SAME_POSITION/116_semi_conflict.java">116_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/116_stru_conflict.java">116_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/116_semi_declaration.java">116_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/116_stru_declaration.java">116_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/116_left.java">116_left</a></td>
+<td class="column9"><a href="SAME_POSITION/116_base.java">116_base</a></td>
+<td class="column10"><a href="SAME_POSITION/116_right.java">116_right</a></td>
+<td class="column11"><a href="SAME_POSITION/116_semi_output.java">116_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/116_stru_output.java">116_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">117</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/117_files.txt">HBaseStatsAggregator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/117_semi_conflict.java">117_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/117_stru_conflict.java">117_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/117_semi_declaration.java">117_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/117_stru_declaration.java">117_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/117_left.java">117_left</a></td>
+<td class="column9"><a href="SAME_POSITION/117_base.java">117_base</a></td>
+<td class="column10"><a href="SAME_POSITION/117_right.java">117_right</a></td>
+<td class="column11"><a href="SAME_POSITION/117_semi_output.java">117_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/117_stru_output.java">117_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">118</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/118_files.txt">DummyStatsAggregator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/118_semi_conflict.java">118_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/118_stru_conflict.java">118_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/118_semi_declaration.java">118_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/118_stru_declaration.java">118_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/118_left.java">118_left</a></td>
+<td class="column9"><a href="SAME_POSITION/118_base.java">118_base</a></td>
+<td class="column10"><a href="SAME_POSITION/118_right.java">118_right</a></td>
+<td class="column11"><a href="SAME_POSITION/118_semi_output.java">118_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/118_stru_output.java">118_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">119</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/119_files.txt">KeyVerifyingStatsAggregator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/119_semi_conflict.java">119_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/119_stru_conflict.java">119_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/119_semi_declaration.java">119_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/119_stru_declaration.java">119_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/119_left.java">119_left</a></td>
+<td class="column9"><a href="SAME_POSITION/119_base.java">119_base</a></td>
+<td class="column10"><a href="SAME_POSITION/119_right.java">119_right</a></td>
+<td class="column11"><a href="SAME_POSITION/119_semi_output.java">119_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/119_stru_output.java">119_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">120</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/120_files.txt">StatsWork.java</a></td>
+<td class="column4"><a href="SAME_POSITION/120_semi_conflict.java">120_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/120_stru_conflict.java">120_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/120_semi_declaration.java">120_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/120_stru_declaration.java">120_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/120_left.java">120_left</a></td>
+<td class="column9"><a href="SAME_POSITION/120_base.java">120_base</a></td>
+<td class="column10"><a href="SAME_POSITION/120_right.java">120_right</a></td>
+<td class="column11"><a href="SAME_POSITION/120_semi_output.java">120_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/120_stru_output.java">120_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">121</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/121_files.txt">CounterStatsAggregator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/121_semi_conflict.java">121_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/121_stru_conflict.java">121_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/121_semi_declaration.java">121_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/121_stru_declaration.java">121_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/121_left.java">121_left</a></td>
+<td class="column9"><a href="SAME_POSITION/121_base.java">121_base</a></td>
+<td class="column10"><a href="SAME_POSITION/121_right.java">121_right</a></td>
+<td class="column11"><a href="SAME_POSITION/121_semi_output.java">121_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/121_stru_output.java">121_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">122</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/122_files.txt">StatsAggregator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/122_semi_conflict.java">122_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/122_stru_conflict.java">122_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/122_semi_declaration.java">122_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/122_stru_declaration.java">122_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/122_left.java">122_left</a></td>
+<td class="column9"><a href="SAME_POSITION/122_base.java">122_base</a></td>
+<td class="column10"><a href="SAME_POSITION/122_right.java">122_right</a></td>
+<td class="column11"><a href="SAME_POSITION/122_semi_output.java">122_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/122_stru_output.java">122_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">123</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/123_files.txt">JDBCStatsAggregator.java</a></td>
+<td class="column4"><a href="SAME_POSITION/123_semi_conflict.java">123_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/123_stru_conflict.java">123_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/123_semi_declaration.java">123_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/123_stru_declaration.java">123_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/123_left.java">123_left</a></td>
+<td class="column9"><a href="SAME_POSITION/123_base.java">123_base</a></td>
+<td class="column10"><a href="SAME_POSITION/123_right.java">123_right</a></td>
+<td class="column11"><a href="SAME_POSITION/123_semi_output.java">123_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/123_stru_output.java">123_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">124</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/124_files.txt">RecordReaderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/124_semi_conflict.java">124_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/124_stru_conflict.java">124_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/124_semi_declaration.java">124_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/124_stru_declaration.java">124_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/124_left.java">124_left</a></td>
+<td class="column9"><a href="SAME_POSITION/124_base.java">124_base</a></td>
+<td class="column10"><a href="SAME_POSITION/124_right.java">124_right</a></td>
+<td class="column11"><a href="SAME_POSITION/124_semi_output.java">124_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/124_stru_output.java">124_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">125</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/125_files.txt">TezCompiler.java</a></td>
+<td class="column4"><a href="SAME_POSITION/125_semi_conflict.java">125_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/125_stru_conflict.java">125_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/125_semi_declaration.java">125_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/125_stru_declaration.java">125_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/125_left.java">125_left</a></td>
+<td class="column9"><a href="SAME_POSITION/125_base.java">125_base</a></td>
+<td class="column10"><a href="SAME_POSITION/125_right.java">125_right</a></td>
+<td class="column11"><a href="SAME_POSITION/125_semi_output.java">125_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/125_stru_output.java">125_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">126</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/126_files.txt">JavaBeanDeserializer.java</a></td>
+<td class="column4"><a href="SAME_POSITION/126_semi_conflict.java">126_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/126_stru_conflict.java">126_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/126_semi_declaration.java">126_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/126_stru_declaration.java">126_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/126_left.java">126_left</a></td>
+<td class="column9"><a href="SAME_POSITION/126_base.java">126_base</a></td>
+<td class="column10"><a href="SAME_POSITION/126_right.java">126_right</a></td>
+<td class="column11"><a href="SAME_POSITION/126_semi_output.java">126_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/126_stru_output.java">126_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">127</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/127_files.txt">AbstractEntityReader.java</a></td>
+<td class="column4"><a href="SAME_POSITION/127_semi_conflict.java">127_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/127_stru_conflict.java">127_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/127_semi_declaration.java">127_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/127_stru_declaration.java">127_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/127_left.java">127_left</a></td>
+<td class="column9"><a href="SAME_POSITION/127_base.java">127_base</a></td>
+<td class="column10"><a href="SAME_POSITION/127_right.java">127_right</a></td>
+<td class="column11"><a href="SAME_POSITION/127_semi_output.java">127_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/127_stru_output.java">127_stru_output</a></td>
+<td class="column13">CONCLUSAO: FP. JDIME INTEGROU MÃTODOS COM O MESMO NOME, MAS ASSINATURAS DIFERENTES.</td>
+</tr>
+<tr>
+<td class="column1">128</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/128_files.txt">AbstractEntityReader.java</a></td>
+<td class="column4"><a href="SAME_POSITION/128_semi_conflict.java">128_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/128_stru_conflict.java">128_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/128_semi_declaration.java">128_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/128_stru_declaration.java">128_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/128_left.java">128_left</a></td>
+<td class="column9"><a href="SAME_POSITION/128_base.java">128_base</a></td>
+<td class="column10"><a href="SAME_POSITION/128_right.java">128_right</a></td>
+<td class="column11"><a href="SAME_POSITION/128_semi_output.java">128_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/128_stru_output.java">128_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">129</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/129_files.txt">SerdeUtils.java</a></td>
+<td class="column4"><a href="SAME_POSITION/129_semi_conflict.java">129_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/129_stru_conflict.java">129_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/129_semi_declaration.java">129_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/129_stru_declaration.java">129_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/129_left.java">129_left</a></td>
+<td class="column9"><a href="SAME_POSITION/129_base.java">129_base</a></td>
+<td class="column10"><a href="SAME_POSITION/129_right.java">129_right</a></td>
+<td class="column11"><a href="SAME_POSITION/129_semi_output.java">129_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/129_stru_output.java">129_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">130</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/130_files.txt">SerdeUtils.java</a></td>
+<td class="column4"><a href="SAME_POSITION/130_semi_conflict.java">130_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/130_stru_conflict.java">130_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/130_semi_declaration.java">130_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/130_stru_declaration.java">130_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/130_left.java">130_left</a></td>
+<td class="column9"><a href="SAME_POSITION/130_base.java">130_base</a></td>
+<td class="column10"><a href="SAME_POSITION/130_right.java">130_right</a></td>
+<td class="column11"><a href="SAME_POSITION/130_semi_output.java">130_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/130_stru_output.java">130_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">131</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/131_files.txt">AutoValueProcessor.java</a></td>
+<td class="column4"><a href="SAME_POSITION/131_semi_conflict.java">131_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/131_stru_conflict.java">131_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/131_semi_declaration.java">131_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/131_stru_declaration.java">131_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/131_left.java">131_left</a></td>
+<td class="column9"><a href="SAME_POSITION/131_base.java">131_base</a></td>
+<td class="column10"><a href="SAME_POSITION/131_right.java">131_right</a></td>
+<td class="column11"><a href="SAME_POSITION/131_semi_output.java">131_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/131_stru_output.java">131_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">132</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/132_files.txt">DownsamplerTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/132_semi_conflict.java">132_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/132_stru_conflict.java">132_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/132_semi_declaration.java">132_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/132_stru_declaration.java">132_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/132_left.java">132_left</a></td>
+<td class="column9"><a href="SAME_POSITION/132_base.java">132_base</a></td>
+<td class="column10"><a href="SAME_POSITION/132_right.java">132_right</a></td>
+<td class="column11"><a href="SAME_POSITION/132_semi_output.java">132_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/132_stru_output.java">132_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">133</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/133_files.txt">VideoBitmapDecoderTest.java</a></td>
+<td class="column4"><a href="SAME_POSITION/133_semi_conflict.java">133_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/133_stru_conflict.java">133_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/133_semi_declaration.java">133_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/133_stru_declaration.java">133_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/133_left.java">133_left</a></td>
+<td class="column9"><a href="SAME_POSITION/133_base.java">133_base</a></td>
+<td class="column10"><a href="SAME_POSITION/133_right.java">133_right</a></td>
+<td class="column11"><a href="SAME_POSITION/133_semi_output.java">133_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/133_stru_output.java">133_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">134</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/134_files.txt">RecordReaderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/134_semi_conflict.java">134_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/134_stru_conflict.java">134_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/134_semi_declaration.java">134_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/134_stru_declaration.java">134_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/134_left.java">134_left</a></td>
+<td class="column9"><a href="SAME_POSITION/134_base.java">134_base</a></td>
+<td class="column10"><a href="SAME_POSITION/134_right.java">134_right</a></td>
+<td class="column11"><a href="SAME_POSITION/134_semi_output.java">134_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/134_stru_output.java">134_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">135</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/135_files.txt">RecordReaderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/135_semi_conflict.java">135_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/135_stru_conflict.java">135_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/135_semi_declaration.java">135_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/135_stru_declaration.java">135_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/135_left.java">135_left</a></td>
+<td class="column9"><a href="SAME_POSITION/135_base.java">135_base</a></td>
+<td class="column10"><a href="SAME_POSITION/135_right.java">135_right</a></td>
+<td class="column11"><a href="SAME_POSITION/135_semi_output.java">135_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/135_stru_output.java">135_stru_output</a></td>
+<td class="column13">CONCLUSAO: MESMO CONFLITO, DIFERENTE TEXTO SSMERGE</td>
+</tr>
+<tr>
+<td class="column1">136</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/136_files.txt">RecordReaderImpl.java</a></td>
+<td class="column4"><a href="SAME_POSITION/136_semi_conflict.java">136_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/136_stru_conflict.java">136_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/136_semi_declaration.java">136_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/136_stru_declaration.java">136_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/136_left.java">136_left</a></td>
+<td class="column9"><a href="SAME_POSITION/136_base.java">136_base</a></td>
+<td class="column10"><a href="SAME_POSITION/136_right.java">136_right</a></td>
+<td class="column11"><a href="SAME_POSITION/136_semi_output.java">136_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/136_stru_output.java">136_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+<tr>
+<td class="column1">137</td>
+<td class="column2">SAME_POSITION</td>
+<td class="column3"><a href="SAME_POSITION/137_files.txt">PSurfaceAWT.java</a></td>
+<td class="column4"><a href="SAME_POSITION/137_semi_conflict.java">137_semi_conflict</a></td>
+<td class="column5"><a href="SAME_POSITION/137_stru_conflict.java">137_stru_conflict</a></td>
+<td class="column6"><a href="SAME_POSITION/137_semi_declaration.java">137_semi_declaration</a></td>
+<td class="column7"><a href="SAME_POSITION/137_stru_declaration.java">137_stru_declaration</a></td>
+<td class="column8"><a href="SAME_POSITION/137_left.java">137_left</a></td>
+<td class="column9"><a href="SAME_POSITION/137_base.java">137_base</a></td>
+<td class="column10"><a href="SAME_POSITION/137_right.java">137_right</a></td>
+<td class="column11"><a href="SAME_POSITION/137_semi_output.java">137_semi_output</a></td>
+<td class="column12"><a href="SAME_POSITION/137_stru_output.java">137_stru_output</a></td>
+<td class="column13"></td>
+</tr>
+</tbody>					</table>				</div>			</div>		</div>	</div>	<!--===============================================================================================-->		<script src="vendor/jquery/jquery-3.2.1.min.js"></script><!--===============================================================================================-->	<script src="vendor/bootstrap/js/popper.js"></script>	<script src="vendor/bootstrap/js/bootstrap.min.js"></script><!--===============================================================================================-->	<script src="vendor/select2/select2.min.js"></script><!--===============================================================================================-->	<script src="js/main.js"></script></body></html>

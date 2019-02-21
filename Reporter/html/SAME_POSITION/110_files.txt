@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_7d35db6_a4b5fbe\rev_left_7d35db6\core\src\main\java\org\elasticsearch\search\sort\SortParseElement.java
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_7d35db6_a4b5fbe\rev_base_c9e1ccf\core\src\main\java\org\elasticsearch\search\sort\SortParseElement.java
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_7d35db6_a4b5fbe\rev_right_a4b5fbe\core\src\main\java\org\elasticsearch\search\sort\SortParseElement.java

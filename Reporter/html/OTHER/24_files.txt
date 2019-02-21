@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_left_7ee8686\src\core\lombok\javac\handlers\HandleConstructor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_base_deed98b\src\core\lombok\javac\handlers\HandleConstructor.java
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_right_72b55dc\src\core\lombok\javac\handlers\HandleConstructor.java

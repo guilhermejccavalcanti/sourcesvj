@@ -1,0 +1,6 @@
+<<<<<<< MINE
+updateServerListEnabled
+=======
+connectionString
+>>>>>>> YOURS
+

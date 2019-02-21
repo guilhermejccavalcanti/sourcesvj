@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\druid\revisions\rev_be2f153_adda148\rev_left_be2f153\client\src\main\java\com\metamx\druid\curator\announcement\Announcer.java
+C:\Users\user\Desktop\gjcc\amostra\projects\druid\revisions\rev_be2f153_adda148\rev_base_fde874e\client\src\main\java\com\metamx\druid\curator\announcement\Announcer.java
+C:\Users\user\Desktop\gjcc\amostra\projects\druid\revisions\rev_be2f153_adda148\rev_right_adda148\client\src\main\java\com\metamx\druid\curator\announcement\Announcer.java

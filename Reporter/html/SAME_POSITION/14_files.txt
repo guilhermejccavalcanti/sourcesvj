@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_9050781_396f9cf\rev_left_9050781\blueprints-rexster-graph\src\main\java\com\tinkerpop\blueprints\pgm\impls\rexster\util\RexsterVertexSequence.java
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_9050781_396f9cf\rev_base_aa4381f\blueprints-rexster-graph\src\main\java\com\tinkerpop\blueprints\pgm\impls\rexster\util\RexsterVertexSequence.java
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_9050781_396f9cf\rev_right_396f9cf\blueprints-rexster-graph\src\main\java\com\tinkerpop\blueprints\pgm\impls\rexster\util\RexsterVertexSequence.java

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_2cb49af_4a6a7fc\rev_left_2cb49af\ambry-messageformat\src\main\java\com.github.ambry.messageformat\MessageFormatSend.java
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_2cb49af_4a6a7fc\rev_base_faf5e48\ambry-messageformat\src\main\java\com.github.ambry.messageformat\MessageFormatSend.java
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_2cb49af_4a6a7fc\rev_right_4a6a7fc\ambry-messageformat\src\main\java\com.github.ambry.messageformat\MessageFormatSend.java

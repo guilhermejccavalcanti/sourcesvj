@@ -1,0 +1,6 @@
+<<<<<<< MINE
+str
+=======
+postStr
+>>>>>>> YOURS
+

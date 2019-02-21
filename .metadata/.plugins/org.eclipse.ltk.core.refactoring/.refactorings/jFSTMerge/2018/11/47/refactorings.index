@@ -1,0 +1,12 @@
+1542911838201	Move methods
+1542912062859	Move method
+1542914915869	Rename local variable 'mergeCmd'
+1542919739601	Delete elements
+1542920176913	Rename local variable 'falsePositive'
+1543002355541	Rename local variable 'leftContent'
+1543002717215	Rename local variable 'maxRightLeft'
+1543002722439	Rename local variable 'minRightLeft'
+1543003067447	Rename local variable 'c'
+1543003074499	Rename local variable 'cl'
+1543006246288	Move method
+1543006255326	Move methods

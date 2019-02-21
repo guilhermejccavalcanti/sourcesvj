@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_36aa3e9_35a7a81\rev_left_36aa3e9\ql\src\java\org\apache\hadoop\hive\ql\io\orc\RecordReaderImpl.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_36aa3e9_35a7a81\rev_base_5e223d4\ql\src\java\org\apache\hadoop\hive\ql\io\orc\RecordReaderImpl.java
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_36aa3e9_35a7a81\rev_right_35a7a81\ql\src\java\org\apache\hadoop\hive\ql\io\orc\RecordReaderImpl.java

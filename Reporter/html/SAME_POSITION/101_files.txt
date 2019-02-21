@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_3027618_bf354e3\rev_left_3027618\src\eclipseAgent\lombok\eclipse\agent\PatchFixes.java
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_3027618_bf354e3\rev_base_6c9b3d5\src\eclipseAgent\lombok\eclipse\agent\PatchFixes.java
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_3027618_bf354e3\rev_right_bf354e3\src\eclipseAgent\lombok\eclipse\agent\PatchFixes.java

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\Kundera\revisions\rev_84557c9_5c6ec4a\rev_left_84557c9\kundera-cassandra\src\main\java\com\impetus\client\cassandra\pelops\PelopsDataHandler.java
+C:\Users\user\Desktop\gjcc\amostra\projects\Kundera\revisions\rev_84557c9_5c6ec4a\rev_base_1e02853\kundera-cassandra\src\main\java\com\impetus\client\cassandra\pelops\PelopsDataHandler.java
+C:\Users\user\Desktop\gjcc\amostra\projects\Kundera\revisions\rev_84557c9_5c6ec4a\rev_right_5c6ec4a\kundera-cassandra\src\main\java\com\impetus\client\cassandra\pelops\PelopsDataHandler.java

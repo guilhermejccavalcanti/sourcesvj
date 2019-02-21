@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\vrapper\revisions\rev_d392d75_6ed1662\rev_left_d392d75\net.sourceforge.vrapper.core\src\net\sourceforge\vrapper\vim\commands\motions\MoveWordRightForUpdate.java
+C:\Users\user\Desktop\gjcc\amostra\projects\vrapper\revisions\rev_d392d75_6ed1662\rev_base_37a6da8\net.sourceforge.vrapper.core\src\net\sourceforge\vrapper\vim\commands\motions\MoveWordRightForUpdate.java
+C:\Users\user\Desktop\gjcc\amostra\projects\vrapper\revisions\rev_d392d75_6ed1662\rev_right_6ed1662\net.sourceforge.vrapper.core\src\net\sourceforge\vrapper\vim\commands\motions\MoveWordRightForUpdate.java

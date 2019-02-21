@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\glide\revisions\rev_f389e91_431ccaf\rev_left_f389e91\library\src\androidTest\java\com\bumptech\glide\load\resource\bitmap\VideoBitmapDecoderTest.java
+C:\Users\user\Desktop\gjcc\amostra\projects\glide\revisions\rev_f389e91_431ccaf\rev_base_2c5f63e\library\src\androidTest\java\com\bumptech\glide\load\resource\bitmap\VideoBitmapDecoderTest.java
+C:\Users\user\Desktop\gjcc\amostra\projects\glide\revisions\rev_f389e91_431ccaf\rev_right_431ccaf\library\src\androidTest\java\com\bumptech\glide\load\resource\bitmap\VideoBitmapDecoderTest.java

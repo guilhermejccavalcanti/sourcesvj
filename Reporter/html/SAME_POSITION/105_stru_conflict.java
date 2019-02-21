@@ -1,0 +1,6 @@
+<<<<<<< MINE
+logFieldName
+=======
+loggerCategory
+>>>>>>> YOURS
+

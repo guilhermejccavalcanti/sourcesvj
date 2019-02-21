@@ -1,0 +1,3188 @@
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_6d19f7c_e13f8e4\rev_left_6d19f7c\flyway-core\src\main\java\org\flywaydb\core\internal\dbsupport\DbSupportFactory.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_6d19f7c_e13f8e4\rev_base_77a15e5\flyway-core\src\main\java\org\flywaydb\core\internal\dbsupport\DbSupportFactory.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_6d19f7c_e13f8e4\rev_right_e13f8e4\flyway-core\src\main\java\org\flywaydb\core\internal\dbsupport\DbSupportFactory.java
+CONCLUSAO: FP. OS DEVS EDITARAM/ADICIONARAM COMANDOS DIFERENTES QUE NÃO APARENTAM TER RELAÇÃO ENTRE SI.
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+||||||| BASE
+
+		//Sybase ASE support
+=======
+        if (databaseProductName.startsWith("Phoenix")) {
+            return new PhoenixDbSupport(connection);
+        }
+
+		//Sybase ASE support
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public static DbSupport createDbSupport(Connection connection, boolean printInfo) {
+        String databaseProductName = getDatabaseProductName(connection);
+
+        if (printInfo) {
+            LOG.info("Database: " + getJdbcUrl(connection) + " (" + databaseProductName + ")");
+        }
+
+        if (databaseProductName.startsWith("Apache Derby")) {
+            return new DerbyDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("SQLite")) {
+            return new SQLiteDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("H2")) {
+            return new H2DbSupport(connection);
+        }
+        if (databaseProductName.contains("HSQL Database Engine")) {
+            // For regular Hsql and the Google Cloud SQL local default DB.
+            return new HsqlDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("Microsoft SQL Server")) {
+            return new SQLServerDbSupport(connection);
+        }
+        if (databaseProductName.contains("MySQL")) {
+            // For regular MySQL, MariaDB and Google Cloud SQL.
+            // Google Cloud SQL returns different names depending on the environment and the SDK version.
+            //   ex.: Google SQL Service/MySQL
+            return new MySQLDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("Oracle")) {
+            return new OracleDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("PostgreSQL 8")) {
+            // Redshift reports a databaseProductName of "PostgreSQL 8.0", and it uses the same JDBC driver,
+            // but only supports a subset of features. Therefore, we need to execute a query in order to
+            // distinguish it from the real PostgreSQL 8:
+            RedshiftDbSupport redshift;
+            if ("RedshiftJDBC".equals(getDriverName(connection))) {
+                redshift = new RedshfitDbSupportViaRedshiftDriver(connection);
+            } else {
+                redshift = new RedshfitDbSupportViaPostgreSQLDriver(connection);
+            }
+            if (redshift.detect()) {
+                return redshift;
+            }
+        }
+        if (databaseProductName.startsWith("PostgreSQL")) {
+            return new PostgreSQLDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("DB2")) {
+			if (getDatabaseProductVersion(connection).startsWith("DSN")){
+				return new DB2zosDbSupport(connection);
+			} else {
+				return new DB2DbSupport(connection);
+			}
+        }
+        if (databaseProductName.startsWith("Vertica")) {
+            return new VerticaDbSupport(connection);
+        }
+        if (databaseProductName.contains("solidDB")) {
+            // SolidDB was originally developed by a company named Solid and was sold afterwards to IBM.
+            // In the meanwhile IBM also sold solidDB to Unicom Systems.
+            // Therefore no vendor string in search criteria
+            return new SolidDbSupport(connection);
+        }
+<<<<<<< MINE
+=======
+        if (databaseProductName.startsWith("Phoenix")) {
+            return new PhoenixDbSupport(connection);
+        }
+
+		//Sybase ASE support
+>>>>>>> YOURS
+        if (databaseProductName.startsWith("ASE")) {
+        	return new SybaseASEDbSupport(connection);
+        }
+        if (databaseProductName.startsWith("HDB")) {
+        	return new SapHanaDbSupport(connection);
+        }
+        
+        throw new FlywayException("Unsupported Database: " + databaseProductName);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_1f41948_4a4a3e3\rev_left_1f41948\ambry-server\src\test\java\com.github.ambry.server\ServerTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_1f41948_4a4a3e3\rev_base_98cfd5d\ambry-server\src\test\java\com.github.ambry.server\ServerTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_1f41948_4a4a3e3\rev_right_4a4a3e3\ambry-server\src\test\java\com.github.ambry.server\ServerTest.java
+CONCLUSAO: TP. OS DEVS EDITAM O MESMO COMNANDO DE FORMAS DISTINTAS. DEBUGAR
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+    sslCluster = new MockCluster(notificationSystem, true, "DC1,DC2,DC3", serverSSLProps, true);
+    sslCluster.startServers();
+    MockClusterMap clusterMap = sslCluster.getClusterMap();
+    DataNodeId dataNodeId = clusterMap.getDataNodeIds().get(0);
+||||||| BASE
+    cluster = new MockCluster(notificationSystem, true, "", "", "");
+    MockClusterMap clusterMap = cluster.getClusterMap();
+=======
+    MockTime time = new MockTime(SystemTime.getInstance().milliseconds());
+    cluster = new MockCluster(notificationSystem, true, "", "", "", time);
+    MockClusterMap clusterMap = cluster.getClusterMap();
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Test
+  public void endToEndTestHardDeletes()
+      throws Exception {
+<<<<<<< MINE
+    sslCluster = new MockCluster(notificationSystem, true, "DC1,DC2,DC3", serverSSLProps, true);
+    sslCluster.startServers();
+    MockClusterMap clusterMap = sslCluster.getClusterMap();
+    DataNodeId dataNodeId = clusterMap.getDataNodeIds().get(0);
+=======
+    MockTime time = new MockTime(SystemTime.getInstance().milliseconds());
+    cluster = new MockCluster(notificationSystem, true, "", "", "", time);
+    MockClusterMap clusterMap = cluster.getClusterMap();
+>>>>>>> YOURS
+    ArrayList<byte[]> usermetadata = new ArrayList<byte[]>(9);
+    ArrayList<byte[]> data = new ArrayList<byte[]>(9);
+    for (int i = 0; i < 9; i++) {
+      usermetadata.add(new byte[1000 + i]);
+      data.add(new byte[31870 + i]);
+      new Random().nextBytes(usermetadata.get(i));
+      new Random().nextBytes(data.get(i));
+    }
+
+    ArrayList<BlobProperties> properties = new ArrayList<BlobProperties>(9);
+    properties.add(new BlobProperties(31870, "serviceid1"));
+    properties.add(new BlobProperties(31871, "serviceid1"));
+    properties.add(new BlobProperties(31872, "serviceid1"));
+    properties.add(new BlobProperties(31873, "serviceid1", "ownerid", "jpeg", false, 0));
+    properties.add(new BlobProperties(31874, "serviceid1"));
+    properties.add(new BlobProperties(31875, "serviceid1", "ownerid", "jpeg", false, 0));
+    properties.add(new BlobProperties(31876, "serviceid1"));
+    properties.add(new BlobProperties(31877, "serviceid1"));
+    properties.add(new BlobProperties(31878, "serviceid1"));
+
+    List<PartitionId> partitionIds = clusterMap.getWritablePartitionIds();
+    ArrayList<BlobId> blobIdList = new ArrayList<BlobId>(9);
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+    blobIdList.add(new BlobId(partitionIds.get(0)));
+
+    // put blob 0
+    PutRequest putRequest0 =
+        new PutRequest(1, "client1", blobIdList.get(0), properties.get(0), ByteBuffer.wrap(usermetadata.get(0)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(0))));
+    BlockingChannel channel =
+        getBlockingChannelBasedOnPortType(new Port(dataNodeId.getPort(), PortType.PLAINTEXT), "localhost",
+            clientSSLSocketFactory1, clientSSLConfig1);
+    channel.connect();
+    channel.send(putRequest0);
+    InputStream putResponseStream = channel.receive().getInputStream();
+    PutResponse response0 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response0.getError(), ServerErrorCode.No_Error);
+
+    // put blob 1
+    PutRequest putRequest1 =
+        new PutRequest(1, "client1", blobIdList.get(1), properties.get(1), ByteBuffer.wrap(usermetadata.get(1)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(1))));
+    channel.send(putRequest1);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response1 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response1.getError(), ServerErrorCode.No_Error);
+
+    // put blob 2
+    PutRequest putRequest2 =
+        new PutRequest(1, "client1", blobIdList.get(2), properties.get(2), ByteBuffer.wrap(usermetadata.get(2)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(2))));
+    channel.send(putRequest2);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response2 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response2.getError(), ServerErrorCode.No_Error);
+
+    // put blob 3 that is expired
+    PutRequest putRequest3 =
+        new PutRequest(1, "client1", blobIdList.get(3), properties.get(3), ByteBuffer.wrap(usermetadata.get(3)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(3))));
+    channel.send(putRequest3);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response3 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response3.getError(), ServerErrorCode.No_Error);
+
+    // put blob 4
+    PutRequest putRequest4 =
+        new PutRequest(1, "client1", blobIdList.get(4), properties.get(4), ByteBuffer.wrap(usermetadata.get(4)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(4))));
+    channel.send(putRequest4);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response4 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response4.getError(), ServerErrorCode.No_Error);
+
+    // put blob 5 that is expired
+    PutRequest putRequest5 =
+        new PutRequest(1, "client1", blobIdList.get(5), properties.get(5), ByteBuffer.wrap(usermetadata.get(5)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(5))));
+    channel.send(putRequest5);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response5 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response5.getError(), ServerErrorCode.No_Error);
+
+    notificationSystem.awaitBlobCreations(blobIdList.get(0).getID());
+    notificationSystem.awaitBlobCreations(blobIdList.get(1).getID());
+    notificationSystem.awaitBlobCreations(blobIdList.get(2).getID());
+    notificationSystem.awaitBlobCreations(blobIdList.get(4).getID());
+
+    // delete blob 1
+    DeleteRequest deleteRequest = new DeleteRequest(1, "client1", blobIdList.get(1));
+    channel.send(deleteRequest);
+    InputStream deleteResponseStream = channel.receive().getInputStream();
+    DeleteResponse deleteResponse = DeleteResponse.readFrom(new DataInputStream(deleteResponseStream));
+    Assert.assertEquals(deleteResponse.getError(), ServerErrorCode.No_Error);
+
+    byte[] zeroedMetadata = new byte[usermetadata.get(1).length];
+    usermetadata.set(1, zeroedMetadata);
+    byte[] zeroedData = new byte[data.get(1).length];
+    data.set(1, zeroedData);
+
+    // delete blob 4
+    deleteRequest = new DeleteRequest(1, "client1", blobIdList.get(4));
+    channel.send(deleteRequest);
+    deleteResponseStream = channel.receive().getInputStream();
+    deleteResponse = DeleteResponse.readFrom(new DataInputStream(deleteResponseStream));
+    Assert.assertEquals(deleteResponse.getError(), ServerErrorCode.No_Error);
+
+    zeroedMetadata = new byte[usermetadata.get(4).length];
+    usermetadata.set(4, zeroedMetadata);
+    zeroedData = new byte[data.get(4).length];
+    data.set(4, zeroedData);
+
+    notificationSystem.awaitBlobDeletions(blobIdList.get(1).getID());
+    notificationSystem.awaitBlobDeletions(blobIdList.get(4).getID());
+
+    time.currentMilliseconds = time.currentMilliseconds + Time.SecsPerDay * Time.MsPerSec;
+    ensureCleanupTokenCatchesUp(partitionIds.get(0).getReplicaIds().get(0).getReplicaPath(), clusterMap, 198431);
+    ensureCleanupTokenCatchesUp(partitionIds.get(0).getReplicaIds().get(1).getReplicaPath(), clusterMap, 132299);
+    ensureCleanupTokenCatchesUp(partitionIds.get(0).getReplicaIds().get(2).getReplicaPath(), clusterMap, 132299);
+
+    MockPartitionId partition = (MockPartitionId) clusterMap.getWritablePartitionIds().get(0);
+
+    ArrayList<PartitionRequestInfo> partitionRequestInfoList = new ArrayList<PartitionRequestInfo>();
+    ArrayList<BlobId> ids = new ArrayList<BlobId>();
+    for (int i = 0; i < 6; i++) {
+      ids.add(blobIdList.get(i));
+    }
+
+    PartitionRequestInfo partitionRequestInfo = new PartitionRequestInfo(partition, ids);
+    partitionRequestInfoList.add(partitionRequestInfo);
+
+    try {
+      GetRequest getRequest =
+          new GetRequest(1, "clientid2", MessageFormatFlags.BlobProperties, partitionRequestInfoList,
+              GetOptions.Include_All);
+      channel.send(getRequest);
+      InputStream stream = channel.receive().getInputStream();
+      GetResponse resp = GetResponse.readFrom(new DataInputStream(stream), clusterMap);
+
+      for (int i = 0; i < 6; i++) {
+        BlobProperties propertyOutput = MessageFormatRecord.deserializeBlobProperties(resp.getInputStream());
+        Assert.assertEquals(propertyOutput.getBlobSize(), properties.get(i).getBlobSize());
+        Assert.assertEquals(propertyOutput.getServiceId(), "serviceid1");
+      }
+
+      getRequest = new GetRequest(1, "clientid2", MessageFormatFlags.BlobUserMetadata, partitionRequestInfoList,
+          GetOptions.Include_All);
+      channel.send(getRequest);
+      stream = channel.receive().getInputStream();
+      resp = GetResponse.readFrom(new DataInputStream(stream), clusterMap);
+
+      for (int i = 0; i < 6; i++) {
+        ByteBuffer userMetadataOutput = MessageFormatRecord.deserializeUserMetadata(resp.getInputStream());
+        Assert.assertArrayEquals(userMetadataOutput.array(), usermetadata.get(i));
+      }
+
+      getRequest =
+          new GetRequest(1, "clientid2", MessageFormatFlags.Blob, partitionRequestInfoList, GetOptions.Include_All);
+      channel.send(getRequest);
+      stream = channel.receive().getInputStream();
+      resp = GetResponse.readFrom(new DataInputStream(stream), clusterMap);
+
+      for (int i = 0; i < 6; i++) {
+        BlobOutput blobOutput = MessageFormatRecord.deserializeBlob(resp.getInputStream());
+        Assert.assertEquals(blobOutput.getSize(), properties.get(i).getBlobSize());
+        byte[] dataOutput = new byte[(int) blobOutput.getSize()];
+        blobOutput.getStream().read(dataOutput);
+        Assert.assertArrayEquals(dataOutput, data.get(i));
+      }
+    } catch (Exception e) {
+      Assert.assertEquals(false, true);
+    }
+
+    // put blob 6
+    PutRequest putRequest6 =
+        new PutRequest(1, "client1", blobIdList.get(6), properties.get(6), ByteBuffer.wrap(usermetadata.get(6)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(6))));
+    channel.send(putRequest6);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response6 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response6.getError(), ServerErrorCode.No_Error);
+
+    // put blob 7
+    PutRequest putRequest7 =
+        new PutRequest(1, "client1", blobIdList.get(7), properties.get(7), ByteBuffer.wrap(usermetadata.get(7)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(7))));
+    channel.send(putRequest7);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response7 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response7.getError(), ServerErrorCode.No_Error);
+
+    // put blob 8
+    PutRequest putRequest8 =
+        new PutRequest(1, "client1", blobIdList.get(8), properties.get(8), ByteBuffer.wrap(usermetadata.get(8)),
+            new ByteBufferInputStream(ByteBuffer.wrap(data.get(8))));
+    channel.send(putRequest8);
+    putResponseStream = channel.receive().getInputStream();
+    PutResponse response9 = PutResponse.readFrom(new DataInputStream(putResponseStream));
+    Assert.assertEquals(response9.getError(), ServerErrorCode.No_Error);
+
+    notificationSystem.awaitBlobCreations(blobIdList.get(6).getID());
+    notificationSystem.awaitBlobCreations(blobIdList.get(7).getID());
+    notificationSystem.awaitBlobCreations(blobIdList.get(8).getID());
+    // Do more deletes
+
+    // delete blob 3 that is expired.
+    deleteRequest = new DeleteRequest(1, "client1", blobIdList.get(3));
+    channel.send(deleteRequest);
+    deleteResponseStream = channel.receive().getInputStream();
+    deleteResponse = DeleteResponse.readFrom(new DataInputStream(deleteResponseStream));
+    Assert.assertEquals(deleteResponse.getError(), ServerErrorCode.No_Error);
+
+    zeroedMetadata = new byte[usermetadata.get(3).length];
+    usermetadata.set(3, zeroedMetadata);
+    zeroedData = new byte[data.get(3).length];
+    data.set(3, zeroedData);
+
+    // delete blob 0
+    deleteRequest = new DeleteRequest(1, "client1", blobIdList.get(0));
+    channel.send(deleteRequest);
+    deleteResponseStream = channel.receive().getInputStream();
+    deleteResponse = DeleteResponse.readFrom(new DataInputStream(deleteResponseStream));
+    Assert.assertEquals(deleteResponse.getError(), ServerErrorCode.No_Error);
+
+    zeroedMetadata = new byte[usermetadata.get(0).length];
+    usermetadata.set(0, zeroedMetadata);
+    zeroedData = new byte[data.get(0).length];
+    data.set(0, zeroedData);
+
+    // delete blob 6.
+    deleteRequest = new DeleteRequest(1, "client1", blobIdList.get(6));
+    channel.send(deleteRequest);
+    deleteResponseStream = channel.receive().getInputStream();
+    deleteResponse = DeleteResponse.readFrom(new DataInputStream(deleteResponseStream));
+    Assert.assertEquals(deleteResponse.getError(), ServerErrorCode.No_Error);
+
+    zeroedMetadata = new byte[usermetadata.get(6).length];
+    usermetadata.set(6, zeroedMetadata);
+    zeroedData = new byte[data.get(6).length];
+    data.set(6, zeroedData);
+
+    notificationSystem.awaitBlobDeletions(blobIdList.get(0).getID());
+    notificationSystem.awaitBlobDeletions(blobIdList.get(6).getID());
+
+    time.currentMilliseconds = time.currentMilliseconds + Time.SecsPerDay * Time.MsPerSec;
+    ensureCleanupTokenCatchesUp(partitionIds.get(0).getReplicaIds().get(0).getReplicaPath(), clusterMap, 297905);
+    ensureCleanupTokenCatchesUp(partitionIds.get(0).getReplicaIds().get(1).getReplicaPath(), clusterMap, 231676);
+    ensureCleanupTokenCatchesUp(partitionIds.get(0).getReplicaIds().get(2).getReplicaPath(), clusterMap, 231676);
+
+    partitionRequestInfoList = new ArrayList<PartitionRequestInfo>();
+    partitionRequestInfo = new PartitionRequestInfo(partition, blobIdList);
+    partitionRequestInfoList.add(partitionRequestInfo);
+
+    try {
+      GetRequest getRequest =
+          new GetRequest(1, "clientid2", MessageFormatFlags.BlobProperties, partitionRequestInfoList,
+              GetOptions.Include_All);
+      channel.send(getRequest);
+      InputStream stream = channel.receive().getInputStream();
+      GetResponse resp = GetResponse.readFrom(new DataInputStream(stream), clusterMap);
+
+      for (int i = 0; i < 9; i++) {
+        BlobProperties propertyOutput = MessageFormatRecord.deserializeBlobProperties(resp.getInputStream());
+        Assert.assertEquals(propertyOutput.getBlobSize(), properties.get(i).getBlobSize());
+        Assert.assertEquals(propertyOutput.getServiceId(), "serviceid1");
+      }
+
+      getRequest = new GetRequest(1, "clientid2", MessageFormatFlags.BlobUserMetadata, partitionRequestInfoList,
+          GetOptions.Include_All);
+      channel.send(getRequest);
+      stream = channel.receive().getInputStream();
+      resp = GetResponse.readFrom(new DataInputStream(stream), clusterMap);
+
+      for (int i = 0; i < 9; i++) {
+        ByteBuffer userMetadataOutput = MessageFormatRecord.deserializeUserMetadata(resp.getInputStream());
+        Assert.assertArrayEquals(userMetadataOutput.array(), usermetadata.get(i));
+      }
+
+      getRequest =
+          new GetRequest(1, "clientid2", MessageFormatFlags.Blob, partitionRequestInfoList, GetOptions.Include_All);
+      channel.send(getRequest);
+      stream = channel.receive().getInputStream();
+      resp = GetResponse.readFrom(new DataInputStream(stream), clusterMap);
+
+      for (int i = 0; i < 9; i++) {
+        BlobOutput blobOutput = MessageFormatRecord.deserializeBlob(resp.getInputStream());
+        Assert.assertEquals(blobOutput.getSize(), properties.get(i).getBlobSize());
+        byte[] dataOutput = new byte[(int) blobOutput.getSize()];
+        blobOutput.getStream().read(dataOutput);
+        Assert.assertArrayEquals(dataOutput, data.get(i));
+      }
+    } catch (MessageFormatException e) {
+      e.printStackTrace();
+      Assert.assertEquals(false, true);
+    }
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_16b59fa_7c9c613\rev_left_16b59fa\driver-compat\src\main\com\mongodb\DBCollection.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_16b59fa_7c9c613\rev_base_b004820\driver-compat\src\main\com\mongodb\DBCollection.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_16b59fa_7c9c613\rev_right_7c9c613\driver-compat\src\main\com\mongodb\DBCollection.java
+CONCLUSAO: FP. REFATORAMENTO. DISCUTIR
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        return insert(mongoInsert, codec);
+||||||| BASE
+        return insert(mongoInsert, serializer);
+=======
+        return new WriteResult(insertInternal(mongoInsert, serializer), aWriteConcern);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Override
+<<<<<<< MINE
+    public WriteResult insert(final List<DBObject> documents, final WriteConcern writeConcern, final DBEncoder encoder) {
+        final Codec<DBObject> codec;
+        //TODO: Is this really how it should work?
+        if (encoder != null) {
+            codec = new DBEncoderDecoderCodec(encoder, null, null, null);
+        } else if (encoderFactory != null) {
+            codec = new DBEncoderDecoderCodec(encoderFactory.create(), null, null, null);
+        } else {
+            codec = this.codec;
+        }
+=======
+    public WriteResult insert(final List<DBObject> documents, final WriteConcern aWriteConcern, final DBEncoder encoder) {
+        final Serializer<DBObject> serializer = toDBObjectSerializer(encoder);
+>>>>>>> YOURS
+
+        final MongoInsert<DBObject> mongoInsert = new MongoInsert<DBObject>(documents)
+                .writeConcern(this.writeConcern.toNew());
+<<<<<<< MINE
+        return insert(mongoInsert, codec);
+=======
+        return new WriteResult(insertInternal(mongoInsert, serializer), aWriteConcern);
+>>>>>>> YOURS
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_left_58400ef\flyway-core\src\main\java\org\flywaydb\core\Flyway.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_base_24f1874\flyway-core\src\main\java\org\flywaydb\core\Flyway.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_right_8c800df\flyway-core\src\main\java\org\flywaydb\core\Flyway.java
+CONCLUSAO: FP. OS DEVS EDITARAM/ADICIONARAM COMANDOS DIFERENTES QUE NÃO APARENTAM TER RELAÇÃO ENTRE SI.
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.beforeMigrate(connectionUserObjects);
+        		}
+
+        		MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+||||||| BASE
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+=======
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table), classLoader);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public int migrate() throws FlywayException {
+        return execute(new Command<Integer>() {
+            public Integer execute(Connection connectionMetaDataTable, Connection connectionUserObjects, DbSupport dbSupport, Schema[] schemas) {
+<<<<<<< MINE
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.beforeMigrate(connectionUserObjects);
+        		}
+
+        		MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+=======
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table), classLoader);
+>>>>>>> YOURS
+
+                MigrationResolver migrationResolver = createMigrationResolver(dbSupport);
+                if (validateOnMigrate) {
+                    doValidate(connectionMetaDataTable, migrationResolver, metaDataTable, schemas);
+                }
+
+                new DbSchemas(connectionMetaDataTable, schemas, metaDataTable).create();
+
+                if (!metaDataTable.hasSchemasMarker() && !metaDataTable.hasInitMarker() && !metaDataTable.hasAppliedMigrations()) {
+                    List<Schema> nonEmptySchemas = new ArrayList<Schema>();
+                    for (Schema schema : schemas) {
+                        if (!schema.empty()) {
+                            nonEmptySchemas.add(schema);
+                        }
+                    }
+
+                    if (initOnMigrate || nonEmptySchemas.isEmpty()) {
+                        if (initOnMigrate && !nonEmptySchemas.isEmpty()) {
+                            new DbInit(connectionMetaDataTable, metaDataTable, initVersion, initDescription).init();
+                        }
+                    } else {
+                        if (nonEmptySchemas.size() == 1) {
+                            Schema schema = nonEmptySchemas.get(0);
+                            //Check whether we only have an empty metadata table in an otherwise empty schema
+                            if (schema.allTables().length != 1 || !schema.getTable(table).exists()) {
+                                throw new FlywayException("Found non-empty schema " + schema
+                                        + " without metadata table! Use init()"
+                                        + " or set initOnMigrate to true to initialize the metadata table.");
+                            }
+                        } else {
+                            throw new FlywayException("Found non-empty schemas "
+                                    + StringUtils.collectionToCommaDelimitedString(nonEmptySchemas)
+                                    + " without metadata table! Use init()"
+                                    + " or set initOnMigrate to true to initialize the metadata table.");
+                        }
+                    }
+                }
+
+                DbSupport dbSupportUserObjects = DbSupportFactory.createDbSupport(connectionUserObjects, false);
+                Schema originalSchemaUserObjects = dbSupportUserObjects.getCurrentSchema();
+                boolean schemaChange = !schemas[0].equals(originalSchemaUserObjects);
+                if (schemaChange) {
+                    dbSupportUserObjects.setCurrentSchema(schemas[0]);
+                }
+
+                DbMigrate dbMigrator =
+                        new DbMigrate(connectionMetaDataTable, connectionUserObjects, dbSupport, metaDataTable,
+                                schemas[0], migrationResolver, target, ignoreFailedFutureMigration, outOfOrder);
+                dbMigrator.setCallbacks(callbacks);
+                try {
+                    return dbMigrator.migrate();
+                } finally {
+                    if (schemaChange) {
+                        dbSupportUserObjects.setCurrentSchema(originalSchemaUserObjects);
+                    }
+
+            		for (FlywayCallback callback: getCallbacks()) {
+            			callback.afterMigrate(connectionUserObjects);
+            		}
+                }
+            }
+        });
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_left_58400ef\flyway-core\src\main\java\org\flywaydb\core\Flyway.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_base_24f1874\flyway-core\src\main\java\org\flywaydb\core\Flyway.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_right_8c800df\flyway-core\src\main\java\org\flywaydb\core\Flyway.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.beforeValidate(connectionUserObjects);
+        		}
+
+        		MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+||||||| BASE
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+=======
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table), classLoader);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public void validate() throws FlywayException {
+        execute(new Command<Void>() {
+            public Void execute(Connection connectionMetaDataTable, Connection connectionUserObjects, DbSupport dbSupport, Schema[] schemas) {
+<<<<<<< MINE
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.beforeValidate(connectionUserObjects);
+        		}
+
+        		MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+=======
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table), classLoader);
+>>>>>>> YOURS
+                MigrationResolver migrationResolver = createMigrationResolver(dbSupport);
+
+                doValidate(connectionMetaDataTable, migrationResolver, metaDataTable, schemas);
+
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.afterValidate(connectionUserObjects);
+        		}
+                return null;
+            }
+        });
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_left_58400ef\flyway-core\src\main\java\org\flywaydb\core\Flyway.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_base_24f1874\flyway-core\src\main\java\org\flywaydb\core\Flyway.java,C:\Users\user\Desktop\gjcc\amostra\projects\flyway\revisions\rev_58400ef_8c800df\rev_right_8c800df\flyway-core\src\main\java\org\flywaydb\core\Flyway.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.beforeInit(connectionUserObjects);
+        		}
+
+        		MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+||||||| BASE
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+=======
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table), classLoader);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public void init() throws FlywayException {
+        execute(new Command<Void>() {
+            public Void execute(Connection connectionMetaDataTable, Connection connectionUserObjects, DbSupport dbSupport, Schema[] schemas) {
+<<<<<<< MINE
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.beforeInit(connectionUserObjects);
+        		}
+
+        		MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table));
+=======
+                MetaDataTable metaDataTable = new MetaDataTableImpl(dbSupport, schemas[0].getTable(table), classLoader);
+>>>>>>> YOURS
+                new DbSchemas(connectionMetaDataTable, schemas, metaDataTable).create();
+                new DbInit(connectionMetaDataTable, metaDataTable, initVersion, initDescription).init();
+
+        		for (FlywayCallback callback: getCallbacks()) {
+        			callback.afterInit(connectionUserObjects);
+        		}
+
+                return null;
+            }
+        });
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\curator\revisions\rev_7d44bae_337b9d9\rev_left_7d44bae\curator-client\src\main\java\org\apache\curator\ensemble\fixed\FixedEnsembleProvider.java,C:\Users\user\Desktop\gjcc\amostra\projects\curator\revisions\rev_7d44bae_337b9d9\rev_base_1571588\curator-client\src\main\java\org\apache\curator\ensemble\fixed\FixedEnsembleProvider.java,C:\Users\user\Desktop\gjcc\amostra\projects\curator\revisions\rev_7d44bae_337b9d9\rev_right_337b9d9\curator-client\src\main\java\org\apache\curator\ensemble\fixed\FixedEnsembleProvider.java
+CONCLUSAO: FP. REFATORAMENTO. DISCUTIR
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        this(connectionString, true);
+||||||| BASE
+        this.connectionString = Preconditions.checkNotNull(connectionString, "connectionString cannot be null");
+=======
+        Preconditions.checkArgument(!Strings.isNullOrEmpty(connectionString),
+            "connectionString cannot be null or empty");
+        this.connectionString = connectionString;
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public FixedEnsembleProvider(String connectionString)
+    {
+<<<<<<< MINE
+        this(connectionString, true);
+=======
+        Preconditions.checkArgument(!Strings.isNullOrEmpty(connectionString),
+            "connectionString cannot be null or empty");
+        this.connectionString = connectionString;
+>>>>>>> YOURS
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_left_c52dbad\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_base_5f6687a\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_right_8bef6af\ambry-network\src\main\java\com.github.ambry.network\Selector.java
+CONCLUSAO: FP. MUDANÇAS EQUIVALENTES. UM APAGOU E O OUTRO COMENTOU
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        // register all per-node metrics at once
+        //metrics.initializeSelectorNodeMetricIfRequired(transmissions.remoteHostName, transmissions.remotePort);
+||||||| BASE
+        // register all per-node metrics at once
+        metrics.initializeSelectorNodeMetricIfRequired(transmissions.remoteHostName, transmissions.remotePort);
+=======
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Override
+  public void poll(long timeoutMs, List<NetworkSend> sends)
+      throws IOException {
+    clear();
+
+    // register for write interest on any new sends
+    if (sends != null) {
+      for (NetworkSend networkSend : sends) {
+        send(networkSend);
+      }
+    }
+
+    // check ready keys
+    long startSelect = time.milliseconds();
+    int readyKeys = select(timeoutMs);
+    long endSelect = time.milliseconds();
+    this.metrics.selectorSelectTime.update(endSelect - startSelect);
+    this.metrics.selectorSelectRate.inc();
+
+    if (readyKeys > 0) {
+      Set<SelectionKey> keys = nioSelector.selectedKeys();
+      Iterator<SelectionKey> iter = keys.iterator();
+      while (iter.hasNext()) {
+        SelectionKey key = iter.next();
+        iter.remove();
+
+        Transmissions transmissions = transmissions(key);
+<<<<<<< MINE
+        // register all per-node metrics at once
+        //metrics.initializeSelectorNodeMetricIfRequired(transmissions.remoteHostName, transmissions.remotePort);
+=======
+>>>>>>> YOURS
+        try {
+          if (key.isConnectable()) {
+            handleConnect(key, transmissions);
+          } else if (key.isReadable()) {
+            read(key, transmissions);
+          } else if (key.isWritable()) {
+            write(key, transmissions);
+          } else if (!key.isValid()) {
+            close(key);
+          } else {
+            throw new IllegalStateException("Unrecognized key state for processor thread.");
+          }
+        } catch (IOException e) {
+          String socketDescription = socketDescription(channel(key));
+          if (e instanceof EOFException || e instanceof ConnectException) {
+            metrics.selectorDisconnectedErrorCount.inc();
+            logger.error("Connection {} disconnected", socketDescription, e);
+          } else {
+            metrics.selectorIOErrorCount.inc();
+            logger.warn("Error in I/O with connection to {}", socketDescription, e);
+          }
+          close(key);
+        } catch (Exception e) {
+          metrics.selectorKeyOperationErrorCount.inc();
+          logger.error("closing key on exception remote host {}", channel(key).socket().getRemoteSocketAddress(), e);
+          close(key);
+        }
+      }
+      this.metrics.selectorIORate.inc();
+    }
+    long endIo = time.milliseconds();
+    this.metrics.selectorIOTime.update(endIo - endSelect);
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_left_c52dbad\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_base_5f6687a\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_right_8bef6af\ambry-network\src\main\java\com.github.ambry.network\Selector.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+    //this.metrics.initializeSelectorNodeMetricIfRequired(transmissions.remoteHostName, transmissions.remotePort);
+||||||| BASE
+    this.metrics.initializeSelectorNodeMetricIfRequired(transmissions.remoteHostName, transmissions.remotePort);
+=======
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+private void handleConnect(SelectionKey key, Transmissions transmissions)
+      throws IOException {
+    SocketChannel socketChannel = channel(key);
+    socketChannel.finishConnect();
+    key.interestOps(key.interestOps() & ~SelectionKey.OP_CONNECT | SelectionKey.OP_READ);
+    this.connected.add(transmissions.getConnectionId());
+    this.metrics.selectorConnectionCreated.inc();
+<<<<<<< MINE
+    //this.metrics.initializeSelectorNodeMetricIfRequired(transmissions.remoteHostName, transmissions.remotePort);
+=======
+>>>>>>> YOURS
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_left_c52dbad\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_base_5f6687a\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_right_8bef6af\ambry-network\src\main\java\com.github.ambry.network\Selector.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        //metrics.updateNodeReceiveMetric(transmissions.remoteHostName, transmissions.remotePort,
+        //    transmissions.receive.getReceivedBytes().getPayload().limit(),
+        //    time.milliseconds() - transmissions.receive.getReceiveStartTimeInMs());
+||||||| BASE
+        metrics.updateNodeReceiveMetric(transmissions.remoteHostName, transmissions.remotePort,
+            transmissions.receive.getReceivedBytes().getPayload().limit(),
+            time.milliseconds() - transmissions.receive.getReceiveStartTimeInMs());
+=======
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+private void read(SelectionKey key, Transmissions transmissions)
+      throws IOException {
+    long startTimeToReadInMs = time.milliseconds();
+    try {
+      if (!transmissions.hasReceive()) {
+        transmissions.receive =
+            new NetworkReceive(transmissions.getConnectionId(), new BoundedByteBufferReceive(), time);
+      }
+
+      SocketChannel socketChannel = channel(key);
+      long bytesRead = transmissions.receive.getReceivedBytes().readFrom(socketChannel);
+      if (bytesRead == -1) {
+        close(key);
+        return;
+      }
+      metrics.selectorBytesReceived.update(bytesRead);
+      metrics.selectorBytesReceivedCount.inc(bytesRead);
+
+      if (transmissions.receive.getReceivedBytes().isReadComplete()) {
+        this.completedReceives.add(transmissions.receive);
+<<<<<<< MINE
+        //metrics.updateNodeReceiveMetric(transmissions.remoteHostName, transmissions.remotePort,
+        //    transmissions.receive.getReceivedBytes().getPayload().limit(),
+        //    time.milliseconds() - transmissions.receive.getReceiveStartTimeInMs());
+=======
+>>>>>>> YOURS
+        transmissions.clearReceive();
+      }
+    } finally {
+      long readTime = time.milliseconds() - startTimeToReadInMs;
+      logger.trace("SocketServer time spent on read per key {} = {}", transmissions.connectionId, readTime);
+    }
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_left_c52dbad\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_base_5f6687a\ambry-network\src\main\java\com.github.ambry.network\Selector.java,C:\Users\user\Desktop\gjcc\amostra\projects\ambry\revisions\rev_c52dbad_8bef6af\rev_right_8bef6af\ambry-network\src\main\java\com.github.ambry.network\Selector.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        //metrics.updateNodeSendMetric(transmissions.remoteHostName, transmissions.remotePort, send.sizeInBytes(),
+        //    time.milliseconds() - networkSend.getSendStartTimeInMs());
+||||||| BASE
+        metrics.updateNodeSendMetric(transmissions.remoteHostName, transmissions.remotePort, send.sizeInBytes(),
+            time.milliseconds() - networkSend.getSendStartTimeInMs());
+=======
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+private void write(SelectionKey key, Transmissions transmissions)
+      throws IOException {
+    long startTimeToWriteInMs = time.milliseconds();
+    try {
+      SocketChannel socketChannel = channel(key);
+      NetworkSend networkSend = transmissions.send;
+      Send send = networkSend.getPayload();
+      if (send == null) {
+        throw new IllegalStateException("Registered for write interest but no response attached to key.");
+      }
+      send.writeTo(socketChannel);
+      logger.trace("Bytes written to {} using key {}", socketChannel.socket().getRemoteSocketAddress(),
+          transmissions.connectionId);
+
+      if (send.isSendComplete()) {
+        logger.trace("Finished writing, registering for read on connection {}",
+            socketChannel.socket().getRemoteSocketAddress());
+        networkSend.onSendComplete();
+        this.completedSends.add(networkSend);
+        metrics.sendInFlight.dec();
+<<<<<<< MINE
+        //metrics.updateNodeSendMetric(transmissions.remoteHostName, transmissions.remotePort, send.sizeInBytes(),
+        //    time.milliseconds() - networkSend.getSendStartTimeInMs());
+=======
+>>>>>>> YOURS
+        transmissions.clearSend();
+        key.interestOps(key.interestOps() & ~SelectionKey.OP_WRITE | SelectionKey.OP_READ);
+      }
+    } finally {
+      long writeTime = time.milliseconds() - startTimeToWriteInMs;
+      logger.trace("SocketServer time spent on write per key {} = {}", transmissions.connectionId, writeTime);
+    }
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\omid\revisions\rev_d4aa650_fe8d343\rev_left_d4aa650\src\main\java\com\yahoo\omid\examples\notifications\ClientNotificationAppExample.java,C:\Users\user\Desktop\gjcc\amostra\projects\omid\revisions\rev_d4aa650_fe8d343\rev_base_7515683\src\main\java\com\yahoo\omid\examples\notifications\ClientNotificationAppExample.java,C:\Users\user\Desktop\gjcc\amostra\projects\omid\revisions\rev_d4aa650_fe8d343\rev_right_fe8d343\src\main\java\com\yahoo\omid\examples\notifications\ClientNotificationAppExample.java
+CONCLUSAO. FP SE FOR REFATORAMENTO. TP SE FOREM MUDANÇAS DISTINTAS
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+||||||| BASE
+        final ObserverRegistrationService registrationService = new ObserverRegistrationService("ExampleApp");
+=======
+        final OmidDelta registrationService = new OmidDelta("ExampleApp");
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@SuppressWarnings("static-access")
+    public static void main(String[] args) throws Exception {
+<<<<<<< MINE
+=======
+        final OmidDelta registrationService = new OmidDelta("ExampleApp");
+>>>>>>> YOURS
+
+        CommandLineParser cmdLineParser = new ExtendedPosixParser(true);
+
+        Options options = new Options();
+        options.addOption(OptionBuilder.withLongOpt("txs").withDescription("Number of transactions to execute")
+                .withType(Number.class).hasArg().withArgName("argname").create());
+        options.addOption(OptionBuilder.withLongOpt("rows-per-tx")
+                .withDescription("Number of rows that each transaction inserts").withType(Number.class).hasArg()
+                .withArgName("argname").create());
+
+        int txsToExecute = 1; // Default value
+        int rowsPerTx = 1; // Default value
+        
+        try {
+            CommandLine cmdLine = cmdLineParser.parse(options, args);
+
+
+            if (cmdLine.hasOption("txs")) {
+                txsToExecute = ((Number) cmdLine.getParsedOptionValue("txs")).intValue();
+            }
+
+
+            if (cmdLine.hasOption("rows-per-tx")) {
+                rowsPerTx = ((Number) cmdLine.getParsedOptionValue("rows-per-tx")).intValue();
+            }
+
+            cdl = new CountDownLatch(txsToExecute * rowsPerTx * 2);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+<<<<<<< MINE
+=======
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                try {
+                    registrationService.close();
+                    logger.info("ooo Omid ooo - Omid's Notification Example App Stopped (CTRL+C) - ooo Omid ooo");
+                } catch (IOException e) {
+                    // Ignore
+                }
+            }
+        });
+
+>>>>>>> YOURS
+        // TSO Client setup
+        Configuration tsoClientHbaseConf = HBaseConfiguration.create();
+        tsoClientHbaseConf.set("tso.host", "localhost");
+        tsoClientHbaseConf.setInt("tso.port", 1234);
+
+        logger.info("ooo Omid ooo - STARTING OMID'S EXAMPLE NOTIFICATION APP. - ooo Omid ooo");
+
+        logger.info("ooo Omid ooo -" + " A table called " + Constants.TABLE_1 + " with a column Family "
+                + Constants.COLUMN_FAMILY_1 + " has been already created by the Omid Infrastructure "
+                + "- ooo Omid ooo");
+<<<<<<< MINE
+
+        Observer obs1 = new Observer() {
+=======
+>>>>>>> YOURS
+
+            Interest interestObs1 = new Interest(Constants.TABLE_1, Constants.COLUMN_FAMILY_1, Constants.COLUMN_1);
+
+            public void onColumnChanged(byte[] column, byte[] columnFamily, byte[] table, byte[] rowKey, TransactionState tx) {
+                logger.info("ooo Omid ooo -"
+                + "I'M OBSERVER o1."
+                + " An update has occurred on Table: "
+                + Bytes.toString(table)
+                + " RowKey: "
+                + Bytes.toString(rowKey)
+                + " ColumnFamily: "
+                + Bytes.toString(columnFamily)
+                + " Column: "
+                + Bytes.toString(column)
+                + " !!! - ooo Omid ooo");
+                logger.info("ooo Omid ooo - OBSERVER o1 INSERTING A NEW ROW ON COLUMN "
+                + Constants.COLUMN_2 + " UNDER TRANSACTIONAL CONTEXT " + tx +
+                " - ooo Omid ooo");
+               Configuration tsoClientConf = HBaseConfiguration.create();
+               tsoClientConf.set("tso.host", "localhost");
+               tsoClientConf.setInt("tso.port", 1234);
+
+               try {
+                   TransactionalTable tt = new TransactionalTable(tsoClientConf, Constants.TABLE_1);
+                   doTransactionalPut(tx, tt, rowKey, Bytes.toBytes(Constants.COLUMN_FAMILY_1),
+                           Bytes.toBytes(Constants.COLUMN_2), Bytes.toBytes("Data written by OBSERVER o1"));
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+               cdl.countDown();
+           }
+
+            @Override
+            public String getName() {
+                return "o1";
+            }
+
+            @Override
+            public List<Interest> getInterests() {
+                return Collections.singletonList(interestObs1);
+            }
+        };
+
+        Observer obs2 = new Observer() {
+
+            Interest interestObs2 = new Interest(Constants.TABLE_1, Constants.COLUMN_FAMILY_1, Constants.COLUMN_2);
+            
+            public void onColumnChanged(byte[] column, byte[] columnFamily, byte[] table, byte[] rowKey, TransactionState tx) {
+                logger.info("ooo Omid ooo - "
+                + "I'M OBSERVER o2."
+                + " An update has occurred on Table: "
+                + Bytes.toString(table)
+                + " RowKey: "
+                + Bytes.toString(rowKey)
+                + " ColumnFamily: "
+                + Bytes.toString(columnFamily)
+                + " Column: "
+                + Bytes.toString(column)
+                + " !!! I'M NOT GONNA DO ANYTHING ELSE - ooo Omid ooo");
+                cdl.countDown();
+           }
+
+            @Override
+            public String getName() {
+                return "o2";
+            }
+
+            @Override
+            public List<Interest> getInterests() {
+                return Collections.singletonList(interestObs2);
+            }
+        };
+
+        // Create application
+        final IncrementalApplication app = new DeltaOmid.AppBuilder("ExampleApp")
+                                                    .addObserver(obs1)
+                                                    .addObserver(obs2)
+                                                    .build();
+        
+        
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                try {
+                    app.close();
+                    logger.info("ooo Omid ooo - Omid's Notification Example App Stopped (CTRL+C) - ooo Omid ooo");
+                } catch (IOException e) {
+                    // Ignore
+                }
+            }
+        });
+
+        logger.info("ooo Omid ooo - WAITING 5 SECONDS TO ALLOW OBSERVER REGISTRATION - ooo Omid ooo");
+        Thread.currentThread().sleep(5000);
+
+        TransactionManager tm = new TransactionManager(tsoClientHbaseConf);
+        TransactionalTable tt = new TransactionalTable(tsoClientHbaseConf, Constants.TABLE_1);
+
+        logger.info("ooo Omid ooo - STARTING " + txsToExecute + " TRIGGER TXS INSERTING " + rowsPerTx
+                + " ROWS EACH IN COLUMN " + Constants.COLUMN_1 + " - ooo Omid ooo");
+        for (int i = 0; i < txsToExecute; i++) {
+            // Transaction adding to rows to a table
+            TransactionState tx = tm.beginTransaction();
+
+            for (int j = 0; j < rowsPerTx; j++) {
+                Put row = new Put(Bytes.toBytes("row-" + Integer.toString(i + (j * 10000))));
+                row.add(Bytes.toBytes(Constants.COLUMN_FAMILY_1), Bytes.toBytes(Constants.COLUMN_1),
+                        Bytes.toBytes("testWrite-" + Integer.toString(i + (j * 10000))));
+                tt.put(tx, row);
+            }
+
+            tm.tryCommit(tx);
+        }
+        logger.info("ooo Omid ooo - TRIGGER TXS COMMITTED - ooo Omid ooo");
+        tt.close();
+
+        logger.info("ooo Omid ooo - WAITING TO ALLOW THE 2 OBSERVERS RECEIVING ALL THE NOTIFICATIONS - ooo Omid ooo");
+        cdl.await();
+        logger.info("ooo Omid ooo - OBSERVERS HAVE RECEIVED ALL THE NOTIFICATIONS WAITING 30 SECONDS TO ALLOW FINISHING CLEARING STUFF - ooo Omid ooo");        
+        Thread.currentThread().sleep(30000);
+        app.close();
+        Thread.currentThread().sleep(10000);
+<<<<<<< MINE
+=======
+        registrationService.close();
+>>>>>>> YOURS
+
+        logger.info("ooo Omid ooo - OMID'S NOTIFICATION APP FINISHED - ooo Omid ooo");
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\omid\revisions\rev_d4aa650_fe8d343\rev_left_d4aa650\src\main\java\com\yahoo\omid\examples\notifications\ClientNotificationAppExample.java,C:\Users\user\Desktop\gjcc\amostra\projects\omid\revisions\rev_d4aa650_fe8d343\rev_base_7515683\src\main\java\com\yahoo\omid\examples\notifications\ClientNotificationAppExample.java,C:\Users\user\Desktop\gjcc\amostra\projects\omid\revisions\rev_d4aa650_fe8d343\rev_right_fe8d343\src\main\java\com\yahoo\omid\examples\notifications\ClientNotificationAppExample.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+||||||| BASE
+        registrationService.stopAndWait();
+=======
+        registrationService.close();
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@SuppressWarnings("static-access")
+    public static void main(String[] args) throws Exception {
+<<<<<<< MINE
+=======
+        final OmidDelta registrationService = new OmidDelta("ExampleApp");
+>>>>>>> YOURS
+
+        CommandLineParser cmdLineParser = new ExtendedPosixParser(true);
+
+        Options options = new Options();
+        options.addOption(OptionBuilder.withLongOpt("txs").withDescription("Number of transactions to execute")
+                .withType(Number.class).hasArg().withArgName("argname").create());
+        options.addOption(OptionBuilder.withLongOpt("rows-per-tx")
+                .withDescription("Number of rows that each transaction inserts").withType(Number.class).hasArg()
+                .withArgName("argname").create());
+
+        int txsToExecute = 1; // Default value
+        int rowsPerTx = 1; // Default value
+        
+        try {
+            CommandLine cmdLine = cmdLineParser.parse(options, args);
+
+
+            if (cmdLine.hasOption("txs")) {
+                txsToExecute = ((Number) cmdLine.getParsedOptionValue("txs")).intValue();
+            }
+
+
+            if (cmdLine.hasOption("rows-per-tx")) {
+                rowsPerTx = ((Number) cmdLine.getParsedOptionValue("rows-per-tx")).intValue();
+            }
+
+            cdl = new CountDownLatch(txsToExecute * rowsPerTx * 2);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+<<<<<<< MINE
+=======
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                try {
+                    registrationService.close();
+                    logger.info("ooo Omid ooo - Omid's Notification Example App Stopped (CTRL+C) - ooo Omid ooo");
+                } catch (IOException e) {
+                    // Ignore
+                }
+            }
+        });
+
+>>>>>>> YOURS
+        // TSO Client setup
+        Configuration tsoClientHbaseConf = HBaseConfiguration.create();
+        tsoClientHbaseConf.set("tso.host", "localhost");
+        tsoClientHbaseConf.setInt("tso.port", 1234);
+
+        logger.info("ooo Omid ooo - STARTING OMID'S EXAMPLE NOTIFICATION APP. - ooo Omid ooo");
+
+        logger.info("ooo Omid ooo -" + " A table called " + Constants.TABLE_1 + " with a column Family "
+                + Constants.COLUMN_FAMILY_1 + " has been already created by the Omid Infrastructure "
+                + "- ooo Omid ooo");
+<<<<<<< MINE
+
+        Observer obs1 = new Observer() {
+=======
+>>>>>>> YOURS
+
+            Interest interestObs1 = new Interest(Constants.TABLE_1, Constants.COLUMN_FAMILY_1, Constants.COLUMN_1);
+
+            public void onColumnChanged(byte[] column, byte[] columnFamily, byte[] table, byte[] rowKey, TransactionState tx) {
+                logger.info("ooo Omid ooo -"
+                + "I'M OBSERVER o1."
+                + " An update has occurred on Table: "
+                + Bytes.toString(table)
+                + " RowKey: "
+                + Bytes.toString(rowKey)
+                + " ColumnFamily: "
+                + Bytes.toString(columnFamily)
+                + " Column: "
+                + Bytes.toString(column)
+                + " !!! - ooo Omid ooo");
+                logger.info("ooo Omid ooo - OBSERVER o1 INSERTING A NEW ROW ON COLUMN "
+                + Constants.COLUMN_2 + " UNDER TRANSACTIONAL CONTEXT " + tx +
+                " - ooo Omid ooo");
+               Configuration tsoClientConf = HBaseConfiguration.create();
+               tsoClientConf.set("tso.host", "localhost");
+               tsoClientConf.setInt("tso.port", 1234);
+
+               try {
+                   TransactionalTable tt = new TransactionalTable(tsoClientConf, Constants.TABLE_1);
+                   doTransactionalPut(tx, tt, rowKey, Bytes.toBytes(Constants.COLUMN_FAMILY_1),
+                           Bytes.toBytes(Constants.COLUMN_2), Bytes.toBytes("Data written by OBSERVER o1"));
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+               cdl.countDown();
+           }
+
+            @Override
+            public String getName() {
+                return "o1";
+            }
+
+            @Override
+            public List<Interest> getInterests() {
+                return Collections.singletonList(interestObs1);
+            }
+        };
+
+        Observer obs2 = new Observer() {
+
+            Interest interestObs2 = new Interest(Constants.TABLE_1, Constants.COLUMN_FAMILY_1, Constants.COLUMN_2);
+            
+            public void onColumnChanged(byte[] column, byte[] columnFamily, byte[] table, byte[] rowKey, TransactionState tx) {
+                logger.info("ooo Omid ooo - "
+                + "I'M OBSERVER o2."
+                + " An update has occurred on Table: "
+                + Bytes.toString(table)
+                + " RowKey: "
+                + Bytes.toString(rowKey)
+                + " ColumnFamily: "
+                + Bytes.toString(columnFamily)
+                + " Column: "
+                + Bytes.toString(column)
+                + " !!! I'M NOT GONNA DO ANYTHING ELSE - ooo Omid ooo");
+                cdl.countDown();
+           }
+
+            @Override
+            public String getName() {
+                return "o2";
+            }
+
+            @Override
+            public List<Interest> getInterests() {
+                return Collections.singletonList(interestObs2);
+            }
+        };
+
+        // Create application
+        final IncrementalApplication app = new DeltaOmid.AppBuilder("ExampleApp")
+                                                    .addObserver(obs1)
+                                                    .addObserver(obs2)
+                                                    .build();
+        
+        
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                try {
+                    app.close();
+                    logger.info("ooo Omid ooo - Omid's Notification Example App Stopped (CTRL+C) - ooo Omid ooo");
+                } catch (IOException e) {
+                    // Ignore
+                }
+            }
+        });
+
+        logger.info("ooo Omid ooo - WAITING 5 SECONDS TO ALLOW OBSERVER REGISTRATION - ooo Omid ooo");
+        Thread.currentThread().sleep(5000);
+
+        TransactionManager tm = new TransactionManager(tsoClientHbaseConf);
+        TransactionalTable tt = new TransactionalTable(tsoClientHbaseConf, Constants.TABLE_1);
+
+        logger.info("ooo Omid ooo - STARTING " + txsToExecute + " TRIGGER TXS INSERTING " + rowsPerTx
+                + " ROWS EACH IN COLUMN " + Constants.COLUMN_1 + " - ooo Omid ooo");
+        for (int i = 0; i < txsToExecute; i++) {
+            // Transaction adding to rows to a table
+            TransactionState tx = tm.beginTransaction();
+
+            for (int j = 0; j < rowsPerTx; j++) {
+                Put row = new Put(Bytes.toBytes("row-" + Integer.toString(i + (j * 10000))));
+                row.add(Bytes.toBytes(Constants.COLUMN_FAMILY_1), Bytes.toBytes(Constants.COLUMN_1),
+                        Bytes.toBytes("testWrite-" + Integer.toString(i + (j * 10000))));
+                tt.put(tx, row);
+            }
+
+            tm.tryCommit(tx);
+        }
+        logger.info("ooo Omid ooo - TRIGGER TXS COMMITTED - ooo Omid ooo");
+        tt.close();
+
+        logger.info("ooo Omid ooo - WAITING TO ALLOW THE 2 OBSERVERS RECEIVING ALL THE NOTIFICATIONS - ooo Omid ooo");
+        cdl.await();
+        logger.info("ooo Omid ooo - OBSERVERS HAVE RECEIVED ALL THE NOTIFICATIONS WAITING 30 SECONDS TO ALLOW FINISHING CLEARING STUFF - ooo Omid ooo");        
+        Thread.currentThread().sleep(30000);
+        app.close();
+        Thread.currentThread().sleep(10000);
+<<<<<<< MINE
+=======
+        registrationService.close();
+>>>>>>> YOURS
+
+        logger.info("ooo Omid ooo - OMID'S NOTIFICATION APP FINISHED - ooo Omid ooo");
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_6520395_119e9ba\rev_left_6520395\core\src\main\java\org\elasticsearch\discovery\zen\ping\ZenPingService.java,C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_6520395_119e9ba\rev_base_32a0973\core\src\main\java\org\elasticsearch\discovery\zen\ping\ZenPingService.java,C:\Users\user\Desktop\gjcc\amostra\projects\elasticsearch\revisions\rev_6520395_119e9ba\rev_right_119e9ba\core\src\main\java\org\elasticsearch\discovery\zen\ping\ZenPingService.java
+CONCLUSAO. TP PODE SER. UM FEZ MAIS COISAS QUE O OUTRO
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+public List<? extends ZenPing> zenPings() {
+||||||| BASE
+public ImmutableList<? extends ZenPing> zenPings() {
+=======
+public List<ZenPing> zenPings() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+<<<<<<< MINE
+public List<? extends ZenPing> zenPings() {
+=======
+public List<ZenPing> zenPings() {
+>>>>>>> YOURS
+        return this.zenPings;
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_c9f3cd0_3c172b6\rev_left_c9f3cd0\src\org\nutz\mapl\impl\convert\ObjConvertImpl.java,C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_c9f3cd0_3c172b6\rev_base_35ed83e\src\org\nutz\mapl\impl\convert\ObjConvertImpl.java,C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_c9f3cd0_3c172b6\rev_right_3c172b6\src\org\nutz\mapl\impl\convert\ObjConvertImpl.java
+TYPE
+CONCLUSAO: FP. REFATORAMENTO.
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+
+            Object val = map.get(jef.getName());
+            if (val == null) {
+                continue;
+            }
+
+            Type jefType = ReflectTool.getInheritGenericType(obj.getClass(), jef.getGenericType());
+
+||||||| BASE
+
+            Object val = map.get(jef.getName());
+            if (val == null) {
+                continue;
+            }
+
+=======
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@SuppressWarnings("unchecked")
+    private Object injectObj(Object model, Mirror<?> mirror) {
+        // zzh: ??? Object?????????
+        if (mirror.getType() == Object.class)
+            return model;
+        Object obj = mirror.born();
+        context.set(fetchPath(), obj);
+        Map<String, ?> map = (Map<String, ?>) model;
+
+        JsonEntity jen = Json.getEntity(mirror);
+        for (Entry<String, ?> en : map.entrySet()) {
+            Object val = en.getValue();
+            if (val == null)
+                continue;
+            String key = en.getKey();
+            JsonEntityField jef = jen.getField(key);
+            if (jef == null) {
+                continue;
+            }
+<<<<<<< MINE
+
+            Object val = map.get(jef.getName());
+            if (val == null) {
+                continue;
+            }
+
+            Type jefType = ReflectTool.getInheritGenericType(obj.getClass(), jef.getGenericType());
+
+=======
+>>>>>>> YOURS
+            if (isLeaf(val)) {
+                if (val instanceof El) {
+                    val = ((El) val).eval(context);
+                }
+<<<<<<< MINE
+                // zzh@2012-09-14: ???? createBy ?
+                // jef.setValue(obj, Castors.me().castTo(jef.createValue(obj,
+                // val, null), Lang.getTypeClass(jef.getGenericType())));
+                // jef.setValue(obj, jef.createValue(obj, val, null));
+                jef.setValue(obj, Mapl.maplistToObj(val, jefType));
+=======
+                jef.setValue(obj, Mapl.maplistToObj(val, jef.getGenericType()));
+>>>>>>> YOURS
+                continue;
+            } else {
+                path.push(key);
+<<<<<<< MINE
+                // jef.setValue(obj, Mapl.maplistToObj(val,
+                // me.getGenericsType(0)));
+                jef.setValue(obj, Mapl.maplistToObj(val, jefType));
+                // zzh@2012-09-14: ???? createBy ?
+                // jef.setValue(obj, jef.createValue(obj, val,
+                // me.getGenericsType(0)));
+=======
+                jef.setValue(obj, Mapl.maplistToObj(val, jef.getGenericType()));
+>>>>>>> YOURS
+            }
+        }
+        return obj;
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_left_6a995e3\driver\src\test\org\mongodb\GetLastErrorTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_base_94d5650\driver\src\test\org\mongodb\GetLastErrorTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_right_ff5bd7f\driver\src\test\org\mongodb\GetLastErrorTest.java
+CONLUSAO: FP. MUDANÇAS COMPLEMENTARES (REFATORAMENTO?). DISCUTIR
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        collection.insert(doc);
+||||||| BASE
+        collection.insert(new MongoInsert<Document>(doc));
+=======
+        getCollection().insert(new MongoInsert<Document>(doc));
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Test
+    public void testDuplicateKeyException() {
+        Document doc = new Document("_id", 1);
+<<<<<<< MINE
+        collection.insert(doc);
+=======
+        getCollection().insert(new MongoInsert<Document>(doc));
+>>>>>>> YOURS
+        try {
+<<<<<<< MINE
+            collection.insert(doc);
+            fail("should throw exception");
+=======
+            getCollection().insert(new MongoInsert<Document>(doc));
+            fail("Should throw MongoDuplicateKeyException");
+>>>>>>> YOURS
+        } catch (MongoDuplicateKeyException e) {
+            assertThat(e.getCommandResult().getErrorCode(), is(11000));
+        }
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_left_6a995e3\driver\src\test\org\mongodb\GetLastErrorTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_base_94d5650\driver\src\test\org\mongodb\GetLastErrorTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_right_ff5bd7f\driver\src\test\org\mongodb\GetLastErrorTest.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+            collection.insert(doc);
+            fail("should throw exception");
+||||||| BASE
+            collection.insert(new MongoInsert<Document>(doc));
+            fail("should throw exception");
+=======
+            getCollection().insert(new MongoInsert<Document>(doc));
+            fail("Should throw MongoDuplicateKeyException");
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Test
+    public void testDuplicateKeyException() {
+        Document doc = new Document("_id", 1);
+<<<<<<< MINE
+        collection.insert(doc);
+=======
+        getCollection().insert(new MongoInsert<Document>(doc));
+>>>>>>> YOURS
+        try {
+<<<<<<< MINE
+            collection.insert(doc);
+            fail("should throw exception");
+=======
+            getCollection().insert(new MongoInsert<Document>(doc));
+            fail("Should throw MongoDuplicateKeyException");
+>>>>>>> YOURS
+        } catch (MongoDuplicateKeyException e) {
+            assertThat(e.getCommandResult().getErrorCode(), is(11000));
+        }
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_left_6a995e3\driver\src\test\org\mongodb\MongoFindTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_base_94d5650\driver\src\test\org\mongodb\MongoFindTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_right_ff5bd7f\driver\src\test\org\mongodb\MongoFindTest.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        collection.insert(new Document("loc", new double[] {0, 0}));
+||||||| BASE
+        collection.insert(new MongoInsert<Document>(new Document("loc", new double[] {0, 0})));
+=======
+        MongoCollection<Document> collection = getCollection();
+        collection.insert(new MongoInsert<Document>(new Document("loc", new double[]{0, 0})));
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Test
+    public void shouldThrowQueryFailureException() {
+<<<<<<< MINE
+        collection.insert(new Document("loc", new double[] {0, 0}));
+=======
+        MongoCollection<Document> collection = getCollection();
+        collection.insert(new MongoInsert<Document>(new Document("loc", new double[]{0, 0})));
+>>>>>>> YOURS
+        try {
+<<<<<<< MINE
+            collection.filter(new QueryFilterDocument("loc", new Document("$near", new double[] {0, 0}))).one();
+=======
+            collection.findOne(new MongoFind(new QueryFilterDocument("loc", new Document("$near", new double[]{0,
+                    0}))));
+>>>>>>> YOURS
+            fail("Should be a query failure since there is no 2d index");
+        } catch (MongoQueryFailureException e) {
+            assertEquals(13038, e.getErrorCode());
+        }
+    }
+----------------------------
+JDIME_DECL
+  @Test public void shouldThrowQueryFailureException() {
+    MongoCollection<Document> collection = getCollection();
+    collection.insert(new Document("loc", new double[]{ 0, 0 } ));
+    try {
+      
+<<<<<<< C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_left_6a995e3\driver\src\test\org\mongodb\MongoFindTest.java
+collection.filter(new QueryFilterDocument("loc", new Document("$near", new double[]{ 0, 0 } ))).one()
+=======
+collection.findOne(new MongoFind(new QueryFilterDocument("loc", new Document("$near", new double[]{ 0, 0 } ))))
+>>>>>>> C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_right_ff5bd7f\driver\src\test\org\mongodb\MongoFindTest.java
+;
+      fail("Should be a query failure since there is no 2d index");
+    }
+  }
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_left_6a995e3\driver\src\test\org\mongodb\MongoSaveTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_base_94d5650\driver\src\test\org\mongodb\MongoSaveTest.java,C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_right_ff5bd7f\driver\src\test\org\mongodb\MongoSaveTest.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        collection.save(document);
+||||||| BASE
+        collection.save(new MongoSave<Document>(document));
+=======
+        getCollection().save(new MongoSave<Document>(document));
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@Test
+    public void shouldReplaceIfPresent() {
+        Document document = new Document();
+<<<<<<< MINE
+        collection.save(document);
+=======
+        getCollection().save(new MongoSave<Document>(document));
+>>>>>>> YOURS
+
+        document.put("x", 1);
+<<<<<<< MINE
+        collection.save(document);
+        assertThat("Did not replace the document", collection.one(), is(document));
+=======
+        getCollection().save(new MongoSave<Document>(document));
+        assertThat("Did not replace the document", getCollection().findOne(new MongoFind()), is(document));
+>>>>>>> YOURS
+    }
+----------------------------
+JDIME_DECL
+  @Test public void shouldReplaceIfPresent() {
+    Document document = new Document();
+    getCollection().save(document);
+    document.put("x", 1);
+    getCollection().save(document);
+    assertThat("Did not replace the document", 
+<<<<<<< C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_left_6a995e3\driver\src\test\org\mongodb\MongoSaveTest.java
+collection.one()
+=======
+getCollection().findOne(new MongoFind())
+>>>>>>> C:\Users\user\Desktop\gjcc\amostra\projects\mongo-java-driver\revisions\rev_6a995e3_ff5bd7f\rev_right_ff5bd7f\driver\src\test\org\mongodb\MongoSaveTest.java
+, is(document));
+  }
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_ec13a42_efbb281\rev_left_ec13a42\blueprints-core\src\main\java\com\tinkerpop\blueprints\util\wrappers\event\EventGraph.java,C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_ec13a42_efbb281\rev_base_1978017\blueprints-core\src\main\java\com\tinkerpop\blueprints\util\wrappers\event\EventGraph.java,C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_ec13a42_efbb281\rev_right_efbb281\blueprints-core\src\main\java\com\tinkerpop\blueprints\util\wrappers\event\EventGraph.java
+CONCLUSAO: FP. MUDANÇAS COMPLEMENTARES
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+        final Map<String, Object> props = ElementHelper.getProperties(vertex);
+||||||| BASE
+=======
+        Map<String, Object> props = ElementHelper.getProperties(vertex);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public void removeVertex(final Vertex vertex) {
+        Vertex vertexToRemove = vertex;
+        if (vertex instanceof EventVertex) {
+            vertexToRemove = ((EventVertex) vertex).getBaseVertex();
+        }
+
+<<<<<<< MINE
+        final Map<String, Object> props = ElementHelper.getProperties(vertex);
+=======
+        Map<String, Object> props = ElementHelper.getProperties(vertex);
+>>>>>>> YOURS
+        this.baseGraph.removeVertex(vertexToRemove);
+        this.onVertexRemoved(vertex, props);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_left_6bf0b68\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_base_c79604d\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_right_54d4f1c\app\src\processing\app\Editor.java
+CONCLUSAO: FP. REFATORAMENTO. DISCUTIR
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+      pasteItem = new JMenuItem("Paste");
+      pasteItem.addActionListener(new ActionListener() {
+||||||| BASE
+      item = new JMenuItem("Paste");
+      item.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.paste"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public TextAreaPopup() {
+<<<<<<< MINE
+      cutItem = new JMenuItem("Cut");
+=======
+      JMenuItem item;
+
+      cutItem = new JMenuItem(Language.text("menu.edit.cut"));
+>>>>>>> YOURS
+      cutItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCut();
+          }
+      });
+      this.add(cutItem);
+
+      copyItem = new JMenuItem(Language.text("menu.edit.copy"));
+      copyItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopy();
+          }
+        });
+      this.add(copyItem);
+
+      discourseItem = new JMenuItem(Language.text("menu.edit.copy_as_html"));
+      discourseItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopyAsHTML();
+          }
+        });
+      this.add(discourseItem);
+
+<<<<<<< MINE
+      pasteItem = new JMenuItem("Paste");
+      pasteItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.paste"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handlePaste();
+          }
+        });
+      this.add(pasteItem);
+
+<<<<<<< MINE
+      selectAllItem = new JMenuItem("Select All");
+      selectAllItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.select_all"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+        public void actionPerformed(ActionEvent e) {
+          handleSelectAll();
+        }
+      });
+      this.add(selectAllItem);
+
+      this.addSeparator();
+
+<<<<<<< MINE
+      commUncommItem = new JMenuItem("Comment/Uncomment");
+      commUncommItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.comment_uncomment"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleCommentUncomment();
+          }
+      });
+      this.add(commUncommItem);
+
+<<<<<<< MINE
+      incIndItem = new JMenuItem("Increase Indent");
+      incIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2192 "+Language.text("menu.edit.increase_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(true);
+          }
+      });
+      this.add(incIndItem);
+
+<<<<<<< MINE
+      decIndItem = new JMenuItem("Decrease Indent");
+      decIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2190 "+Language.text("menu.edit.decrease_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(false);
+          }
+      });
+      this.add(decIndItem);
+
+      this.addSeparator();
+
+      referenceItem = new JMenuItem(Language.text("find_in_reference"));
+      referenceItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleFindReference();
+          }
+        });
+      this.add(referenceItem);
+
+      Toolkit.setMenuMnemonics(cutItem, copyItem, discourseItem,
+        pasteItem, selectAllItem, commUncommItem, incIndItem, 
+	decIndItem, referenceItem);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_left_6bf0b68\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_base_c79604d\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_right_54d4f1c\app\src\processing\app\Editor.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+      selectAllItem = new JMenuItem("Select All");
+      selectAllItem.addActionListener(new ActionListener() {
+||||||| BASE
+      item = new JMenuItem("Select All");
+      item.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.select_all"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public TextAreaPopup() {
+<<<<<<< MINE
+      cutItem = new JMenuItem("Cut");
+=======
+      JMenuItem item;
+
+      cutItem = new JMenuItem(Language.text("menu.edit.cut"));
+>>>>>>> YOURS
+      cutItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCut();
+          }
+      });
+      this.add(cutItem);
+
+      copyItem = new JMenuItem(Language.text("menu.edit.copy"));
+      copyItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopy();
+          }
+        });
+      this.add(copyItem);
+
+      discourseItem = new JMenuItem(Language.text("menu.edit.copy_as_html"));
+      discourseItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopyAsHTML();
+          }
+        });
+      this.add(discourseItem);
+
+<<<<<<< MINE
+      pasteItem = new JMenuItem("Paste");
+      pasteItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.paste"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handlePaste();
+          }
+        });
+      this.add(pasteItem);
+
+<<<<<<< MINE
+      selectAllItem = new JMenuItem("Select All");
+      selectAllItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.select_all"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+        public void actionPerformed(ActionEvent e) {
+          handleSelectAll();
+        }
+      });
+      this.add(selectAllItem);
+
+      this.addSeparator();
+
+<<<<<<< MINE
+      commUncommItem = new JMenuItem("Comment/Uncomment");
+      commUncommItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.comment_uncomment"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleCommentUncomment();
+          }
+      });
+      this.add(commUncommItem);
+
+<<<<<<< MINE
+      incIndItem = new JMenuItem("Increase Indent");
+      incIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2192 "+Language.text("menu.edit.increase_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(true);
+          }
+      });
+      this.add(incIndItem);
+
+<<<<<<< MINE
+      decIndItem = new JMenuItem("Decrease Indent");
+      decIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2190 "+Language.text("menu.edit.decrease_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(false);
+          }
+      });
+      this.add(decIndItem);
+
+      this.addSeparator();
+
+      referenceItem = new JMenuItem(Language.text("find_in_reference"));
+      referenceItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleFindReference();
+          }
+        });
+      this.add(referenceItem);
+
+      Toolkit.setMenuMnemonics(cutItem, copyItem, discourseItem,
+        pasteItem, selectAllItem, commUncommItem, incIndItem, 
+	decIndItem, referenceItem);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_left_6bf0b68\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_base_c79604d\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_right_54d4f1c\app\src\processing\app\Editor.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+      commUncommItem = new JMenuItem("Comment/Uncomment");
+      commUncommItem.addActionListener(new ActionListener() {
+||||||| BASE
+      item = new JMenuItem("Comment/Uncomment");
+      item.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.comment_uncomment"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public TextAreaPopup() {
+<<<<<<< MINE
+      cutItem = new JMenuItem("Cut");
+=======
+      JMenuItem item;
+
+      cutItem = new JMenuItem(Language.text("menu.edit.cut"));
+>>>>>>> YOURS
+      cutItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCut();
+          }
+      });
+      this.add(cutItem);
+
+      copyItem = new JMenuItem(Language.text("menu.edit.copy"));
+      copyItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopy();
+          }
+        });
+      this.add(copyItem);
+
+      discourseItem = new JMenuItem(Language.text("menu.edit.copy_as_html"));
+      discourseItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopyAsHTML();
+          }
+        });
+      this.add(discourseItem);
+
+<<<<<<< MINE
+      pasteItem = new JMenuItem("Paste");
+      pasteItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.paste"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handlePaste();
+          }
+        });
+      this.add(pasteItem);
+
+<<<<<<< MINE
+      selectAllItem = new JMenuItem("Select All");
+      selectAllItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.select_all"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+        public void actionPerformed(ActionEvent e) {
+          handleSelectAll();
+        }
+      });
+      this.add(selectAllItem);
+
+      this.addSeparator();
+
+<<<<<<< MINE
+      commUncommItem = new JMenuItem("Comment/Uncomment");
+      commUncommItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.comment_uncomment"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleCommentUncomment();
+          }
+      });
+      this.add(commUncommItem);
+
+<<<<<<< MINE
+      incIndItem = new JMenuItem("Increase Indent");
+      incIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2192 "+Language.text("menu.edit.increase_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(true);
+          }
+      });
+      this.add(incIndItem);
+
+<<<<<<< MINE
+      decIndItem = new JMenuItem("Decrease Indent");
+      decIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2190 "+Language.text("menu.edit.decrease_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(false);
+          }
+      });
+      this.add(decIndItem);
+
+      this.addSeparator();
+
+      referenceItem = new JMenuItem(Language.text("find_in_reference"));
+      referenceItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleFindReference();
+          }
+        });
+      this.add(referenceItem);
+
+      Toolkit.setMenuMnemonics(cutItem, copyItem, discourseItem,
+        pasteItem, selectAllItem, commUncommItem, incIndItem, 
+	decIndItem, referenceItem);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_left_6bf0b68\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_base_c79604d\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_right_54d4f1c\app\src\processing\app\Editor.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+      incIndItem = new JMenuItem("Increase Indent");
+      incIndItem.addActionListener(new ActionListener() {
+||||||| BASE
+      item = new JMenuItem("Increase Indent");
+      item.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2192 "+Language.text("menu.edit.increase_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public TextAreaPopup() {
+<<<<<<< MINE
+      cutItem = new JMenuItem("Cut");
+=======
+      JMenuItem item;
+
+      cutItem = new JMenuItem(Language.text("menu.edit.cut"));
+>>>>>>> YOURS
+      cutItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCut();
+          }
+      });
+      this.add(cutItem);
+
+      copyItem = new JMenuItem(Language.text("menu.edit.copy"));
+      copyItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopy();
+          }
+        });
+      this.add(copyItem);
+
+      discourseItem = new JMenuItem(Language.text("menu.edit.copy_as_html"));
+      discourseItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopyAsHTML();
+          }
+        });
+      this.add(discourseItem);
+
+<<<<<<< MINE
+      pasteItem = new JMenuItem("Paste");
+      pasteItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.paste"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handlePaste();
+          }
+        });
+      this.add(pasteItem);
+
+<<<<<<< MINE
+      selectAllItem = new JMenuItem("Select All");
+      selectAllItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.select_all"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+        public void actionPerformed(ActionEvent e) {
+          handleSelectAll();
+        }
+      });
+      this.add(selectAllItem);
+
+      this.addSeparator();
+
+<<<<<<< MINE
+      commUncommItem = new JMenuItem("Comment/Uncomment");
+      commUncommItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.comment_uncomment"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleCommentUncomment();
+          }
+      });
+      this.add(commUncommItem);
+
+<<<<<<< MINE
+      incIndItem = new JMenuItem("Increase Indent");
+      incIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2192 "+Language.text("menu.edit.increase_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(true);
+          }
+      });
+      this.add(incIndItem);
+
+<<<<<<< MINE
+      decIndItem = new JMenuItem("Decrease Indent");
+      decIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2190 "+Language.text("menu.edit.decrease_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(false);
+          }
+      });
+      this.add(decIndItem);
+
+      this.addSeparator();
+
+      referenceItem = new JMenuItem(Language.text("find_in_reference"));
+      referenceItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleFindReference();
+          }
+        });
+      this.add(referenceItem);
+
+      Toolkit.setMenuMnemonics(cutItem, copyItem, discourseItem,
+        pasteItem, selectAllItem, commUncommItem, incIndItem, 
+	decIndItem, referenceItem);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_left_6bf0b68\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_base_c79604d\app\src\processing\app\Editor.java,C:\Users\user\Desktop\gjcc\amostra\projects\processing\revisions\rev_6bf0b68_54d4f1c\rev_right_54d4f1c\app\src\processing\app\Editor.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+      decIndItem = new JMenuItem("Decrease Indent");
+      decIndItem.addActionListener(new ActionListener() {
+||||||| BASE
+      item = new JMenuItem("Decrease Indent");
+      item.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2190 "+Language.text("menu.edit.decrease_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+public TextAreaPopup() {
+<<<<<<< MINE
+      cutItem = new JMenuItem("Cut");
+=======
+      JMenuItem item;
+
+      cutItem = new JMenuItem(Language.text("menu.edit.cut"));
+>>>>>>> YOURS
+      cutItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCut();
+          }
+      });
+      this.add(cutItem);
+
+      copyItem = new JMenuItem(Language.text("menu.edit.copy"));
+      copyItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopy();
+          }
+        });
+      this.add(copyItem);
+
+      discourseItem = new JMenuItem(Language.text("menu.edit.copy_as_html"));
+      discourseItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleCopyAsHTML();
+          }
+        });
+      this.add(discourseItem);
+
+<<<<<<< MINE
+      pasteItem = new JMenuItem("Paste");
+      pasteItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.paste"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handlePaste();
+          }
+        });
+      this.add(pasteItem);
+
+<<<<<<< MINE
+      selectAllItem = new JMenuItem("Select All");
+      selectAllItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.select_all"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+        public void actionPerformed(ActionEvent e) {
+          handleSelectAll();
+        }
+      });
+      this.add(selectAllItem);
+
+      this.addSeparator();
+
+<<<<<<< MINE
+      commUncommItem = new JMenuItem("Comment/Uncomment");
+      commUncommItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem(Language.text("menu.edit.comment_uncomment"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleCommentUncomment();
+          }
+      });
+      this.add(commUncommItem);
+
+<<<<<<< MINE
+      incIndItem = new JMenuItem("Increase Indent");
+      incIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2192 "+Language.text("menu.edit.increase_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(true);
+          }
+      });
+      this.add(incIndItem);
+
+<<<<<<< MINE
+      decIndItem = new JMenuItem("Decrease Indent");
+      decIndItem.addActionListener(new ActionListener() {
+=======
+      item = new JMenuItem("\u2190 "+Language.text("menu.edit.decrease_indent"));
+      item.addActionListener(new ActionListener() {
+>>>>>>> YOURS
+          public void actionPerformed(ActionEvent e) {
+            handleIndentOutdent(false);
+          }
+      });
+      this.add(decIndItem);
+
+      this.addSeparator();
+
+      referenceItem = new JMenuItem(Language.text("find_in_reference"));
+      referenceItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            handleFindReference();
+          }
+        });
+      this.add(referenceItem);
+
+      Toolkit.setMenuMnemonics(cutItem, copyItem, discourseItem,
+        pasteItem, selectAllItem, commUncommItem, incIndItem, 
+	decIndItem, referenceItem);
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_2d4709b_c164a97\rev_left_2d4709b\ql\src\java\org\apache\hadoop\hive\ql\plan\StatsWork.java,C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_2d4709b_c164a97\rev_base_200c631\ql\src\java\org\apache\hadoop\hive\ql\plan\StatsWork.java,C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_2d4709b_c164a97\rev_right_c164a97\ql\src\java\org\apache\hadoop\hive\ql\plan\StatsWork.java
+CONCLUSAO: FP. MUDANÇAS COMPLEMENTARES
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+public Task<?> getSourceTask() {
+||||||| BASE
+public MapRedTask getSourceTask() {
+=======
+public Task getSourceTask() {
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+<<<<<<< MINE
+public Task<?> getSourceTask() {
+=======
+public Task getSourceTask() {
+>>>>>>> YOURS
+    return sourceTask;
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_left_7ee8686\src\core\lombok\javac\handlers\HandleConstructor.java,C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_base_deed98b\src\core\lombok\javac\handlers\HandleConstructor.java,C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_right_72b55dc\src\core\lombok\javac\handlers\HandleConstructor.java
+CONCLUSAO: FP. MUDANÇAS COMPLEMENTARES
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL | Flags.PARAMETER, nonNulls.appendList(nullables)), field.name, field.vartype, null);
+||||||| BASE
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL, nonNulls.appendList(nullables)), field.name, field.vartype, null);
+=======
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL, nonNulls.appendList(nullables)), fieldName, field.vartype, null);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+static JCMethodDecl createConstructor(AccessLevel level, List<JCAnnotation> onConstructor, JavacNode typeNode, List<JavacNode> fields, boolean suppressConstructorProperties, JCTree source) {
+		JavacTreeMaker maker = typeNode.getTreeMaker();
+		
+		boolean isEnum = (((JCClassDecl) typeNode.get()).mods.flags & Flags.ENUM) != 0;
+		if (isEnum) level = AccessLevel.PRIVATE;
+		
+		ListBuffer<JCStatement> nullChecks = ListBuffer.lb();
+		ListBuffer<JCStatement> assigns = ListBuffer.lb();
+		ListBuffer<JCVariableDecl> params = ListBuffer.lb();
+		
+		for (JavacNode fieldNode : fields) {
+			JCVariableDecl field = (JCVariableDecl) fieldNode.get();
+			Name fieldName = removePrefixFromField(fieldNode);
+			Name rawName = field.name;
+			List<JCAnnotation> nonNulls = findAnnotations(fieldNode, TransformationsUtil.NON_NULL_PATTERN);
+			List<JCAnnotation> nullables = findAnnotations(fieldNode, TransformationsUtil.NULLABLE_PATTERN);
+<<<<<<< MINE
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL | Flags.PARAMETER, nonNulls.appendList(nullables)), field.name, field.vartype, null);
+=======
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL, nonNulls.appendList(nullables)), fieldName, field.vartype, null);
+>>>>>>> YOURS
+			params.append(param);
+			JCFieldAccess thisX = maker.Select(maker.Ident(fieldNode.toName("this")), rawName);
+			JCAssign assign = maker.Assign(thisX, maker.Ident(fieldName));
+			assigns.append(maker.Exec(assign));
+			
+			if (!nonNulls.isEmpty()) {
+				JCStatement nullCheck = generateNullCheck(maker, fieldNode);
+				if (nullCheck != null) nullChecks.append(nullCheck);
+			}
+		}
+		
+		JCModifiers mods = maker.Modifiers(toJavacModifier(level), List.<JCAnnotation>nil());
+		if (!suppressConstructorProperties && level != AccessLevel.PRIVATE && !isLocalType(typeNode)) {
+			addConstructorProperties(mods, typeNode, fields);
+		}
+		if (onConstructor != null) mods.annotations = mods.annotations.appendList(copyAnnotations(onConstructor));
+		
+		return recursiveSetGeneratedBy(maker.MethodDef(mods, typeNode.toName("<init>"),
+				null, List.<JCTypeParameter>nil(), params.toList(), List.<JCExpression>nil(), maker.Block(0L, nullChecks.appendList(assigns).toList()), null), source);
+	}
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_left_7ee8686\src\core\lombok\javac\handlers\HandleConstructor.java,C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_base_deed98b\src\core\lombok\javac\handlers\HandleConstructor.java,C:\Users\user\Desktop\gjcc\amostra\projects\lombok\revisions\rev_7ee8686_72b55dc\rev_right_72b55dc\src\core\lombok\javac\handlers\HandleConstructor.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL | Flags.PARAMETER, nonNulls.appendList(nullables)), field.name, pType, null);
+||||||| BASE
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL, nonNulls.appendList(nullables)), field.name, pType, null);
+=======
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL, nonNulls.appendList(nullables)), fieldName, pType, null);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+private JCMethodDecl createStaticConstructor(String name, AccessLevel level, JavacNode typeNode, List<JavacNode> fields, JCTree source) {
+		JavacTreeMaker maker = typeNode.getTreeMaker();
+		JCClassDecl type = (JCClassDecl) typeNode.get();
+		
+		JCModifiers mods = maker.Modifiers(Flags.STATIC | toJavacModifier(level));
+		
+		JCExpression returnType, constructorType;
+		
+		ListBuffer<JCTypeParameter> typeParams = ListBuffer.lb();
+		ListBuffer<JCVariableDecl> params = ListBuffer.lb();
+		ListBuffer<JCExpression> typeArgs1 = ListBuffer.lb();
+		ListBuffer<JCExpression> typeArgs2 = ListBuffer.lb();
+		ListBuffer<JCExpression> args = ListBuffer.lb();
+		
+		if (!type.typarams.isEmpty()) {
+			for (JCTypeParameter param : type.typarams) {
+				typeArgs1.append(maker.Ident(param.name));
+				typeArgs2.append(maker.Ident(param.name));
+				typeParams.append(maker.TypeParameter(param.name, param.bounds));
+			}
+			returnType = maker.TypeApply(maker.Ident(type.name), typeArgs1.toList());
+			constructorType = maker.TypeApply(maker.Ident(type.name), typeArgs2.toList());
+		} else {
+			returnType = maker.Ident(type.name);
+			constructorType = maker.Ident(type.name);
+		}
+		
+		for (JavacNode fieldNode : fields) {
+			JCVariableDecl field = (JCVariableDecl) fieldNode.get();
+			Name fieldName = removePrefixFromField(fieldNode);
+			JCExpression pType = cloneType(maker, field.vartype, source);
+			List<JCAnnotation> nonNulls = findAnnotations(fieldNode, TransformationsUtil.NON_NULL_PATTERN);
+			List<JCAnnotation> nullables = findAnnotations(fieldNode, TransformationsUtil.NULLABLE_PATTERN);
+<<<<<<< MINE
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL | Flags.PARAMETER, nonNulls.appendList(nullables)), field.name, pType, null);
+=======
+			JCVariableDecl param = maker.VarDef(maker.Modifiers(Flags.FINAL, nonNulls.appendList(nullables)), fieldName, pType, null);
+>>>>>>> YOURS
+			params.append(param);
+			args.append(maker.Ident(fieldName));
+		}
+		JCReturn returnStatement = maker.Return(maker.NewClass(null, List.<JCExpression>nil(), constructorType, args.toList(), null));
+		JCBlock body = maker.Block(0, List.<JCStatement>of(returnStatement));
+		
+		return recursiveSetGeneratedBy(maker.MethodDef(mods, typeNode.toName(name), returnType, typeParams.toList(), params.toList(), List.<JCExpression>nil(), body, null), source);
+	}
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_d156c77_a762c79\rev_left_d156c77\src\org\nutz\lang\socket\Sockets.java,C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_d156c77_a762c79\rev_base_e9fb7a5\src\org\nutz\lang\socket\Sockets.java,C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_d156c77_a762c79\rev_right_a762c79\src\org\nutz\lang\socket\Sockets.java
+CONCLUSAO: FP. MUDANÇAS EQUIVALENTES. UM APAGOU E O OUTRO COMENTOU
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+							//if(log.isDebugEnabled())
+							//	log.debug(" %% check ... " + context.getBoolean("stop"));
+||||||| BASE
+							if(log.isDebugEnabled())
+								log.debug(" %% check ... " + context.getBoolean("stop"));
+=======
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@SuppressWarnings("rawtypes")
+	public static void localListen(	int port,
+									Map<String, SocketAction> actions,
+									ExecutorService service,
+									Class<? extends SocketAtom> klass) {
+		try {
+			// ???????
+			SocketActionTable saTable = new SocketActionTable(actions);
+
+			// ??? socket ??
+			final ServerSocket server;
+			try {
+				server = new ServerSocket(port);
+			}
+			catch (IOException e1) {
+				throw Lang.wrapThrow(e1);
+			}
+
+			if (log.isInfoEnabled())
+				log.infof("Local socket is up at :%d with %d action ready", port, actions.size());
+
+			final Context context = Lang.context();
+			context.set("stop", false);
+			/*
+			 * ???????????????? socket ??
+			 */
+			(new Thread() {
+				@Override
+				public void run() {
+					setName("Nutz.Sockets monitor thread");
+					while (true) {
+						try {
+							Thread.sleep(1000);
+<<<<<<< MINE
+							//if(log.isDebugEnabled())
+							//	log.debug(" %% check ... " + context.getBoolean("stop"));
+=======
+>>>>>>> YOURS
+							if (context.getBoolean("stop")) {
+								try {
+									server.close();
+								}
+								catch (Throwable e) {}
+								return;
+							}
+						}
+						catch (Throwable e) {}
+					}
+				}
+			}).start();
+			/*
+			 * ?? SocketAtom ????
+			 */
+			Borning borning = Mirror.me(klass).getBorningByArgTypes(Context.class,
+																	Socket.class,
+																	SocketActionTable.class);
+			if (borning == null) {
+				log.error("boring == null !!!!");
+				return;
+			}
+			/*
+			 * ??????
+			 */
+			while (!context.getBoolean("stop")) {
+				try {
+					if (log.isDebugEnabled())
+						log.debug("Waiting for new socket");
+					Socket socket = server.accept();
+					if (context.getBoolean("stop")) {
+						Sockets.safeClose(socket);
+						break;//??????????,????????,????????
+					}
+					if (log.isDebugEnabled())
+<<<<<<< MINE
+						log.debug("accept a new socket, create new SocketAtom to handle it ...");
+					Runnable runnable = (Runnable) borning.born(new Object[]{context,socket, saTable});
+=======
+						log.debug("Appact a new socket, create new SocketAtom to handle it ...");
+					Runnable runnable = (Runnable) borning.born(new Object[]{	context,
+																				socket,
+																				saTable});
+>>>>>>> YOURS
+					service.execute(runnable);
+				}
+				catch (Throwable e) {
+					log.info("Throwable catched!! maybe ask to exit", e);
+				}
+<<<<<<< MINE
+=======
+				if (log.isDebugEnabled())
+					log.debugf("next loop '%s'", context.getBoolean("stop"));
+				if (context.getBoolean("stop"))
+					break;
+>>>>>>> YOURS
+			}
+			
+			if (!server.isClosed()) {
+				try {
+					server.close();
+				}
+				catch (Throwable e) {}
+			}
+			
+			log.info("Seem stop signal was got, all running thread to exit in 60s");
+			
+			try {
+				service.shutdown();
+				service.awaitTermination(15, TimeUnit.SECONDS);
+			}
+			catch (InterruptedException e) {}
+			try {
+				service.shutdownNow();
+			}
+			catch (Throwable e2) {}
+		}
+		catch (RuntimeException e) {
+			throw e;
+		}
+		finally {
+			if (log.isInfoEnabled())
+				log.info("Stop services ...");
+			service.shutdown();
+		}
+
+		if (log.isInfoEnabled())
+			log.infof("Local socket is down for :%d", port);
+
+	}
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_d156c77_a762c79\rev_left_d156c77\src\org\nutz\lang\socket\Sockets.java,C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_d156c77_a762c79\rev_base_e9fb7a5\src\org\nutz\lang\socket\Sockets.java,C:\Users\user\Desktop\gjcc\amostra\projects\nutz\revisions\rev_d156c77_a762c79\rev_right_a762c79\src\org\nutz\lang\socket\Sockets.java
+CONCLUSAO: FP. MUDANÇAS EQUIVALENTES. UM APAGOU E O OUTRO COMENTOU
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+||||||| BASE
+				if (context.getBoolean("stop"))
+					break;
+=======
+				if (log.isDebugEnabled())
+					log.debugf("next loop '%s'", context.getBoolean("stop"));
+				if (context.getBoolean("stop"))
+					break;
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@SuppressWarnings("rawtypes")
+	public static void localListen(	int port,
+									Map<String, SocketAction> actions,
+									ExecutorService service,
+									Class<? extends SocketAtom> klass) {
+		try {
+			// ???????
+			SocketActionTable saTable = new SocketActionTable(actions);
+
+			// ??? socket ??
+			final ServerSocket server;
+			try {
+				server = new ServerSocket(port);
+			}
+			catch (IOException e1) {
+				throw Lang.wrapThrow(e1);
+			}
+
+			if (log.isInfoEnabled())
+				log.infof("Local socket is up at :%d with %d action ready", port, actions.size());
+
+			final Context context = Lang.context();
+			context.set("stop", false);
+			/*
+			 * ???????????????? socket ??
+			 */
+			(new Thread() {
+				@Override
+				public void run() {
+					setName("Nutz.Sockets monitor thread");
+					while (true) {
+						try {
+							Thread.sleep(1000);
+<<<<<<< MINE
+							//if(log.isDebugEnabled())
+							//	log.debug(" %% check ... " + context.getBoolean("stop"));
+=======
+>>>>>>> YOURS
+							if (context.getBoolean("stop")) {
+								try {
+									server.close();
+								}
+								catch (Throwable e) {}
+								return;
+							}
+						}
+						catch (Throwable e) {}
+					}
+				}
+			}).start();
+			/*
+			 * ?? SocketAtom ????
+			 */
+			Borning borning = Mirror.me(klass).getBorningByArgTypes(Context.class,
+																	Socket.class,
+																	SocketActionTable.class);
+			if (borning == null) {
+				log.error("boring == null !!!!");
+				return;
+			}
+			/*
+			 * ??????
+			 */
+			while (!context.getBoolean("stop")) {
+				try {
+					if (log.isDebugEnabled())
+						log.debug("Waiting for new socket");
+					Socket socket = server.accept();
+					if (context.getBoolean("stop")) {
+						Sockets.safeClose(socket);
+						break;//??????????,????????,????????
+					}
+					if (log.isDebugEnabled())
+<<<<<<< MINE
+						log.debug("accept a new socket, create new SocketAtom to handle it ...");
+					Runnable runnable = (Runnable) borning.born(new Object[]{context,socket, saTable});
+=======
+						log.debug("Appact a new socket, create new SocketAtom to handle it ...");
+					Runnable runnable = (Runnable) borning.born(new Object[]{	context,
+																				socket,
+																				saTable});
+>>>>>>> YOURS
+					service.execute(runnable);
+				}
+				catch (Throwable e) {
+					log.info("Throwable catched!! maybe ask to exit", e);
+				}
+<<<<<<< MINE
+=======
+				if (log.isDebugEnabled())
+					log.debugf("next loop '%s'", context.getBoolean("stop"));
+				if (context.getBoolean("stop"))
+					break;
+>>>>>>> YOURS
+			}
+			
+			if (!server.isClosed()) {
+				try {
+					server.close();
+				}
+				catch (Throwable e) {}
+			}
+			
+			log.info("Seem stop signal was got, all running thread to exit in 60s");
+			
+			try {
+				service.shutdown();
+				service.awaitTermination(15, TimeUnit.SECONDS);
+			}
+			catch (InterruptedException e) {}
+			try {
+				service.shutdownNow();
+			}
+			catch (Throwable e2) {}
+		}
+		catch (RuntimeException e) {
+			throw e;
+		}
+		finally {
+			if (log.isInfoEnabled())
+				log.info("Stop services ...");
+			service.shutdown();
+		}
+
+		if (log.isInfoEnabled())
+			log.infof("Local socket is down for :%d", port);
+
+	}
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_42a3857_8482c5f\rev_left_42a3857\ql\src\java\org\apache\hadoop\hive\ql\parse\DDLSemanticAnalyzer.java,C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_42a3857_8482c5f\rev_base_b82d38a\ql\src\java\org\apache\hadoop\hive\ql\parse\DDLSemanticAnalyzer.java,C:\Users\user\Desktop\gjcc\amostra\projects\hive\revisions\rev_42a3857_8482c5f\rev_right_8482c5f\ql\src\java\org\apache\hadoop\hive\ql\parse\DDLSemanticAnalyzer.java
+CONCLUSAO: FP. MUDANÇAS COMPLEMENTARES
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+          partSpec == null ? new HashMap<String, String>() : partSpec, null);
+||||||| BASE
+          partSpec == null ? new HashMap<String, String>() : partSpec);
+=======
+          partSpec == null ? new HashMap<>() : partSpec);
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+private void analyzeAlterTablePartMergeFiles(ASTNode ast,
+      String tableName, HashMap<String, String> partSpec)
+      throws SemanticException {
+    AlterTablePartMergeFilesDesc mergeDesc = new AlterTablePartMergeFilesDesc(
+        tableName, partSpec);
+
+    List<Path> inputDir = new ArrayList<Path>();
+    Path oldTblPartLoc = null;
+    Path newTblPartLoc = null;
+    Table tblObj = null;
+    ListBucketingCtx lbCtx = null;
+
+    try {
+      tblObj = getTable(tableName);
+      // TODO: we should probably block all ACID tables here.
+      if (MetaStoreUtils.isInsertOnlyTable(tblObj.getParameters())) {
+        throw new SemanticException("Merge is not supported for MM tables");
+      }
+      mergeDesc.setTableDesc(Utilities.getTableDesc(tblObj));
+
+      List<String> bucketCols = null;
+      Class<? extends InputFormat> inputFormatClass = null;
+      boolean isArchived = false;
+      boolean checkIndex = HiveConf.getBoolVar(conf,
+          HiveConf.ConfVars.HIVE_CONCATENATE_CHECK_INDEX);
+      if (checkIndex) {
+        List<Index> indexes = db.getIndexes(tblObj.getDbName(), tblObj.getTableName(),
+            Short.MAX_VALUE);
+        if (indexes != null && indexes.size() > 0) {
+          throw new SemanticException("can not do merge because source table "
+              + tableName + " is indexed.");
+        }
+      }
+
+      if (tblObj.isPartitioned()) {
+        if (partSpec == null) {
+          throw new SemanticException("source table " + tableName
+              + " is partitioned but no partition desc found.");
+        } else {
+          Partition part = getPartition(tblObj, partSpec, false);
+          if (part == null) {
+            throw new SemanticException("source table " + tableName
+                + " is partitioned but partition not found.");
+          }
+          bucketCols = part.getBucketCols();
+          inputFormatClass = part.getInputFormatClass();
+          isArchived = ArchiveUtils.isArchived(part);
+
+          Path tabPath = tblObj.getPath();
+          Path partPath = part.getDataLocation();
+
+          // if the table is in a different dfs than the partition,
+          // replace the partition's dfs with the table's dfs.
+          newTblPartLoc = new Path(tabPath.toUri().getScheme(), tabPath.toUri()
+              .getAuthority(), partPath.toUri().getPath());
+
+          oldTblPartLoc = partPath;
+
+          lbCtx = constructListBucketingCtx(part.getSkewedColNames(), part.getSkewedColValues(),
+              part.getSkewedColValueLocationMaps(), part.isStoredAsSubDirectories(), conf);
+        }
+      } else {
+        inputFormatClass = tblObj.getInputFormatClass();
+        bucketCols = tblObj.getBucketCols();
+
+        // input and output are the same
+        oldTblPartLoc = tblObj.getPath();
+        newTblPartLoc = tblObj.getPath();
+
+        lbCtx = constructListBucketingCtx(tblObj.getSkewedColNames(), tblObj.getSkewedColValues(),
+            tblObj.getSkewedColValueLocationMaps(), tblObj.isStoredAsSubDirectories(), conf);
+      }
+
+      // throw a HiveException for other than rcfile and orcfile.
+      if (!((inputFormatClass.equals(RCFileInputFormat.class) ||
+          (inputFormatClass.equals(OrcInputFormat.class))))) {
+        throw new SemanticException(
+            "Only RCFile and ORCFile Formats are supported right now.");
+      }
+      mergeDesc.setInputFormatClass(inputFormatClass);
+
+      // throw a HiveException if the table/partition is bucketized
+      if (bucketCols != null && bucketCols.size() > 0) {
+        throw new SemanticException(
+            "Merge can not perform on bucketized partition/table.");
+      }
+
+      // throw a HiveException if the table/partition is archived
+      if (isArchived) {
+        throw new SemanticException(
+            "Merge can not perform on archived partitions.");
+      }
+
+      inputDir.add(oldTblPartLoc);
+
+      mergeDesc.setInputDir(inputDir);
+
+      mergeDesc.setLbCtx(lbCtx);
+
+      addInputsOutputsAlterTable(tableName, partSpec, AlterTableTypes.MERGEFILES);
+      DDLWork ddlWork = new DDLWork(getInputs(), getOutputs(), mergeDesc);
+      ddlWork.setNeedLock(true);
+      Task<? extends Serializable> mergeTask = TaskFactory.get(ddlWork, conf);
+      TableDesc tblDesc = Utilities.getTableDesc(tblObj);
+      Path queryTmpdir = ctx.getExternalTmpPath(newTblPartLoc);
+      mergeDesc.setOutputDir(queryTmpdir);
+      // No need to handle MM tables - unsupported path.
+      LoadTableDesc ltd = new LoadTableDesc(queryTmpdir, tblDesc,
+<<<<<<< MINE
+          partSpec == null ? new HashMap<String, String>() : partSpec, null);
+=======
+          partSpec == null ? new HashMap<>() : partSpec);
+>>>>>>> YOURS
+      ltd.setLbCtx(lbCtx);
+      Task<MoveWork> moveTsk = TaskFactory.get(new MoveWork(null, null, ltd, null, false), conf);
+      mergeTask.addDependentTask(moveTsk);
+
+      if (conf.getBoolVar(HiveConf.ConfVars.HIVESTATSAUTOGATHER)) {
+        StatsWork statDesc;
+        if (oldTblPartLoc.equals(newTblPartLoc)) {
+          // If we're merging to the same location, we can avoid some metastore calls
+          TableSpec tableSpec = new TableSpec(db, tableName, partSpec);
+          statDesc = new StatsWork(tableSpec);
+        } else {
+          statDesc = new StatsWork(ltd);
+        }
+        statDesc.setNoStatsAggregator(true);
+        statDesc.setClearAggregatorStats(true);
+        statDesc.setStatsReliable(conf.getBoolVar(HiveConf.ConfVars.HIVE_STATS_RELIABLE));
+        Task<? extends Serializable> statTask = TaskFactory.get(statDesc, conf);
+        moveTsk.addDependentTask(statTask);
+      }
+
+      rootTasks.add(mergeTask);
+    } catch (Exception e) {
+      throw new SemanticException(e);
+    }
+  }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------
+
+############################
+
+C:\Users\user\Desktop\gjcc\amostra\projects\cucumber-jvm\revisions\rev_fb20fd2_c9fa125\rev_left_fb20fd2\cucumber-maven-plugin\src\main\java\cucumber\mojo\CucumberMojo.java,C:\Users\user\Desktop\gjcc\amostra\projects\cucumber-jvm\revisions\rev_fb20fd2_c9fa125\rev_base_8f75c36\cucumber-maven-plugin\src\main\java\cucumber\mojo\CucumberMojo.java,C:\Users\user\Desktop\gjcc\amostra\projects\cucumber-jvm\revisions\rev_fb20fd2_c9fa125\rev_right_c9fa125\cucumber-maven-plugin\src\main\java\cucumber\mojo\CucumberMojo.java
+TYPE
+ OTHER 
+----------------------------
+JFSTMERGE_CONF
+<<<<<<< MINE
+||||||| BASE
+    @Override
+=======
+//    @Override
+>>>>>>> YOURS
+----------------------------
+JDIME_CONF
+<EMPTY>
+----------------------------
+JFSTMERGE_DECL
+@SuppressWarnings({"unchecked"})
+<<<<<<< MINE
+=======
+//    @Override
+>>>>>>> YOURS
+    public void execute() throws MojoFailureException, MojoExecutionException {
+
+        if (installGems) {
+            installGem(listify("cucumber"));
+            for (String s : gems) {
+                installGem(parseGem(s));
+            }
+        }
+        
+        List<String> allArgs = new ArrayList<String>();
+        allArgs.add("-S");
+        allArgs.add("cucumber");
+        allArgs.add((features != null) ? features : "src/test/features");
+
+        Java jruby = jruby(allArgs);
+        try {
+            jruby.execute();
+        } catch (BuildException e) {
+            // suck it & spit
+            throw new MojoFailureException("Cucumber failed: " + e.getMessage());
+        }
+    }
+----------------------------
+JDIME_DECL
+<EMPTY>
+----------------------------

@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_ec13a42_efbb281\rev_left_ec13a42\blueprints-core\src\main\java\com\tinkerpop\blueprints\util\wrappers\event\EventGraph.java
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_ec13a42_efbb281\rev_base_1978017\blueprints-core\src\main\java\com\tinkerpop\blueprints\util\wrappers\event\EventGraph.java
+C:\Users\user\Desktop\gjcc\amostra\projects\blueprints\revisions\rev_ec13a42_efbb281\rev_right_efbb281\blueprints-core\src\main\java\com\tinkerpop\blueprints\util\wrappers\event\EventGraph.java

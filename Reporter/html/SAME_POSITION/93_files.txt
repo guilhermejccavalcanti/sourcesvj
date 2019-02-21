@@ -1,0 +1,3 @@
+C:\Users\user\Desktop\gjcc\amostra\projects\cucumber-jvm\revisions\rev_393837b_d4ffedd\rev_left_393837b\core\src\main\java\cucumber\runtime\StepDefinitionMatch.java
+C:\Users\user\Desktop\gjcc\amostra\projects\cucumber-jvm\revisions\rev_393837b_d4ffedd\rev_base_9379c6c\core\src\main\java\cucumber\runtime\StepDefinitionMatch.java
+C:\Users\user\Desktop\gjcc\amostra\projects\cucumber-jvm\revisions\rev_393837b_d4ffedd\rev_right_d4ffedd\core\src\main\java\cucumber\runtime\StepDefinitionMatch.java
