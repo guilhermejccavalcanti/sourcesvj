@@ -1,7 +1,6 @@
 package br.ufpe.cin.files;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
@@ -31,6 +30,7 @@ import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
+import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.TypeDeclaration;
 
 import de.ovgu.cide.fstgen.ast.FSTNode;
@@ -712,9 +712,10 @@ public final class FilesManager {
 			List<TypeDeclaration> types = indenter.getTypes();
 			if(!types.isEmpty()){
 				TypeDeclaration type = types.get(0);
-				if(type instanceof ClassOrInterfaceDeclaration ){
+				if(type instanceof ClassOrInterfaceDeclaration 
+						|| type instanceof EnumDeclaration){
 					fullqualifiedname += ((!fullqualifiedname.isEmpty())?".":"") + type.getName();
-				}
+				} 
 			}
 			return fullqualifiedname;
 		} catch (Exception e) {
@@ -827,5 +828,11 @@ public final class FilesManager {
 		}
 		catch (Exception e) {}
 		return StandardCharsets.UTF_8;
+	}
+
+	public static String stripComments(String str) {
+		str = str.replaceAll(".*[^:]//.*|/\\*((.|\\n)(?!=*/))*\\*/", ""); //remove comments
+		str = str.replaceAll("/\\*(?:.|[\\n\\r])*?\\*/",""); //remove javadoc
+		return str;
 	}
 }

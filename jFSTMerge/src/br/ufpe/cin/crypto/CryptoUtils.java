@@ -25,12 +25,12 @@ public class CryptoUtils {
 
 	public static void encrypt(File inputFile, File outputFile) throws CryptoException
 	{
-		doCrypto(Cipher.ENCRYPT_MODE, inputFile, outputFile);
+		//doCrypto(Cipher.ENCRYPT_MODE, inputFile, outputFile);
 	}
 
 	public static void decrypt(File inputFile, File outputFile)
 			throws CryptoException {
-		doCrypto(Cipher.DECRYPT_MODE,inputFile, outputFile);
+		//doCrypto(Cipher.DECRYPT_MODE,inputFile, outputFile);
 	}
 
 	//method to encrypt strings if required in future

@@ -1,6 +1,3 @@
-### Status
-[![Build Status](https://api.travis-ci.org/guilhermejccavalcanti/jFSTMerge.svg?branch=master)](https://travis-ci.org/guilhermejccavalcanti/jFSTMerge)
-
 jFSTMerge
 ========
 

@@ -234,12 +234,20 @@ public final class SemistructuredMerge {
 				if(IS_ORDERED && (node.getType().equals("MethodDecl") 
 						|| node.getType().equals("ConstructorDecl") 
 						|| node.getType().equals("FieldDecl"))){//FPFN without if...else
-					
+
 					orderedMerge(node, context, leftContent, baseContent,rightContent);
-				
+
 				} else {
 					String mergedBodyContent = TextualMerge.merge(leftContent, baseContent, rightContent, false); //FPFN original = true
 					((FSTTerminal) node).setBody(mergedBodyContent);
+
+					if(	node.getType().equals("MethodDecl") 
+							|| node.getType().equals("ConstructorDecl") 
+							|| node.getType().equals("FieldDecl")){
+						if(mergedBodyContent.contains("<<<<<<")){
+							context.ssmergeConfsInDecl++;
+						}
+					}
 
 					/*				
 					identifyNodesEditedInOnlyOneVersion(node, context, leftContent,	baseContent, rightContent);
@@ -483,6 +491,10 @@ public final class SemistructuredMerge {
 			mergedBodyContent = mergedBodyContent.replace("public class PlaceHolderFake {","");
 			mergedBodyContent = mergedBodyContent.substring(0, mergedBodyContent.lastIndexOf("}"));
 			((FSTTerminal) node).setBody(mergedBodyContent);
+			
+			if(mergedBodyContent.contains("<<<<<<")){
+				context.jdimeConfsInDecl++;
+			}
 
 			fileVar1.deleteOnExit();fileBase.deleteOnExit();fileVar2.deleteOnExit();
 			//fileVar1.delete();fileBase.delete();fileVar2.delete();

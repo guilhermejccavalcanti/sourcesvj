@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="971" key="DIALOG_X_ORIGIN"/>
-		<item value="92" key="DIALOG_Y_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="767" key="dialogHeight"/>
@@ -17,8 +17,11 @@
 		</list>
 	</section>
 	<section name="PreferencesImportWizard">
-		<item value="E:\theme-66.epf" key=""/>
+		<item value="E:\theme-285.epf" key=""/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="E:\theme-285.epf"/>
+			<item value="E:\theme-91.epf"/>
+			<item value="E:\theme-1649.epf"/>
 			<item value="E:\theme-66.epf"/>
 			<item value="E:\theme-1.epf"/>
 		</list>
@@ -26,7 +29,7 @@
 	<section name="NewWizardAction">
 	</section>
 	<section name="ImportExportAction">
-		<item value="org.eclipse.jdt.internal.ui.fatjarpackager.JarPackageWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<item value="org.eclipse.jdt.internal.ui.jarpackager.JarPackageWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
 		<item value="org.eclipse.ui.wizards.import.Preferences" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
@@ -35,5 +38,7 @@
 			<item value="org.eclipse.jdt.ui.Java"/>
 			<item value="org.eclipse.jst.j2ee.internal"/>
 		</list>
+	</section>
+	<section name="PreferencesExportWizard">
 	</section>
 </section>

@@ -76,6 +76,9 @@ public class JFSTMerge {
 	@Parameter(names = "-jdime", description = "Parameter to merge with jdime (structured merge).", arity = 1)
 	public static boolean mergeWithJdime = true;
 
+	@Parameter(names = "-jssmerge", description = "Parameter to merge with ssmerge (semistructured merge).", arity = 1)
+	public static boolean mergeWithSsmerge = true;
+
 	/**
 	 * Merges merge scenarios, indicated by .revisions files. 
 	 * This is mainly used for evaluation purposes.
@@ -193,16 +196,21 @@ public class JFSTMerge {
 				context.unstructuredMergeTime 	= System.nanoTime() - t0un;
 				successtextual = true;
 
-				long t0ss = System.nanoTime();
-				context.semistructuredOutput 	= SemistructuredMerge.merge(left, base, right, context);
-				context.semistructuredMergeTime = context.semistructuredMergeTime + (System.nanoTime() - t0ss);
+				if(JFSTMerge.mergeWithSsmerge){
+					long t0ss = System.nanoTime();
+					context.semistructuredOutput 	= SemistructuredMerge.merge(left, base, right, context);
+					context.semistructuredMergeTime = context.semistructuredMergeTime + (System.nanoTime() - t0ss);
+				} else {
+					context.semistructuredOutput 	= context.unstructuredOutput;
+					context.semistructuredMergeTime = context.unstructuredMergeTime;
+				}
 				successssmerge = true;
 
 				//FPFN running jdime, avoiding infinite loop after 1 minute per file
 				if(JFSTMerge.mergeWithJdime){
 					long t0st = System.nanoTime();
 					context.structuredOutput 	= StructuredMerge.merge(left, base, right, context, true);
-					//context.structuredOutput 	= StructuredMerge.merge(left, base, right, context); FPFN original
+					//context.structuredOutput 	= StructuredMerge.merge(left, base, right, context); //FPFN original
 					context.structuredMergeTime = (System.nanoTime() - t0st);
 				} else {
 					context.structuredOutput 	= context.semistructuredOutput;
@@ -266,9 +274,9 @@ public class JFSTMerge {
 
 	public static void main(String[] args) {
 		new JFSTMerge().mergeFiles(
-				new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jdime\\toy\\left.java"),
-				new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jdime\\toy\\base.java"),
-				new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jdime\\toy\\right.java"),
+				new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jFSTMerge\\toy\\left.java"),
+				new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jFSTMerge\\toy\\base.java"),
+				new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jFSTMerge\\toy\\right.java"),
 				null);
 
 		//				new JFSTMerge().mergeFiles(
@@ -332,7 +340,7 @@ public class JFSTMerge {
 	}
 
 	private int checkConflictState(MergeContext context) {
-		/*		List<MergeConflict> conflictList = new ArrayList<>();
+		List<MergeConflict> conflictList = new ArrayList<>();
 		if(JFSTMerge.isStructured) {
 			conflictList = FilesManager.extractMergeConflicts(context.structuredOutput);
 		} else {
@@ -342,8 +350,7 @@ public class JFSTMerge {
 			return 1;
 		} else {
 			return 0;
-		}*/
-
-		return 1;
+		}
+		//return 1;
 	}
 }

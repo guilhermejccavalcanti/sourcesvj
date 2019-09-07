@@ -156,6 +156,20 @@ public final class FPFNUtils {
 					&& null != context.structuredOutput) {
 				//FPFN uncomment log(context);
 				count(context);
+
+				//printing merged files for further analyzes
+				try{
+					String path = System.getProperty("user.home")+ File.separator + ".jfstmerge" + File.separator + "mergedFiles" + File.separator;
+					new File(path).mkdirs(); //ensuring it exists
+					//				FilesManager.writeContent(path + (context.fullQualifiedMergedClass).split(",")[2] + ".unstructured", context.unstructuredOutput); only filename
+					//				FilesManager.writeContent(path + (context.fullQualifiedMergedClass).split(",")[2] + ".semistructured", context.semistructuredOutput);
+					//				FilesManager.writeContent(path + (context.fullQualifiedMergedClass).split(",")[2] + ".structured", context.structuredOutput);
+					FilesManager.writeContent(path + (context.fullQualifiedMergedClass).split("/")[1] + ".unstructured", context.unstructuredOutput); //project,merge commit, filename
+					FilesManager.writeContent(path + (context.fullQualifiedMergedClass).split("/")[1] + ".semistructured", context.semistructuredOutput);
+					FilesManager.writeContent(path + (context.fullQualifiedMergedClass).split("/")[1] + ".structured", context.structuredOutput);
+				} catch(Exception e) {
+					return;
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -305,6 +319,9 @@ public final class FPFNUtils {
 
 			//diff
 			String diffcmd = "C:/KDiff3/bin/diff.exe " + "\"" + left.getPath() + "\"" + " " + "\"" + base.getPath() + "\"";
+			if (!System.getProperty("os.name").contains("Windows")) {
+				diffcmd = "diff " + "\"" + left.getPath() + "\"" + " " + "\"" + base.getPath() + "\"";
+			}
 			Runtime runTime = Runtime.getRuntime();
 			Process process = runTime.exec(diffcmd);
 
@@ -341,19 +358,6 @@ public final class FPFNUtils {
 		return allContribs;
 	}
 
-	private static boolean searchFixedElement(String fixedElement,
-			String[] variant) {
-		boolean foundFixedElement = false;
-		int i = 0;
-		while (!foundFixedElement && i < variant.length) {
-			if (variant[i].equals(fixedElement)) {
-				foundFixedElement = true;
-			}
-			i++;
-		}
-		return foundFixedElement;
-	}
-
 	private static boolean areSimilarConflicts(MergeConflict jfstmergeConf,	MergeConflict jdimeMergeConflict) {
 		if (null == jfstmergeConf || null == jdimeMergeConflict)
 			return false;
@@ -370,26 +374,6 @@ public final class FPFNUtils {
 					rjfst.contains(rjdm) || 
 					rjdm.contains(rjfst)
 					);
-		}
-	}
-
-	private static void log(MergeContext context) throws FileNotFoundException {
-		String mergedFiles = 
-				((context.getLeft()!=null)? context.getLeft() .getPath() : "empty") + ","
-						+ ((context.getBase()!=null)? context.getBase() .getPath() : "empty") + ","
-						+ ((context.getRight()!=null)?context.getRight().getPath() : "empty") + "\n";
-		for (Difference diff : context.differences) {
-			if(!diff.types.isEmpty()){
-				String logPath = System.getProperty("user.home") + File.separator
-						+ ".jfstmerge" + File.separator + "log"
-						+ diff.getTypeIntoString() + ".txt";
-				String logEntry = mergedFiles + diff.toString();
-
-				PrintWriter pw = new PrintWriter(new FileOutputStream(new File(
-						logPath), true), true);
-				pw.append(logEntry + "\n");
-				pw.close();
-			}
 		}
 	}
 
@@ -410,6 +394,9 @@ public final class FPFNUtils {
 		int ssmergeConf = 0;
 		int jdimeConf   = 0;
 		int textualConf = 0;
+
+		int ssmergeConfsInDecl = 0;
+		int jdimeConfsInDecl = 0;
 
 		for (Difference diff : context.differences) {
 			if (diff.types.contains(Type.CONSECUTIVE_LINES)
@@ -447,8 +434,11 @@ public final class FPFNUtils {
 		jdimeConf 	= FilesManager.extractMergeConflicts(context.structuredOutput).size();
 		textualConf = FilesManager.extractMergeConflicts(context.unstructuredOutput).size();
 
-		context.isSsEqualsToUn = FilesManager.getStringContentIntoSingleLineNoSpacing(context.semistructuredOutput).equals(FilesManager.getStringContentIntoSingleLineNoSpacing(context.unstructuredOutput));
-		context.isStEqualsToUn = FilesManager.getStringContentIntoSingleLineNoSpacing(context.structuredOutput).equals(FilesManager.getStringContentIntoSingleLineNoSpacing(context.unstructuredOutput));
+		context.isSsEqualsToUn = FilesManager.getStringContentIntoSingleLineNoSpacing(FilesManager.stripComments(context.semistructuredOutput)).equals(FilesManager.getStringContentIntoSingleLineNoSpacing(FilesManager.stripComments(context.unstructuredOutput)));
+		context.isStEqualsToUn = FilesManager.getStringContentIntoSingleLineNoSpacing(FilesManager.stripComments(context.structuredOutput)).equals(FilesManager.getStringContentIntoSingleLineNoSpacing(FilesManager.stripComments(context.unstructuredOutput)));
+
+		ssmergeConfsInDecl = context.ssmergeConfsInDecl;
+		jdimeConfsInDecl = context.jdimeConfsInDecl;
 
 		String mergedFiles = context.fullQualifiedMergedClass;
 		String logPath = System.getProperty("user.home") + File.separator + ".jfstmerge" + File.separator + "numbers-current-file.csv";
@@ -474,7 +464,10 @@ public final class FPFNUtils {
 				+ "isSsEqualsToUn;"
 				+ "isStEqualsToUn;"
 				+ "changedMethods;" 
-				+ "commonChangedMethods";
+				+ "commonChangedMethods;"
+				+ "ssmergeConfsInDecl;" 
+				+ "jdimeConfsInDecl" 
+				;
 
 		String logEntry = mergedFiles + ";" 
 				+ consecutiveLinesonly + ";" 
@@ -498,7 +491,10 @@ public final class FPFNUtils {
 				+ context.isSsEqualsToUn + ";" 
 				+ context.isStEqualsToUn + ";"
 				+ context.changedMethods + ";" 
-				+ context.commonChangedMethods;
+				+ context.commonChangedMethods + ";" 
+				+ ssmergeConfsInDecl + ";"
+				+ jdimeConfsInDecl 
+				;
 
 		File out = new File(logPath);
 		PrintWriter pw; 
@@ -521,6 +517,39 @@ public final class FPFNUtils {
 		}
 	}
 
+	private static boolean searchFixedElement(String fixedElement,
+			String[] variant) {
+		boolean foundFixedElement = false;
+		int i = 0;
+		while (!foundFixedElement && i < variant.length) {
+			if (variant[i].equals(fixedElement)) {
+				foundFixedElement = true;
+			}
+			i++;
+		}
+		return foundFixedElement;
+	}
+
+	private static void log(MergeContext context) throws FileNotFoundException {
+		String mergedFiles = 
+				((context.getLeft()!=null)? context.getLeft() .getPath() : "empty") + ","
+						+ ((context.getBase()!=null)? context.getBase() .getPath() : "empty") + ","
+						+ ((context.getRight()!=null)?context.getRight().getPath() : "empty") + "\n";
+		for (Difference diff : context.differences) {
+			if(!diff.types.isEmpty()){
+				String logPath = System.getProperty("user.home") + File.separator
+						+ ".jfstmerge" + File.separator + "log"
+						+ diff.getTypeIntoString() + ".txt";
+				String logEntry = mergedFiles + diff.toString();
+
+				PrintWriter pw = new PrintWriter(new FileOutputStream(new File(
+						logPath), true), true);
+				pw.append(logEntry + "\n");
+				pw.close();
+			}
+		}
+	}
+
 	private static void addMultipleNumberOfLinesContributions(List<String> contribLinesFromLeft,	List<String> contribLinesFromRight, String fileIndicator, String lineIndicator) {
 		String[] lines = lineIndicator.split(",");
 		int lowline = Integer.valueOf(lines[0]);
@@ -529,5 +558,12 @@ public final class FPFNUtils {
 			addNumberOfLineContribution(contribLinesFromLeft,contribLinesFromRight, fileIndicator,String.valueOf(lowline));	
 			lowline++;
 		}
+	}
+
+	public static void main(String[] args) {
+		String s = FilesManager.readFileContent(new File("C:\\GGTS\\workspaces\\workspace_rscjd5\\jdime\\toy\\left.java"));
+		s = FilesManager.stripComments(s);
+		s = FilesManager.getStringContentIntoSingleLineNoSpacing(s);
+		System.out.println(s);
 	}
 }

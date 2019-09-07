@@ -1,7 +1,0 @@
-public class A {
-
-    void m() {
-        m = 10;
-        n = 20;
-    }
-}

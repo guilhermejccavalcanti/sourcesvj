@@ -18,15 +18,15 @@ public class MergeContext {
 	String baseContent;
 	String leftContent;
 	String rightContent;
-	public List<FSTNode> addedLeftNodes 	= new ArrayList();
-	public List<FSTNode> addedRightNodes 	= new ArrayList();
-	public List<FSTNode> deletedBaseNodes 	= new ArrayList();
+	public List<FSTNode> addedLeftNodes = new ArrayList();
+	public List<FSTNode> addedRightNodes = new ArrayList();
+	public List<FSTNode> deletedBaseNodes = new ArrayList();
 	public List<FSTNode> nodesDeletedByLeft = new ArrayList();
-	public List<FSTNode> nodesDeletedByRight= new ArrayList();
-	public List<Pair<String, FSTNode>> possibleRenamedLeftNodes 	= new ArrayList();
-	public List<Pair<String, FSTNode>> possibleRenamedRightNodes 	= new ArrayList();
-	public List<FSTNode> editedLeftNodes 	= new ArrayList();
-	public List<FSTNode> editedRightNodes 	= new ArrayList();
+	public List<FSTNode> nodesDeletedByRight = new ArrayList();
+	public List<Pair<String, FSTNode>> possibleRenamedLeftNodes = new ArrayList();
+	public List<Pair<String, FSTNode>> possibleRenamedRightNodes = new ArrayList();
+	public List<FSTNode> editedLeftNodes = new ArrayList();
+	public List<FSTNode> editedRightNodes = new ArrayList();
 	public FSTNode leftTree;
 	public FSTNode baseTree;
 	public FSTNode rightTree;
@@ -34,30 +34,32 @@ public class MergeContext {
 	public String semistructuredOutput;
 	public String unstructuredOutput;
 	public String structuredOutput;
-	public List<Difference> differences 				= new ArrayList();
-	public int newElementReferencingEditedOneConflicts 	= 0;
-	public int renamingConflicts 				= 0;
-	public int typeAmbiguityErrorsConflicts 	= 0;
-	public int deletionConflicts 				= 0;
-	public int initializationBlocksConflicts 	= 0;
-	public int acidentalConflicts 				= 0;
+	public List<Difference> differences = new ArrayList();
+	public int newElementReferencingEditedOneConflicts = 0;
+	public int renamingConflicts = 0;
+	public int typeAmbiguityErrorsConflicts = 0;
+	public int deletionConflicts = 0;
+	public int initializationBlocksConflicts = 0;
+	public int acidentalConflicts = 0;
 	public long semistructuredMergeTime = 0L;
-	public long unstructuredMergeTime 	= 0L;
-	public int semistructuredNumberOfConflicts 	= 0;
-	public int unstructuredNumberOfConflicts 	= 0;
-	public int semistructuredMergeConflictsLOC 	= 0;
-	public int unstructuredMergeConflictsLOC 	= 0;
-	public int orderingConflicts 			= 0;
-	public int duplicatedDeclarationErrors 	= 0;
-	public int equalConflicts 			= 0;
-	public int innerDeletionConflicts 	= 0;
-	public long structuredMergeTime 	= 0L;
-	public boolean sucessfullMerge 		= false;
-	public boolean isSsEqualsToUn			= false;
-	public boolean isStEqualsToUn			= false;
-	public String fullQualifiedMergedClass  = "";
+	public long unstructuredMergeTime = 0L;
+	public int semistructuredNumberOfConflicts = 0;
+	public int unstructuredNumberOfConflicts = 0;
+	public int semistructuredMergeConflictsLOC = 0;
+	public int unstructuredMergeConflictsLOC = 0;
+	public int orderingConflicts = 0;
+	public int duplicatedDeclarationErrors = 0;
+	public int equalConflicts = 0;
+	public int innerDeletionConflicts = 0;
+	public long structuredMergeTime = 0L;
+	public boolean sucessfullMerge = false;
+	public boolean isSsEqualsToUn = false;
+	public boolean isStEqualsToUn = false;
+	public String fullQualifiedMergedClass = "";
 	public int changedMethods = 0;
 	public int commonChangedMethods = 0;
+	public int ssmergeConfsInDecl = 0;
+	public int jdimeConfsInDecl = 0;
 
 	public MergeContext() {
 	}
@@ -71,7 +73,7 @@ public class MergeContext {
 		this.leftContent = FilesManager.readFileContent(this.left);
 		this.baseContent = FilesManager.readFileContent(this.base);
 		this.rightContent = FilesManager.readFileContent(this.right);
-		
+
 		this.setFullQualifiedMergedClassName();
 	}
 
@@ -87,9 +89,9 @@ public class MergeContext {
 		this.nodesDeletedByRight.addAll(otherContext.nodesDeletedByRight);
 
 		this.possibleRenamedLeftNodes
-		.addAll(otherContext.possibleRenamedLeftNodes);
+				.addAll(otherContext.possibleRenamedLeftNodes);
 		this.possibleRenamedRightNodes
-		.addAll(otherContext.possibleRenamedRightNodes);
+				.addAll(otherContext.possibleRenamedRightNodes);
 
 		this.leftTree = otherContext.leftTree;
 		this.baseTree = otherContext.baseTree;
@@ -97,11 +99,12 @@ public class MergeContext {
 		this.superImposedTree = otherContext.superImposedTree;
 
 		this.differences.addAll(otherContext.differences);
-		
+
 		this.commonChangedMethods += otherContext.commonChangedMethods;
 		this.changedMethods += otherContext.changedMethods;
 		
-		this.semistructuredMergeTime += otherContext.semistructuredMergeTime;
+		this.ssmergeConfsInDecl += otherContext.ssmergeConfsInDecl;
+		this.jdimeConfsInDecl += otherContext.jdimeConfsInDecl;
 
 		return this;
 	}
@@ -154,21 +157,30 @@ public class MergeContext {
 		this.rightContent = rightContent;
 	}
 
-	private void setFullQualifiedMergedClassName(){
+	private void setFullQualifiedMergedClassName() {
 		String name = "";
-		if(this.left != null && this.left.length()!=0 ){
+		if (this.left != null && this.left.length() != 0) {
 			name = FilesManager.getFullQualifiedName(this.left);
-		} else if(this.right != null && this.right.length()!=0){
+		} else if (this.right != null && this.right.length() != 0) {
 			name = FilesManager.getFullQualifiedName(this.right);
-		} else if(this.base != null && this.base.length()!=0){
+		} else if (this.base != null && this.base.length() != 0) {
 			name = FilesManager.getFullQualifiedName(this.base);
-		} 
-		if(name.isEmpty()){
-			name = (this.left 	!= null ? this.left.getAbsolutePath() : "<empty left>") + "#" + (
-					this.base 	!= null ? this.base.getAbsolutePath() : "<empty base>") + "#" + (
-					this.right 	!= null ? this.right.getAbsolutePath(): "<empty right>");
 		}
-		String projectAndCommit = FilesManager.lastLine(System.getProperty("user.home") + File.separator + ".jfstmerge" + File.separator + "execution.log");
-		this.fullQualifiedMergedClass =	projectAndCommit+","+name;
+		if (name.isEmpty()) {
+			name = (this.left != null ? this.left.getAbsolutePath()
+					: "<empty left>")
+					+ "#"
+					+ (this.base != null ? this.base.getAbsolutePath()
+							: "<empty base>")
+					+ "#"
+					+ (this.right != null ? this.right.getAbsolutePath()
+							: "<empty right>");
+		}
+		String projectAndCommit = FilesManager.lastLine(System
+				.getProperty("user.home")
+				+ File.separator
+				+ ".jfstmerge"
+				+ File.separator + "execution.log");
+		this.fullQualifiedMergedClass = projectAndCommit + "," + name;
 	}
 }

@@ -35,7 +35,6 @@
 <fullyQualifiedTypeName name="br.ufpe.cin.exceptions.StructuredMergeException"/>
 <fullyQualifiedTypeName name="br.ufpe.cin.mergers.SemistructuredMerge"/>
 <fullyQualifiedTypeName name="org.apache.commons.io.FilenameUtils"/>
-<fullyQualifiedTypeName name="br.ufpe.cin.files.FilesManager"/>
 <fullyQualifiedTypeName name="br.ufpe.cin.app.JFSTMerge"/>
 <fullyQualifiedTypeName name="fpfn.FPFNUtils"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -48,4 +47,6 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
 <fullyQualifiedTypeName name="org.mozilla.universalchardet.ReaderFactory"/>
+<fullyQualifiedTypeName name="br.ufpe.cin.files.FilesManager"/>
+<fullyQualifiedTypeName name="com.github.javaparser.ast.body.EnumDeclaration"/>
 </qualifiedTypeNameHistroy>

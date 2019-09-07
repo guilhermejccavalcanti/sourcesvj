@@ -1,7 +1,7 @@
 #
-#Thu Feb 21 17:36:24 GMT-03:00 2019
+#Fri Sep 06 21:24:13 GMT-03:00 2019
 linkedResources=
-classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n<classpathentry kind\="lib" path\="C\:/Users/Guilherme/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.5.1/65bd0cacc9c79a21c6ed8e9f588577cd3c2f85b9/jna-4.5.1.jar" sourcepath\="C\:/Users/Guilherme/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.5.1/965bf0f4cf5b71c2b1e9bb5a8d7b6919020e0492/jna-4.5.1-sources.jar">\r\n\t<attributes>\r\n\t\t<attribute name\="gradle_used_by_scope" value\="main,test"/>\r\n\t</attributes>\r\n</classpathentry>\r\n</classpath>\n
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n<classpathentry kind\="lib" path\="C\:/Users/Guilherme/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.5.1/65bd0cacc9c79a21c6ed8e9f588577cd3c2f85b9/jna-4.5.1.jar" sourcepath\="C\:/Users/Guilherme/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.5.1/965bf0f4cf5b71c2b1e9bb5a8d7b6919020e0492/jna-4.5.1-sources.jar">\r\n\t<attributes>\r\n\t\t<attribute name\="gradle_used_by_scope" value\="main,test"/>\r\n\t</attributes>\r\n</classpathentry>\r\n</classpath>\n
 subprojectPaths=
 derivedResources=.gradle;build
 buildDir=build
